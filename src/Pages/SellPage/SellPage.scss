@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+.sell__main {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .sell__line {
+    margin-top: 20px;
+    border-left: 1px solid black;
+    height: 94px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  .sell__btn {
+    width: 540px;
+    margin-top: 170px;
+    background-image: linear-gradient(
+      to right,
+      #272ff2 0%,
+      #fc00ff 51%,
+      #272ff2 100%
+    );
+    border: none;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+  }
+  .sell__btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+}

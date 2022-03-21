@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+.houseinfo__main__image {
+  img {
+    width: 860px;
+    height: 577px;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.houseinfo__second__image {
+  img {
+    width: 277px;
+    height: 284px;
+    border-radius: 0 10px 0 0;
+  }
+  Button {
+    width: 275px;
+    height: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 4px;
+  }
+}
+
+.houseinfo__card {
+  width: 85%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__title {
+  display: flex;
+  justify-content: flex-start;
+
+  .card__title__left {
+    background-color: black;
+    width: 104px;
+    height: 20px;
+    color: white;
+
+    border-radius: 18px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .card__title__right {
+    display: flex;
+    margin-left: 95px;
+
+    div {
+      padding-left: 15px;
+    }
+  }
+}
+
+.card__profile {
+  margin-top: 15px;
+  display: flex;
+  border-bottom: solid 1px #dddddd;
+  width: 446px;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .card__profile__info {
+    margin-left: 10px;
+    font-family: "Inter", sans-serif;
+
+    p {
+      margin-bottom: 0px;
+      font-size: 12px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
+
+.card__contact {
+  margin-top: 40px;
+  margin-left: 17px;
+
+  .card__contact__title {
+    border-left: 6px solid #2c4dff;
+    border-radius: 2px;
+    padding-left: 6px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .card__contact__info {
+    display: flex;
+    width: 426px;
+    margin-top: 40px;
+    color: #2c4dff;
+    border-bottom: solid 1px #dddddd;
+    h6 {
+      padding-left: 30px;
+      color: black;
+    }
+  }
+}
+
+.card__offer {
+  margin-top: 40px;
+  margin-left: 17px;
+
+  .card__offer__title {
+    border-left: 6px solid #2c4dff;
+    border-radius: 2px;
+    padding-left: 6px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .card__offer__info {
+    margin-top: 15px;
+    font-family: "Inter", sans-serif;
+
+    .col {
+      padding: 10px;
+    }
+  }
+
+  .card__offer__button {
+    margin-top: 40px;
+    margin-left: -10px;
+    Button {
+      width: 200px;
+      border-radius: 15px;
+    }
+  }
+}
+
+.houseinfo__main__title {
+  margin-top: -120px;
+  font-family: "Inter", sans-serif;
+
+  .houseinfo__text {
+    border-left: 14px solid #ff8226;
+    padding-left: 10px;
+    border-radius: 4px;
+    text-align: left;
+
+    h1 {
+      font-size: 25px;
+      color: #2e5491;
+      line-height: 1;
+    }
+
+    p {
+      color: #262626;
+      padding: 0;
+      line-height: 1.5;
+    }
+  }
+
+  p {
+    text-align: justify;
+    padding-left: 25px;
+    line-height: 45px;
+  }
+}
+
+.houseinfo__map {
+  margin-top: 90px;
+  text-align: left;
+}
+
+.houseinfo__comments__container {
+  background-color: #f4f4f4;
+  padding: 37px 37px 0 37px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+.houseinfo__comments__content {
+  border-bottom: 1px solid #cbcbcb;
+  margin-bottom: 30px;
+}
+
+.houseinfo__comments {
+  font-family: "Inter", sans-serif;
+  margin-top: 90px;
+
+  .comments__user {
+    display: flex;
+
+    .comments__user__text {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .comments__author {
+      background-color: #2127c4;
+      border-radius: 16px;
+      color: white;
+      width: 110px;
+      text-align: center;
+
+      font-size: 13px;
+      font-weight: 800;
+      padding-top: 2px;
+    }
+  }
+
+  .comments__admin {
+    display: flex;
+    margin-top: 10px;
+
+    .comments__admin__text {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.houseinfo__recommendation {
+  width: 98%;
+}
+
+.recommendation__content {
+  margin-top: 40px;
+
+  .rec__image {
+    img {
+      width: 379px;
+      height: 404px;
+    }
+  }
+
+  .rec__content {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 13px;
+
+    h1 {
+      font-size: 30px;
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 15px;
+      font-family: "Inter", sans-serif;
+      font-weight: 300;
+    }
+  }
+
+  .rec__items {
+    display: flex;
+
+    .rec__count {
+      margin-left: 10px;
+      background-color: #ebebeb;
+      border-radius: 50%;
+      width: 21px;
+      height: 21px;
+      font-size: 13px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .rec__count__lug {
+      margin-left: 10px;
+      background-color: #ebebeb;
+      border-radius: 40%;
+      width: 56px;
+      height: 21px;
+      font-size: 12px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .rec__icon {
+      width: 40px;
+      height: 21px;
+    }
+  }
+}

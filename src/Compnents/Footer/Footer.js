@@ -1,0 +1,88 @@
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import "./Footer.scss";
+
+const Footer = () => {
+  return (
+    <Container>
+      <Row className="footer__content">
+        <Col md={2}>
+          <div className="footer__links">
+            <a href="#information">Information</a>
+            <a href="#About">About Us</a>
+            <a href="#Contact">Contact</a>
+            <a href="#Privacy">Privacy policy</a>
+          </div>
+        </Col>
+        <Col>
+          <div className="footer__border"></div>
+        </Col>
+        <Col>
+          <div className="footer__map">
+            <iframe
+              src="https://maps.google.com/maps?q=Nayabazar%20marg&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="349"
+              height="251"
+              frameBorder="0"
+              style={{ border: 0, marginTop: "40px" }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+              title="map"
+            ></iframe>
+          </div>
+        </Col>
+        <Col md={3} style={{ marginTop: "10px" }}>
+          <div className="footer__contact">
+            <FlightTakeoffIcon style={{ color: "#0542EB" }} />
+            <p>Nayabazar Marg, Kathmandu, Nepal</p>
+          </div>
+          <div className="footer__contact">
+            <LocalPhoneIcon style={{ color: "#0542EB" }} />
+            <p>984187394, 977-1-4118745, 4110987</p>
+          </div>
+          <div className="footer__contact">
+            <EmailIcon style={{ color: "#0542EB" }} />
+            <p>nijiproperty1121@gmail.com</p>
+          </div>
+          <div className="footer__social">
+            <div>
+              <FacebookIcon />
+            </div>
+            <div>
+              <InstagramIcon />
+            </div>
+            <div>
+              <TwitterIcon />
+            </div>
+          </div>
+        </Col>
+        <Col>
+          <div className="footer__border"></div>
+        </Col>
+        <Col md={3}>
+          <div className="footer__deals">
+            <h1>Get the lastet deals</h1>
+            <p>
+              Get to know the weekly deals that helps you to find the perfect
+              house. Join weekly niji property news to get the lastest
+              information into your inbox.
+            </p>
+            <div className="footer__email">
+              <input type="text" placeholder="Enter your email" />
+              <button>SIGN UP</button>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default Footer;

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+.rent__container {
+  display: flex;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  width: 96%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  .rent__image {
+    img {
+      width: 388px;
+      height: 271px;
+      border-radius: 8px;
+    }
+  }
+
+  .rent__info {
+    margin-left: 60px;
+  }
+
+  .rent__price {
+    margin-left: 400px;
+    display: flex;
+
+    h1 {
+      font-size: 23px;
+      text-align: center;
+      color: #1745e0;
+    }
+
+    p {
+      font-size: 15px;
+      text-align: center;
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+  }
+}
