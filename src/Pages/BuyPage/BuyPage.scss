@@ -5,10 +5,13 @@
 .buy__list {
   display: flex;
   margin-left: 43px;
-
   p {
     padding-left: 5px;
     font-size: 15px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -71,4 +74,64 @@ img {
 .buy__pagination {
   display: inline-block;
   float: right;
+}
+
+.buy__collapse__container {
+  display: flex;
+
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  .buy__collapse__image {
+    img {
+      width: 388px;
+      height: 271px;
+      border-radius: 8px;
+    }
+  }
+
+  .buy__collapse__info {
+    margin-left: 60px;
+  }
+
+  .buy__collapse__price {
+    margin-left: 750px;
+    display: flex;
+
+    h1 {
+      font-size: 23px;
+      text-align: center;
+      color: #1745e0;
+    }
+
+    p {
+      font-size: 15px;
+      text-align: center;
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.rent__pagination {
+  float: right;
+  margin-top: 20px;
+}
+
+.buy__grid {
+  display: flex;
+  margin-left: 8px;
+
+  p {
+    padding-left: 5px;
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }

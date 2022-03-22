@@ -15,6 +15,8 @@ import HouseImg from "./Pages/SellPage/HouseImg";
 import PersonalInfo from "./Pages/SellPage/PersonalInfo";
 import Publish from "./Pages/SellPage/Publish";
 import RoomRentInfo from "./Pages/RoomRentPage/RoomRentInfo";
+import BuyCollapse from "./Pages/BuyPage/BuyCollapse";
+import Preview from "./Pages/HouseInfo/Preview";
 
 function App() {
   return (
@@ -24,8 +26,11 @@ function App() {
         <div className="app__container">
           <Routes>
             <Route path="/" element={<BuyPage />} exact />
+            <Route path="/buy" element={<BuyPage />} />
+            <Route path="buycollapse" element={<BuyCollapse />} />
             <Route path="/houseinfo" element={<HouseInfo />} />
             <Route path="/rent" element={<RentPage />} />
+            <Route path="/preview" element={<Preview />} />
             <Route path="/sell" element={<SellPage />} />
             <Route path="/selloption" element={<SellOption />} />
             <Route path="/roomrentinfo" element={<RoomRentInfo />} />

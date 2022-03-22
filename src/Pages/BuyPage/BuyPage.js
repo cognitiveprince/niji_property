@@ -3,13 +3,17 @@ import "./BuyPage.scss";
 import { Container, Row } from "react-bootstrap";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 import { Pagination } from "@mantine/core";
+import { Link } from "react-router-dom";
 import BuyContent from "./BuyContent";
 
 const BuyPage = () => {
   return (
     <Container>
       <div className="buy__list">
-        <DragHandleIcon /> <p> List view </p>
+        <DragHandleIcon />{" "}
+        <Link to="/buycollapse">
+          <p> List view </p>{" "}
+        </Link>
       </div>
 
       <Row>

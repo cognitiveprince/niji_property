@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-
+import { Modal } from "@mantine/core";
 import "./HouseInfo.scss";
 import HouseCard from "./HouseCard";
 import HouseComments from "./HouseComments";
 import HouseRecommendation from "./HouseRecommendation";
+import Preview from "./Preview";
 
 const HouseInfo = () => {
+  const [opened, setOpened] = useState(false);
+
   return (
     <>
       <Container style={{ marginTop: "20px" }}>
@@ -30,7 +33,20 @@ const HouseInfo = () => {
               style={{ marginTop: "10px", borderRadius: "0 0 10px 0" }}
             />
             <div className="d-grid gap-2">
-              <Button variant="outline-dark" size="lg">
+              <Modal
+                opened={opened}
+                onClose={() => setOpened(false)}
+                centered
+                size="100%"
+              >
+                <Preview />
+              </Modal>
+
+              <Button
+                onClick={() => setOpened(true)}
+                variant="outline-dark"
+                size="lg"
+              >
                 See all
               </Button>
             </div>
