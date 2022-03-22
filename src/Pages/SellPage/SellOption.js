@@ -5,7 +5,7 @@ import "./SellOption.scss";
 
 const SellOption = () => {
   return (
-    <Container>
+    <Container style={{ marginTop: "20px" }}>
       <Row>
         <Col>
           <div className="sell__main">

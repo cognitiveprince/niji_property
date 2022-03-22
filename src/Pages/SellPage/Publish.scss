@@ -1,4 +1,4 @@
-.sell__main {
+.publish__main {
   text-align: center;
 
   h1 {
@@ -10,7 +10,7 @@
     margin-top: 20px;
   }
 
-  .sell__line {
+  .publish__line {
     margin-top: 20px;
     border-left: 1px solid black;
     height: 94px;
@@ -19,7 +19,7 @@
     margin-left: -3px;
   }
 
-  .sell__btn {
+  .publish__btn {
     width: 540px;
     margin-top: 170px;
     background-image: linear-gradient(
@@ -38,7 +38,7 @@
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
   }
-  .sell__btn:hover {
+  .publish__btn:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;

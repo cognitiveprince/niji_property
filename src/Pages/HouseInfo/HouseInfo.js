@@ -15,6 +15,8 @@ import KitchenIcon from "@mui/icons-material/Kitchen";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import CircleIcon from "@mui/icons-material/Circle";
 import EastIcon from "@mui/icons-material/East";
+import { ScrollArea } from "@mantine/core";
+import { Badge } from "@mantine/core";
 
 import AirlineSeatIndividualSuiteIcon from "@mui/icons-material/AirlineSeatIndividualSuite";
 import "./HouseInfo.scss";
@@ -239,172 +241,182 @@ const HouseInfo = () => {
           {/* House Info Map Ends */}
 
           {/* House Info Comments */}
+
           <div className="houseinfo__comments" style={{ width: "96%" }}>
             <div style={{ fontSize: "30px", textAlign: "left" }}>Comments</div>
+
             <div className="houseinfo__comments__container">
-              {/* HTML FOR THE COMMENTS VISUAL  */}
-              <div className="houseinfo__comments__content">
-                <div className="comments__user">
-                  <div className="comments__user__icon">
-                    <CircleIcon
-                      style={{
-                        width: "12px",
-                        height: "12px",
-                        color: "#f27000",
-                      }}
-                    />
+              <ScrollArea style={{ height: "250px" }}>
+                {/* HTML FOR THE COMMENTS VISUAL  */}
+                <div className="houseinfo__comments__content">
+                  <div className="comments__user">
+                    <div className="comments__user__icon">
+                      <CircleIcon
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          color: "#f27000",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__user__text">
+                      Would love to visit the house this Saturday, can I ?
+                    </div>
+                    <Badge
+                      style={{ backgroundColor: "#217FC4", color: "white" }}
+                    >
+                      Raju thapa
+                    </Badge>
                   </div>
-                  <div className="comments__user__text">
-                    Would love to visit the house this Saturday, can I ?
-                  </div>
-                  <div className="comments__author">Raju thapa</div>
-                </div>
 
-                <div className="comments__admin">
-                  <div className="comments__admin__icon">
-                    <EastIcon
-                      style={{
-                        width: "50px",
-                        height: "16px",
-                        color: "#353DFC",
-                      }}
-                    />
-                  </div>
-                  <div className="comments__admin__text">
-                    Sorry, we are closed on Saturday.
+                  <div className="comments__admin">
+                    <div className="comments__admin__icon">
+                      <EastIcon
+                        style={{
+                          width: "50px",
+                          height: "16px",
+                          color: "#353DFC",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__admin__text">
+                      Sorry, we are closed on Saturday.
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
+                {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
 
-              {/* HTML FOR THE COMMENTS VISUAL  */}
-              <div className="houseinfo__comments__content">
-                <div className="comments__user">
-                  <div className="comments__user__icon">
-                    <CircleIcon
-                      style={{
-                        width: "12px",
-                        height: "12px",
-                        color: "#f27000",
-                      }}
-                    />
+                {/* HTML FOR THE COMMENTS VISUAL  */}
+                <div className="houseinfo__comments__content">
+                  <div className="comments__user">
+                    <div className="comments__user__icon">
+                      <CircleIcon
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          color: "#f27000",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__user__text">
+                      Would love to visit the house this Saturday, can I ?
+                    </div>
+                    <Badge
+                      style={{ backgroundColor: "#E85836", color: "white" }}
+                    >
+                      Aadish Gurung
+                    </Badge>
                   </div>
-                  <div className="comments__user__text">
-                    Would love to visit the house this Saturday, can I ?
-                  </div>
-                  <div
-                    className="comments__author"
-                    style={{ backgroundColor: "#E85836" }}
-                  >
-                    Aadish Gurung
-                  </div>
-                </div>
 
-                <div className="comments__admin">
-                  <div className="comments__admin__icon">
-                    <EastIcon
-                      style={{
-                        width: "50px",
-                        height: "16px",
-                        color: "#353DFC",
-                      }}
-                    />
-                  </div>
-                  <div className="comments__admin__text">
-                    Sorry, we are closed on Saturday.
+                  <div className="comments__admin">
+                    <div className="comments__admin__icon">
+                      <EastIcon
+                        style={{
+                          width: "50px",
+                          height: "16px",
+                          color: "#353DFC",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__admin__text">
+                      Sorry, we are closed on Saturday.
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
+                {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
 
-              {/* HTML FOR THE COMMENTS VISUAL  */}
-              <div className="houseinfo__comments__content">
-                <div className="comments__user">
-                  <div className="comments__user__icon">
-                    <CircleIcon
-                      style={{
-                        width: "12px",
-                        height: "12px",
-                        color: "#f27000",
-                      }}
-                    />
+                {/* HTML FOR THE COMMENTS VISUAL  */}
+                <div className="houseinfo__comments__content">
+                  <div className="comments__user">
+                    <div className="comments__user__icon">
+                      <CircleIcon
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          color: "#f27000",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__user__text">
+                      Would love to visit the house this Saturday, can I ?
+                    </div>
+                    <Badge
+                      style={{ backgroundColor: "#217FC4", color: "white" }}
+                    >
+                      Saurav Shrestha
+                    </Badge>
                   </div>
-                  <div className="comments__user__text">
-                    Would love to visit the house this Saturday, can I ?
-                  </div>
-                  <div
-                    className="comments__author"
-                    style={{ backgroundColor: "#217FC4" }}
-                  >
-                    Saurav Shrestha
-                  </div>
-                </div>
 
-                <div className="comments__admin">
-                  <div className="comments__admin__icon">
-                    <EastIcon
-                      style={{
-                        width: "50px",
-                        height: "16px",
-                        color: "#353DFC",
-                      }}
-                    />
-                  </div>
-                  <div className="comments__admin__text">
-                    Sorry, we are closed on Saturday.
+                  <div className="comments__admin">
+                    <div className="comments__admin__icon">
+                      <EastIcon
+                        style={{
+                          width: "50px",
+                          height: "16px",
+                          color: "#353DFC",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__admin__text">
+                      Sorry, we are closed on Saturday.
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
+                {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
 
-              {/* HTML FOR THE COMMENTS VISUAL  */}
-              <div
-                className="houseinfo__comments__content"
-                style={{ borderBottom: 0 }}
-              >
-                <div className="comments__user">
-                  <div className="comments__user__icon">
-                    <CircleIcon
-                      style={{
-                        width: "12px",
-                        height: "12px",
-                        color: "#f27000",
-                      }}
-                    />
+                {/* HTML FOR THE COMMENTS VISUAL  */}
+                <div
+                  className="houseinfo__comments__content"
+                  style={{ borderBottom: 0 }}
+                >
+                  <div className="comments__user">
+                    <div className="comments__user__icon">
+                      <CircleIcon
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          color: "#f27000",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__user__text">
+                      Would love to visit the house this Saturday, can I ?
+                    </div>
+                    <Badge
+                      style={{ backgroundColor: "#AB21C4", color: "white" }}
+                    >
+                      Zara Kc
+                    </Badge>
                   </div>
-                  <div className="comments__user__text">
-                    Would love to visit the house this Saturday, can I ?
-                  </div>
-                  <div
-                    className="comments__author"
-                    style={{ backgroundColor: "#AB21C4" }}
-                  >
-                    Zara Kc
-                  </div>
-                </div>
 
-                <div className="comments__admin">
-                  <div className="comments__admin__icon">
-                    <EastIcon
-                      style={{
-                        width: "50px",
-                        height: "16px",
-                        color: "#353DFC",
-                      }}
-                    />
-                  </div>
-                  <div className="comments__admin__text">
-                    Sorry, we are closed on Saturday.
+                  <div className="comments__admin">
+                    <div className="comments__admin__icon">
+                      <EastIcon
+                        style={{
+                          width: "50px",
+                          height: "16px",
+                          color: "#353DFC",
+                        }}
+                      />
+                    </div>
+                    <div className="comments__admin__text">
+                      Sorry, we are closed on Saturday.
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
+                {/* HTML FOR THE COMMENTS VISUAL ENDS HERE */}
+              </ScrollArea>
             </div>
+
             <div className="houseinfo__comments__button">
               <Button
                 variant="outline-dark"
                 size="lg"
-                style={{ float: "right", fontWeight: "bold", fontSize: "15px" }}
+                style={{
+                  float: "right",
+                  fontWeight: "bold",
+                  fontSize: "15px",
+                }}
               >
                 ASK QUESTION
               </Button>

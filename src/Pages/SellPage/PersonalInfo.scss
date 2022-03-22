@@ -1,4 +1,4 @@
-.sell__info__left {
+.personal__info__left {
   background: linear-gradient(
     164deg,
     rgba(249, 92, 187, 1) 0%,
@@ -23,12 +23,12 @@
   }
 }
 
-.sell__info__right {
+.personal__info__right {
   text-align: left;
   margin-top: 50px;
   margin-left: 20px;
 
-  .sell__right__title {
+  .personal__right__title {
     border-left: 6px solid #2c4dff;
     border-radius: 2px;
     padding-left: 6px;
@@ -62,7 +62,7 @@
     outline: none;
   }
 
-  .sell__btn {
+  .personal__btn {
     width: 158px;
     height: 57px;
     border-radius: 15px;

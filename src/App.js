@@ -9,6 +9,11 @@ import RentPage from "./Pages/RentPage/RentPage";
 import SellPage from "./Pages/SellPage/SellPage";
 import SellOption from "./Pages/SellPage/SellOption";
 import SellInfo from "./Pages/SellPage/SellInfo";
+import MapInfo from "./Pages/SellPage/MapInfo";
+import HouseOffer from "./Pages/SellPage/HouseOffer";
+import HouseImg from "./Pages/SellPage/HouseImg";
+import PersonalInfo from "./Pages/SellPage/PersonalInfo";
+import Publish from "./Pages/SellPage/Publish";
 
 function App() {
   return (
@@ -23,6 +28,11 @@ function App() {
             <Route path="/sell" element={<SellPage />} />
             <Route path="/selloption" element={<SellOption />} />
             <Route path="/sellinfo" element={<SellInfo />} />
+            <Route path="/mapinfo" element={<MapInfo />} />
+            <Route path="/houseoffer" element={<HouseOffer />} />
+            <Route path="/houseimg" element={<HouseImg />} />
+            <Route path="/personalinfo" element={<PersonalInfo />} />
+            <Route path="/publish" element={<Publish />} />
           </Routes>
         </div>
         <Footer />
