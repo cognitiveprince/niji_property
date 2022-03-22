@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
-
 .rent__container {
   display: flex;
   margin-top: 20px;
-  font-family: "Inter", sans-serif;
-  width: 96%;
+
   height: 100%;
   border-radius: 10px;
   background-color: white;
@@ -41,4 +37,9 @@
       margin-top: 5px;
     }
   }
+}
+
+.rent__pagination {
+  float: right;
+  margin-top: 20px;
 }

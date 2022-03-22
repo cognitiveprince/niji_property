@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
-import "./HouseInfo.scss";
-import HouseCard from "./HouseCard";
-import HouseComments from "./HouseComments";
-import HouseRecommendation from "./HouseRecommendation";
+import "./RoomRentInfo.scss";
+import HouseCard from "./RoomCard";
+import HouseComments from "./RoomComment";
+import HouseRecommendation from "./RoomRecommendation";
 
-const HouseInfo = () => {
+const RoomRentInfo = () => {
   return (
     <>
       <Container style={{ marginTop: "20px" }}>
@@ -15,17 +15,17 @@ const HouseInfo = () => {
 
           <Col md={6} className="houseinfo__main__image">
             <img
-              src={require("../../Assets/houseinfo_1.png")}
+              src={require("../../Assets/roomrentinfo_1.png")}
               alt="koonya pavillion"
             />
           </Col>
           <Col md={2} className="houseinfo__second__image">
             <img
-              src={require("../../Assets/houseinfo_2.png")}
+              src={require("../../Assets/roomrentinfo_2.png")}
               alt="koonya pavillion"
             />
             <img
-              src={require("../../Assets/houseinfo_3.png")}
+              src={require("../../Assets/roomrentinfo_3.png")}
               alt="koonya pavillion"
               style={{ marginTop: "10px", borderRadius: "0 0 10px 0" }}
             />
@@ -48,9 +48,9 @@ const HouseInfo = () => {
           <div className="houseinfo__main__title">
             <Col md={8}>
               <div className="houseinfo__text">
-                <h1>Rs. 10,00,00,000</h1>
-                <h2>An Inimitable Experience of Place - Koonya Pavilion</h2>
-                <p>Baluwatar, Kathmandu, Nepal</p>
+                <h1>Rs. 15,000</h1>
+                <h2>Entire rental unit</h2>
+                <p>Hattigauda, Kathmandu, Nepal</p>
               </div>
               <div>
                 <p>
@@ -73,7 +73,7 @@ const HouseInfo = () => {
           {/* House Info Map */}
           <div className="houseinfo__map">
             <Button variant="primary" size="lg">
-              House Location , Map View
+              Room Location , Map View
             </Button>
             <div style={{ textAlign: "center" }}>
               <iframe
@@ -104,4 +104,4 @@ const HouseInfo = () => {
   );
 };
 
-export default HouseInfo;
+export default RoomRentInfo;

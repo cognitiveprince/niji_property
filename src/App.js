@@ -14,6 +14,7 @@ import HouseOffer from "./Pages/SellPage/HouseOffer";
 import HouseImg from "./Pages/SellPage/HouseImg";
 import PersonalInfo from "./Pages/SellPage/PersonalInfo";
 import Publish from "./Pages/SellPage/Publish";
+import RoomRentInfo from "./Pages/RoomRentPage/RoomRentInfo";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/rent" element={<RentPage />} />
             <Route path="/sell" element={<SellPage />} />
             <Route path="/selloption" element={<SellOption />} />
+            <Route path="/roomrentinfo" element={<RoomRentInfo />} />
             <Route path="/sellinfo" element={<SellInfo />} />
             <Route path="/mapinfo" element={<MapInfo />} />
             <Route path="/houseoffer" element={<HouseOffer />} />
