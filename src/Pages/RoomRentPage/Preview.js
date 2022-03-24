@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import "./HouseInfo.scss";
+import "./RoomRentInfo.scss";
 import { Center } from "@mantine/core";
 
 const Preview = () => {

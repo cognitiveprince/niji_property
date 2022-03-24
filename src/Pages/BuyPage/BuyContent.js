@@ -4,20 +4,22 @@ import AirlineSeatIndividualSuiteIcon from "@mui/icons-material/AirlineSeatIndiv
 import ShowerIcon from "@mui/icons-material/Shower";
 import LuggageIcon from "@mui/icons-material/Luggage";
 import { Col } from "react-bootstrap";
-import { Badge } from "@mantine/core";
+import { Badge, Center } from "@mantine/core";
 
 const BuyContent = () => {
   return (
     <>
       <Col>
-        <div className="buy__image">
-          <Link to="/houseinfo">
-            <img
-              src={require("../../Assets/first_prop.png")}
-              alt="koonya pavillion"
-            />
-          </Link>
-        </div>
+        <Center>
+          <div className="buy__image">
+            <Link to="/houseinfo">
+              <img
+                src={require("../../Assets/first_prop.png")}
+                alt="koonya pavillion"
+              />
+            </Link>
+          </div>
+        </Center>
         <div className="buy__content">
           <h1>Koonya Pavilion</h1>
 

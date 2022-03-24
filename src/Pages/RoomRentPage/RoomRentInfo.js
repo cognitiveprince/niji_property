@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-
+import { Modal } from "@mantine/core";
 import "./RoomRentInfo.scss";
-import HouseCard from "./RoomCard";
-import HouseComments from "./RoomComment";
-import HouseRecommendation from "./RoomRecommendation";
+import Preview from "./Preview";
+import RoomRecommendation from "./RoomRecommendation";
+import RoomComment from "./RoomComment";
+import RoomCard from "./RoomCard";
 
 const RoomRentInfo = () => {
+  const [opened, setOpened] = useState(false);
   return (
     <>
       <Container style={{ marginTop: "20px" }}>
@@ -30,7 +32,20 @@ const RoomRentInfo = () => {
               style={{ marginTop: "10px", borderRadius: "0 0 10px 0" }}
             />
             <div className="d-grid gap-2">
-              <Button variant="outline-dark" size="lg">
+              <Modal
+                opened={opened}
+                onClose={() => setOpened(false)}
+                centered
+                size="100%"
+              >
+                <Preview />
+              </Modal>
+
+              <Button
+                onClick={() => setOpened(true)}
+                variant="outline-dark"
+                size="lg"
+              >
                 See all
               </Button>
             </div>
@@ -40,7 +55,7 @@ const RoomRentInfo = () => {
 
           {/* Card Section */}
           <Col>
-            <HouseCard />
+            <RoomCard />
           </Col>
           {/* Card Section Ends */}
 
@@ -48,9 +63,9 @@ const RoomRentInfo = () => {
           <div className="houseinfo__main__title">
             <Col md={8}>
               <div className="houseinfo__text">
-                <h1>Rs. 15,000</h1>
-                <h2>Entire rental unit</h2>
-                <p>Hattigauda, Kathmandu, Nepal</p>
+                <h1>Rs. 10,00,00,000</h1>
+                <h2>An Inimitable Experience of Place - Koonya Pavilion</h2>
+                <p>Baluwatar, Kathmandu, Nepal</p>
               </div>
               <div>
                 <p>
@@ -73,7 +88,7 @@ const RoomRentInfo = () => {
           {/* House Info Map */}
           <div className="houseinfo__map">
             <Button variant="primary" size="lg">
-              Room Location , Map View
+              House Location , Map View
             </Button>
             <div style={{ textAlign: "center" }}>
               <iframe
@@ -92,11 +107,11 @@ const RoomRentInfo = () => {
           {/* House Info Map Ends */}
 
           {/* House Info Comments */}
-          <HouseComments />
+          <RoomComment />
           {/* House Info Comments Ends Here */}
 
           {/* House Info Recommendation Starts */}
-          <HouseRecommendation />
+          <RoomRecommendation />
           {/* House Recommendation Ends Here */}
         </Row>
       </Container>

@@ -21,7 +21,7 @@
   }
 
   .rent__price {
-    margin-left: 400px;
+    margin-left: 475px;
     display: flex;
 
     h1 {
@@ -35,6 +35,24 @@
       text-align: center;
       margin-left: 10px;
       margin-top: 5px;
+    }
+
+    @media only screen and (max-width: 1494px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+
+    .rent__info {
+      margin-left: 0px;
+      margin-top: 20px;
+    }
+    .rent__price {
+      margin-left: 0px;
+      margin-top: 20px;
     }
   }
 }

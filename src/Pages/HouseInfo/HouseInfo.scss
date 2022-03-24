@@ -1,19 +1,25 @@
 .houseinfo__main__image {
   img {
-    width: 860px;
+    width: 100%;
     height: 577px;
     border-radius: 10px 0 0 10px;
+  }
+
+  @media only screen and (max-width: 1064px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 
 .houseinfo__second__image {
   img {
-    width: 277px;
+    width: 100%;
     height: 284px;
     border-radius: 0 10px 0 0;
   }
   Button {
-    width: 275px;
+    width: 100%;
     height: 30px;
 
     font-weight: 500;
@@ -23,10 +29,18 @@
     margin-top: 10px;
     padding-top: 4px;
   }
+
+  @media only screen and (max-width: 1064px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .houseinfo__card {
-  width: 85%;
+  width: 100%;
   height: 100%;
   border-radius: 10px;
   background-color: white;
@@ -57,7 +71,6 @@
 
   .card__title__right {
     display: flex;
-    margin-left: 95px;
 
     div {
       padding-left: 15px;
@@ -69,7 +82,7 @@
   margin-top: 15px;
   display: flex;
   border-bottom: solid 1px #dddddd;
-  width: 446px;
+  width: 100%;
   img {
     width: 40px;
     height: 40px;
@@ -105,7 +118,7 @@
 
   .card__contact__info {
     display: flex;
-    width: 426px;
+    width: 100%;
     margin-top: 40px;
     color: #2c4dff;
     border-bottom: solid 1px #dddddd;
@@ -144,6 +157,16 @@
       width: 200px;
       border-radius: 15px;
     }
+    @media only screen and (max-width: 1494px) {
+      Button {
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      Button {
+        margin-top: 20px;
+      }
+    }
   }
 }
 
@@ -173,6 +196,11 @@
     text-align: justify;
     padding-left: 25px;
     line-height: 45px;
+  }
+
+  @media only screen and (max-width: 1064px) {
+    margin-top: 80px;
+    width: 100%;
   }
 }
 
@@ -240,6 +268,11 @@
       width: 379px;
       height: 404px;
     }
+    @media only screen and (max-width: 1700px) {
+      img {
+        width: 100%;
+      }
+    }
   }
 
   .rec__content {
@@ -257,6 +290,10 @@
       font-size: 15px;
 
       font-weight: 300;
+    }
+
+    @media only screen and (max-width: 1500px) {
+      margin-bottom: 20px;
     }
   }
 
@@ -299,5 +336,63 @@
 
   img {
     border-radius: 0;
+  }
+
+  .preview__main__image {
+    width: 1374px;
+    height: 861px;
+  }
+
+  .preview__second__image {
+    width: 780px;
+    height: 651px;
+    margin-right: 50px;
+  }
+
+  .preview__third__image {
+    width: 532px;
+    height: 651px;
+  }
+
+  .preview__fourth__image {
+    width: 1372px;
+    height: 861px;
+  }
+
+  .preview__fifth__image {
+    width: 780px;
+    height: 651px;
+    margin-right: 50px;
+  }
+
+  .preview__sixth__image {
+    width: 532px;
+    height: 651px;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .preview__main__image {
+      width: 100%;
+    }
+    .preview__second__image {
+      width: 100%;
+    }
+    .preview__third__image {
+      width: 100%;
+    }
+    .preview__fourth__image {
+      width: 100%;
+    }
+    .preview__fifth__image {
+      width: 100%;
+    }
+    .preview__sixth__image {
+      width: 100%;
+    }
+
+    .preview__images {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

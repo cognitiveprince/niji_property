@@ -54,7 +54,7 @@ const NavBar = () => {
                 <Link to="/">Buy</Link>
                 <Link to="/sell">Sell</Link>
                 <Link to="/rent">Rent</Link>
-                <Link to="/rent">Development</Link>
+                <Link to="/development">Development</Link>
               </div>
             </Drawer>
             <div className="nav__links">
@@ -65,7 +65,7 @@ const NavBar = () => {
 
               <Link to="/rent">Rent</Link>
 
-              <a href="/development">Development</a>
+              <Link to="/development">Development</Link>
             </div>
           </div>
         </div>

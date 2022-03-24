@@ -11,12 +11,9 @@ import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import KitchenIcon from "@mui/icons-material/Kitchen";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import { Col, Button, Row } from "react-bootstrap";
-import PeopleIcon from "@mui/icons-material/People";
+import LuggageIcon from "@mui/icons-material/Luggage";
 import ShowerIcon from "@mui/icons-material/Shower";
-import OpacityIcon from "@mui/icons-material/Opacity";
-import SignalWifi4BarIcon from "@mui/icons-material/SignalWifi4Bar";
 import { Badge } from "@mantine/core";
-
 const RoomCard = () => {
   return (
     <>
@@ -56,7 +53,7 @@ const RoomCard = () => {
 
           <div className="card__profile__info">
             <p>Seller</p>
-            <h3>Rebecca miyami</h3>
+            <h3>Yuna Evergarden</h3>
           </div>
         </div>
         {/* Profile Section Ends */}
@@ -105,17 +102,17 @@ const RoomCard = () => {
             <Row>
               <Col>
                 <div>
-                  <SingleBedIcon /> 2 bedrooms
+                  <SingleBedIcon /> 3 bedrooms
                 </div>
               </Col>
               <Col>
-                <PeopleIcon /> 2 people space
+                <LuggageIcon /> 1,501 sqft
               </Col>
             </Row>
             <Row>
               <Col>
                 <div>
-                  <ShowerIcon /> 1 washrooms
+                  <ShowerIcon /> 2 washrooms
                 </div>
               </Col>
               <Col>
@@ -130,16 +127,6 @@ const RoomCard = () => {
               </Col>
               <Col>
                 <EventNoteIcon /> Built year - 2016
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <div>
-                  <OpacityIcon /> Hot water
-                </div>
-              </Col>
-              <Col>
-                <SignalWifi4BarIcon /> Wifi *payment*
               </Col>
             </Row>
           </div>
