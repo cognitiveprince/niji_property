@@ -23,7 +23,7 @@ const Footer = () => {
         <Col>
           <div className="footer__border"></div>
         </Col>
-        <Col>
+        <Col md={3} xs={12}>
           <div className="footer__map">
             <iframe
               src="https://maps.google.com/maps?q=Nayabazar%20marg&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -38,7 +38,7 @@ const Footer = () => {
             ></iframe>
           </div>
         </Col>
-        <Col md={3} style={{ marginTop: "10px" }}>
+        <Col md={3} style={{ marginTop: "10px" }} xs={12} sm={12}>
           <div className="footer__contact">
             <FlightTakeoffIcon style={{ color: "#0542EB" }} />
             <p>Nayabazar Marg, Kathmandu, Nepal</p>
@@ -66,7 +66,7 @@ const Footer = () => {
         <Col>
           <div className="footer__border"></div>
         </Col>
-        <Col md={3}>
+        <Col md={3} xs={12}>
           <div className="footer__deals">
             <h1>Get the lastet deals</h1>
             <p>

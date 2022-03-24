@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import AirlineSeatIndividualSuiteIcon from "@mui/icons-material/AirlineSeatIndividualSuite";
 import ShowerIcon from "@mui/icons-material/Shower";
 import PeopleIcon from "@mui/icons-material/People";
+import { Badge } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 const RentContent = () => {
@@ -24,13 +25,17 @@ const RentContent = () => {
 
             <p> Baluwatar , Kathmandu, Nepal</p>
             <div className="buy__items">
-              <div className="buy__count" style={{ marginLeft: "0px" }}>
+              <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
                 3
-              </div>
+              </Badge>
               <AirlineSeatIndividualSuiteIcon className="buy__icon" />
-              <div className="buy__count">4</div>
+              <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+                4
+              </Badge>
               <ShowerIcon className="buy__icon" />
-              <div className="buy__count">2</div>
+              <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+                2
+              </Badge>
               <PeopleIcon className="buy__icon" />
             </div>
           </div>

@@ -17,6 +17,7 @@ import Publish from "./Pages/SellPage/Publish";
 import RoomRentInfo from "./Pages/RoomRentPage/RoomRentInfo";
 import BuyCollapse from "./Pages/BuyPage/BuyCollapse";
 import Preview from "./Pages/HouseInfo/Preview";
+import Development from "./Pages/Development/Development";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/houseimg" element={<HouseImg />} />
             <Route path="/personalinfo" element={<PersonalInfo />} />
             <Route path="/publish" element={<Publish />} />
+            <Route path="/development" element={<Development />} />
           </Routes>
         </div>
         <Footer />

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
+import { Burger } from "@mantine/core";
+import { Drawer } from "@mantine/core";
 
 const NavBar = () => {
+  const [opened, setOpened] = useState(false);
+  const [drawerOpened, setDrawerOpened] = useState(true);
+  const title = opened ? "Close navigation" : "Open navigation";
   return (
     <div className="nav__main">
       {/* Nav Bar Image Nad Heading */}
@@ -26,14 +31,42 @@ const NavBar = () => {
             />
           </div>
           <div className="nav__right">
-            <Link to="/" className="active">
-              Buy
-            </Link>
-            <a href="/sell">Sell</a>
+            <Burger
+              opened={opened}
+              onClick={() => {
+                setOpened((o) => !o);
+                setDrawerOpened(true);
+              }}
+              title={title}
+              className="nav__burger"
+            />
 
-            <Link to="/rent">Rent</Link>
+            <Drawer
+              opened={opened}
+              onClose={() => setOpened(false)}
+              padding="xl"
+              size="xl"
+            >
+              <div
+                className="nav__links__mobile"
+                onClick={() => setOpened(false)}
+              >
+                <Link to="/">Buy</Link>
+                <Link to="/sell">Sell</Link>
+                <Link to="/rent">Rent</Link>
+                <Link to="/rent">Development</Link>
+              </div>
+            </Drawer>
+            <div className="nav__links">
+              <Link to="/" className="active">
+                Buy
+              </Link>
+              <Link to="/sell">Sell</Link>
 
-            <a href="/development">Development</a>
+              <Link to="/rent">Rent</Link>
+
+              <a href="/development">Development</a>
+            </div>
           </div>
         </div>
       </Container>

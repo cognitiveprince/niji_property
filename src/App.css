@@ -16,3 +16,9 @@ App {
   padding-top: 20px;
   text-align: center;
 }
+
+@media only screen and (max-width: 1494px) {
+  .app__container {
+    text-align: left;
+  }
+}

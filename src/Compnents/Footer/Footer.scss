@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
-
 .footer__content {
   margin-top: 100px;
   border-top: solid 1px #707070;
@@ -32,7 +29,6 @@
   p {
     margin-left: 20px;
     font-size: 14px;
-    font-family: "Inter", sans-serif;
   }
 }
 
@@ -77,5 +73,32 @@
     outline: none;
     margin-left: 20px;
     margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 1494px) {
+  .footer__contact {
+    display: none;
+  }
+  .footer__social {
+    display: none;
+  }
+
+  iframe {
+    width: 200%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer__border {
+    display: none;
+  }
+  iframe {
+    width: 100%;
+  }
+  .footer__links {
+    a {
+      border-bottom: 1px solid black;
+    }
   }
 }

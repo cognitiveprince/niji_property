@@ -51,7 +51,7 @@ const BuyPage = () => {
       </Row>
 
       <div className="buy__pagination">
-        <Pagination total={4} color="gray" />;
+        <Pagination total={4} color="gray" />
       </div>
     </Container>
   );

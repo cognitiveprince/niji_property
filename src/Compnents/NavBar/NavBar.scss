@@ -47,5 +47,28 @@
       border-bottom: 2px solid #1e5093;
       padding-bottom: 5px;
     }
+
+    .nav__burger {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links {
+    display: none;
+  }
+  .nav__container .nav__right .nav__burger {
+    display: block;
+  }
+  .nav__links__mobile {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding: 0 20px 20px 0;
+      text-decoration: none;
+      color: black;
+    }
   }
 }
