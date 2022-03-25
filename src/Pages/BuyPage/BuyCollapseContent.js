@@ -5,50 +5,54 @@ import ShowerIcon from "@mui/icons-material/Shower";
 import LuggageIcon from "@mui/icons-material/Luggage";
 import { Badge, Center } from "@mantine/core";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const BuyCollapseContent = () => {
-  return (
-    <Row>
-      <Center>
-        <Col style={{ marginBottom: "20px" }}>
-          <div className="buy__collapse__container">
-            <div className="buy__collapse__image">
-              <Link to="/roomrentinfo">
-                <img
-                  src={require("../../Assets/first_prop.png")}
-                  alt="koonya pavillion"
-                />
-              </Link>
-            </div>
+  const content = useSelector((state) => state.buyContentReducer.buyContent);
+  const renderList = content.map((item) => {
+    const { id, title, image, description, price } = item;
+    return (
+      <Row key={id}>
+        <Center>
+          <Col style={{ marginBottom: "20px" }}>
+            <div className="buy__collapse__container">
+              <div className="buy__collapse__image">
+                <Link to={`/buy/${id}`}>
+                  <img src={image} alt="koonya pavillion" />
+                </Link>
+              </div>
 
-            <div className="buy__collapse__info">
-              <h1>Koonya Pavillion</h1>
+              <div className="buy__collapse__info">
+                <h1>{title}</h1>
 
-              <p> Baluwatar , Kathmandu, Nepal</p>
-              <div className="buy__items">
-                <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  3
-                </Badge>
-                <AirlineSeatIndividualSuiteIcon className="buy__icon" />
-                <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  4
-                </Badge>
-                <ShowerIcon className="buy__icon" />
-                <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  1,505
-                </Badge>
-                <LuggageIcon className="buy__icon" />
+                <p>{description}</p>
+                <div className="buy__items">
+                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+                    3
+                  </Badge>
+                  <AirlineSeatIndividualSuiteIcon className="buy__icon" />
+                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+                    4
+                  </Badge>
+                  <ShowerIcon className="buy__icon" />
+                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+                    1,505
+                  </Badge>
+                  <LuggageIcon className="buy__icon" />
+                </div>
+              </div>
+
+              <div className="buy__collapse__price">
+                <h1>{price}</h1>
               </div>
             </div>
+          </Col>
+        </Center>
+      </Row>
+    );
+  });
 
-            <div className="buy__collapse__price">
-              <h1>Rs. 10,00,00,000</h1>
-            </div>
-          </div>
-        </Col>
-      </Center>
-    </Row>
-  );
+  return <>{renderList}</>;
 };
 
 export default BuyCollapseContent;

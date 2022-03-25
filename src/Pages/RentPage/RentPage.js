@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RentContent from "./RentContent";
 import { Pagination } from "@mantine/core";
 import { Container } from "react-bootstrap";
 import "./RentPage.scss";
+import { useDispatch } from "react-redux";
+import { getRentContents } from "../../Redux/Actions/Actions";
+import axios from "axios";
 
 const RentPage = () => {
+  const dispatch = useDispatch();
+
+  const fetchContent = async () => {
+    const res = await axios
+      .get(
+        "https://my-json-server.typicode.com/realswikarrr/json-server-niji/rentContent"
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+    dispatch(getRentContents(res.data));
+  };
+
+  useEffect(() => {
+    fetchContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Container style={{ textAlign: "left" }}>
-      <RentContent />
-      <RentContent />
-      <RentContent />
-      <RentContent />
       <RentContent />
       <div className="rent__pagination">
         <Pagination total={4} color="gray" />

@@ -29,12 +29,12 @@ function App() {
             <Route path="/" element={<BuyPage />} exact />
             <Route path="/buy" element={<BuyPage />} />
             <Route path="buycollapse" element={<BuyCollapse />} />
-            <Route path="/houseinfo" element={<HouseInfo />} />
+            <Route path="/buy/:buyID" element={<HouseInfo />} />
             <Route path="/rent" element={<RentPage />} />
             <Route path="/preview" element={<Preview />} />
             <Route path="/sell" element={<SellPage />} />
             <Route path="/selloption" element={<SellOption />} />
-            <Route path="/roomrentinfo" element={<RoomRentInfo />} />
+            <Route path="/rent/:rentID" element={<RoomRentInfo />} />
             <Route path="/sellinfo" element={<SellInfo />} />
             <Route path="/mapinfo" element={<MapInfo />} />
             <Route path="/houseoffer" element={<HouseOffer />} />

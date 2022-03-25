@@ -1,0 +1,6 @@
+export const ActionTypes = {
+  GET__RENT__CONTENT: "GET__RENT__CONTENT",
+  GET__RENT__INFO: "GET__RENT__INFO",
+  GET__BUY__CONTENT: "GET__BUY__CONTENT",
+  GET__BUY__INFO: "GET__BUY__INFO",
+};

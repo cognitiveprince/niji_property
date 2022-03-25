@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Modal } from "@mantine/core";
 import "./RoomRentInfo.scss";
@@ -6,9 +6,38 @@ import Preview from "./Preview";
 import RoomRecommendation from "./RoomRecommendation";
 import RoomComment from "./RoomComment";
 import RoomCard from "./RoomCard";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getRentInfo } from "../../Redux/Actions/Actions";
 
 const RoomRentInfo = () => {
   const [opened, setOpened] = useState(false);
+
+  const content = useSelector((state) => state.rentInfoReducer);
+  const { image } = content;
+  const { rentID } = useParams();
+  const dispatch = useDispatch();
+
+  const fetchRentDetail = async () => {
+    const res = await axios
+      .get(
+        `https://my-json-server.typicode.com/realswikarrr/json-server-niji/rentContent/${rentID}`
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+
+    dispatch(getRentInfo(res.data));
+  };
+
+  useEffect(() => {
+    if (rentID && rentID !== "") {
+      fetchRentDetail();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rentID]);
+
   return (
     <>
       <Container style={{ marginTop: "20px" }}>
@@ -16,10 +45,7 @@ const RoomRentInfo = () => {
           {/* Image Section Of The Page */}
 
           <Col md={6} className="houseinfo__main__image">
-            <img
-              src={require("../../Assets/roomrentinfo_1.png")}
-              alt="koonya pavillion"
-            />
+            <img src={image} alt="koonya pavillion" />
           </Col>
           <Col md={2} className="houseinfo__second__image">
             <img

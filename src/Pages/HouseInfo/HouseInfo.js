@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Modal } from "@mantine/core";
 import "./HouseInfo.scss";
@@ -6,9 +6,37 @@ import HouseCard from "./HouseCard";
 import HouseComments from "./HouseComments";
 import HouseRecommendation from "./HouseRecommendation";
 import Preview from "./Preview";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getBuyInfo } from "../../Redux/Actions/Actions";
 
 const HouseInfo = () => {
   const [opened, setOpened] = useState(false);
+
+  const content = useSelector((state) => state.buyInfoReducer);
+  const { image } = content;
+  const { buyID } = useParams();
+  const dispatch = useDispatch();
+
+  const fetchBuyDetail = async () => {
+    const res = await axios
+      .get(
+        `https://my-json-server.typicode.com/realswikarrr/json-server-niji/buyContent/${buyID}`
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+
+    dispatch(getBuyInfo(res.data));
+  };
+
+  useEffect(() => {
+    if (buyID && buyID !== "") {
+      fetchBuyDetail();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buyID]);
 
   return (
     <>
@@ -17,10 +45,7 @@ const HouseInfo = () => {
           {/* Image Section Of The Page */}
 
           <Col md={6} className="houseinfo__main__image">
-            <img
-              src={require("../../Assets/houseinfo_1.png")}
-              alt="koonya pavillion"
-            />
+            <img src={image} alt="koonya pavillion" />
           </Col>
           <Col md={2} className="houseinfo__second__image">
             <img

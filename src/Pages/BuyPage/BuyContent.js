@@ -5,25 +5,25 @@ import ShowerIcon from "@mui/icons-material/Shower";
 import LuggageIcon from "@mui/icons-material/Luggage";
 import { Col } from "react-bootstrap";
 import { Badge, Center } from "@mantine/core";
+import { useSelector } from "react-redux";
 
 const BuyContent = () => {
-  return (
-    <>
-      <Col>
+  const content = useSelector((state) => state.buyContentReducer.buyContent);
+  const renderList = content.map((item) => {
+    const { id, title, image, description } = item;
+    return (
+      <Col key={id}>
         <Center>
           <div className="buy__image">
-            <Link to="/houseinfo">
-              <img
-                src={require("../../Assets/first_prop.png")}
-                alt="koonya pavillion"
-              />
+            <Link to={`/buy/${id}`}>
+              <img src={image} alt="koonya pavillion" />
             </Link>
           </div>
         </Center>
         <div className="buy__content">
-          <h1>Koonya Pavilion</h1>
+          <h1>{title}</h1>
 
-          <p> Baluwatar , Kathmandu, Nepal</p>
+          <p> {description}</p>
           <div className="buy__items">
             <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
               3
@@ -40,8 +40,10 @@ const BuyContent = () => {
           </div>
         </div>
       </Col>
-    </>
-  );
+    );
+  });
+
+  return <>{renderList}</>;
 };
 
 export default BuyContent;
