@@ -22,7 +22,7 @@ const RoomRentInfo = () => {
   const fetchRentDetail = async () => {
     const res = await axios
       .get(
-        `https://my-json-server.typicode.com/realswikarrr/json-server-niji/rentContent/${rentID}`
+        `https://my-json-server.typicode.com/realswikarrr/niji-json/rentContent/${rentID}`
       )
       .catch((error) => {
         console.log(error);

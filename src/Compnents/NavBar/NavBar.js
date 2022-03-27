@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
 import { Burger } from "@mantine/core";
@@ -51,21 +51,19 @@ const NavBar = () => {
                 className="nav__links__mobile"
                 onClick={() => setOpened(false)}
               >
-                <Link to="/">Buy</Link>
+                <Link to="/buy">Buy</Link>
                 <Link to="/sell">Sell</Link>
                 <Link to="/rent">Rent</Link>
                 <Link to="/development">Development</Link>
               </div>
             </Drawer>
             <div className="nav__links">
-              <Link to="/" className="active">
-                Buy
-              </Link>
-              <Link to="/sell">Sell</Link>
+              <NavLink to="/buy">Buy</NavLink>
+              <NavLink to="/sell">Sell</NavLink>
 
-              <Link to="/rent">Rent</Link>
+              <NavLink to="/rent">Rent</NavLink>
 
-              <Link to="/development">Development</Link>
+              <NavLink to="/development">Development</NavLink>
             </div>
           </div>
         </div>

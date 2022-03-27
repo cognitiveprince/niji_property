@@ -22,7 +22,7 @@ const HouseInfo = () => {
   const fetchBuyDetail = async () => {
     const res = await axios
       .get(
-        `https://my-json-server.typicode.com/realswikarrr/json-server-niji/buyContent/${buyID}`
+        `https://my-json-server.typicode.com/realswikarrr/niji-json/buyContent/${buyID}`
       )
       .catch((error) => {
         console.log(error);

@@ -13,7 +13,7 @@ const RentPage = () => {
   const fetchContent = async () => {
     const res = await axios
       .get(
-        "https://my-json-server.typicode.com/realswikarrr/json-server-niji/rentContent"
+        "https://my-json-server.typicode.com/realswikarrr/niji-json/rentContent"
       )
       .catch((error) => {
         console.log(error);

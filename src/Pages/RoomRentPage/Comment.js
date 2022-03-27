@@ -2,7 +2,10 @@ import React from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import EastIcon from "@mui/icons-material/East";
 import { Badge } from "@mantine/core";
+import { useSelector } from "react-redux";
 const Comment = () => {
+  const content = useSelector((state) => state.rentInfoReducer);
+  const { comments, user, reply } = content;
   return (
     <div className="houseinfo__comments__content">
       <div className="comments__user">
@@ -15,11 +18,9 @@ const Comment = () => {
             }}
           />
         </div>
-        <div className="comments__user__text">
-          Would love to visit the house this Saturday, can I ?
-        </div>
+        <div className="comments__user__text">{comments}</div>
         <Badge style={{ backgroundColor: "#217FC4", color: "white" }}>
-          Raju thapa
+          {user}
         </Badge>
       </div>
 
@@ -33,9 +34,7 @@ const Comment = () => {
             }}
           />
         </div>
-        <div className="comments__admin__text">
-          Sorry, we are closed on Saturday.
-        </div>
+        <div className="comments__admin__text">{reply}</div>
       </div>
     </div>
   );

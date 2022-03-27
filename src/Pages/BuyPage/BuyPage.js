@@ -15,7 +15,7 @@ const BuyPage = () => {
   const fetchContent = async () => {
     const res = await axios
       .get(
-        "https://my-json-server.typicode.com/realswikarrr/json-server-niji/buyContent"
+        "https://my-json-server.typicode.com/realswikarrr/niji-json/buyContent"
       )
       .catch((error) => {
         console.log(error);
