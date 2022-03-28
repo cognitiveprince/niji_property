@@ -77,15 +77,8 @@
 }
 
 @media only screen and (max-width: 1494px) {
-  .footer__contact {
-    display: none;
-  }
-  .footer__social {
-    display: none;
-  }
-
   iframe {
-    width: 200%;
+    width: 100%;
   }
 }
 
@@ -97,9 +90,12 @@
     width: 100%;
   }
   .footer__links {
-    a {
-      border-bottom: 1px solid black;
-    }
+    border-bottom: 1px solid black;
+  }
+
+  .footer__contact__container {
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
   }
 
   .footer__email {

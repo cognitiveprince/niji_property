@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const RentContent = () => {
   const content = useSelector((state) => state.rentContentReducer.rentContent);
   const renderList = content.map((item) => {
-    const { id, title, image, description } = item;
+    const { id, title, image, description, beds, showers, space, price } = item;
     return (
       <Row key={id}>
         <Center>
@@ -27,22 +27,22 @@ const RentContent = () => {
                 <p> {description}</p>
                 <div className="buy__items">
                   <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    3
+                    {beds}
                   </Badge>
                   <AirlineSeatIndividualSuiteIcon className="buy__icon" />
                   <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    4
+                    {showers}
                   </Badge>
                   <ShowerIcon className="buy__icon" />
                   <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    2
+                    {space}
                   </Badge>
                   <PeopleIcon className="buy__icon" />
                 </div>
               </div>
 
               <div className="rent__price">
-                <h1>Rs. 1,000</h1>
+                <h1>{price}</h1>
                 <p>/monthly</p>
               </div>
             </div>

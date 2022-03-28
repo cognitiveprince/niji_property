@@ -1,7 +1,7 @@
 .rent__container {
   display: flex;
   margin-top: 20px;
-
+  justify-content: space-between;
   height: 100%;
   border-radius: 10px;
   background-color: white;
@@ -13,11 +13,16 @@
       width: 388px;
       height: 271px;
       border-radius: 8px;
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
   .rent__info {
-    margin-left: 60px;
+    margin-right: 175px;
+    margin-left: 20px;
   }
 
   .rent__price {
@@ -49,6 +54,7 @@
     .rent__info {
       margin-left: 0px;
       margin-top: 20px;
+      margin-right: 0px;
     }
     .rent__price {
       margin-left: 0px;

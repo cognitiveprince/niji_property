@@ -46,6 +46,8 @@
     .active {
       border-bottom: 3px solid #1e5093;
       padding-bottom: 5px;
+      transform: scaleX(1);
+      transition: transform 250ms ease-in-out;
     }
 
     .nav__burger {

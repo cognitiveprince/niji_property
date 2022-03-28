@@ -15,15 +15,13 @@ const RoomRentInfo = () => {
   const [opened, setOpened] = useState(false);
 
   const content = useSelector((state) => state.rentInfoReducer);
-  const { image } = content;
+  const { image, price, title, description } = content;
   const { rentID } = useParams();
   const dispatch = useDispatch();
 
   const fetchRentDetail = async () => {
     const res = await axios
-      .get(
-        `https://my-json-server.typicode.com/realswikarrr/niji-json/rentContent/${rentID}`
-      )
+      .get(`https://niji-json.herokuapp.com/rentContent/${rentID}`)
       .catch((error) => {
         console.log(error);
       });
@@ -48,12 +46,9 @@ const RoomRentInfo = () => {
             <img src={image} alt="koonya pavillion" />
           </Col>
           <Col md={2} className="houseinfo__second__image">
+            <img src={image} alt="koonya pavillion" />
             <img
-              src={require("../../Assets/roomrentinfo_2.png")}
-              alt="koonya pavillion"
-            />
-            <img
-              src={require("../../Assets/roomrentinfo_3.png")}
+              src={image}
               alt="koonya pavillion"
               style={{ marginTop: "10px", borderRadius: "0 0 10px 0" }}
             />
@@ -63,6 +58,11 @@ const RoomRentInfo = () => {
                 onClose={() => setOpened(false)}
                 centered
                 size="100%"
+                transition="fade"
+                transitionDuration={600}
+                transitionTimingFunction="ease"
+                overlayOpacity={0.9}
+                overflow="inside"
               >
                 <Preview />
               </Modal>
@@ -89,9 +89,9 @@ const RoomRentInfo = () => {
           <div className="houseinfo__main__title">
             <Col md={8}>
               <div className="houseinfo__text">
-                <h1>Rs. 10,00,00,000</h1>
-                <h2>An Inimitable Experience of Place - Koonya Pavilion</h2>
-                <p>Baluwatar, Kathmandu, Nepal</p>
+                <h1>{price}</h1>
+                <h2>An Inimitable Experience of Place - {title}</h2>
+                <p>{description}</p>
               </div>
               <div>
                 <p>

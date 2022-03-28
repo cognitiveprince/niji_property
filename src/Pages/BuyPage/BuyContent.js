@@ -10,13 +10,13 @@ import { useSelector } from "react-redux";
 const BuyContent = () => {
   const content = useSelector((state) => state.buyContentReducer.buyContent);
   const renderList = content.map((item) => {
-    const { id, title, image, description } = item;
+    const { id, title, image, description, beds, showers, parking } = item;
     return (
-      <Col key={id}>
+      <Col key={id} md={4}>
         <Center>
           <div className="buy__image">
             <Link to={`/buy/${id}`}>
-              <img src={image} alt="koonya pavillion" />
+              <img src={image} alt={title} />
             </Link>
           </div>
         </Center>
@@ -26,15 +26,15 @@ const BuyContent = () => {
           <p> {description}</p>
           <div className="buy__items">
             <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-              3
+              {beds}
             </Badge>
             <AirlineSeatIndividualSuiteIcon className="buy__icon" />
             <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-              4
+              {showers}
             </Badge>
             <ShowerIcon className="buy__icon" />
             <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-              1,505
+              {parking}
             </Badge>
             <LuggageIcon className="buy__icon" />
           </div>

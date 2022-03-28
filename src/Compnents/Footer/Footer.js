@@ -39,27 +39,29 @@ const Footer = () => {
           </div>
         </Col>
         <Col md={3} style={{ marginTop: "10px" }} xs={12} sm={12}>
-          <div className="footer__contact">
-            <FlightTakeoffIcon style={{ color: "#0542EB" }} />
-            <p>Nayabazar Marg, Kathmandu, Nepal</p>
-          </div>
-          <div className="footer__contact">
-            <LocalPhoneIcon style={{ color: "#0542EB" }} />
-            <p>984187394, 977-1-4118745, 4110987</p>
-          </div>
-          <div className="footer__contact">
-            <EmailIcon style={{ color: "#0542EB" }} />
-            <p>nijiproperty1121@gmail.com</p>
-          </div>
-          <div className="footer__social">
-            <div>
-              <FacebookIcon />
+          <div className="footer__contact__container">
+            <div className="footer__contact">
+              <FlightTakeoffIcon style={{ color: "#0542EB" }} />
+              <p>Nayabazar Marg, Kathmandu, Nepal</p>
             </div>
-            <div>
-              <InstagramIcon />
+            <div className="footer__contact">
+              <LocalPhoneIcon style={{ color: "#0542EB" }} />
+              <p>984187394, 977-1-4118745, 4110987</p>
             </div>
-            <div>
-              <TwitterIcon />
+            <div className="footer__contact">
+              <EmailIcon style={{ color: "#0542EB" }} />
+              <p>nijiproperty1121@gmail.com</p>
+            </div>
+            <div className="footer__social">
+              <div>
+                <FacebookIcon />
+              </div>
+              <div>
+                <InstagramIcon />
+              </div>
+              <div>
+                <TwitterIcon />
+              </div>
             </div>
           </div>
         </Col>

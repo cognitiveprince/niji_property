@@ -3,8 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import "./HouseInfo.scss";
 import { Center } from "@mantine/core";
+import { useSelector } from "react-redux";
 
 const Preview = () => {
+  const content = useSelector((state) => state.buyInfoReducer);
+  const { image } = content;
   return (
     <Container>
       <Row>
@@ -13,7 +16,7 @@ const Preview = () => {
             <Center>
               <div className="preview__content">
                 <img
-                  src={require("../../Assets/preview_1.png")}
+                  src={image}
                   alt="koonya pavillion"
                   className="preview__main__image"
                 />
@@ -24,12 +27,12 @@ const Preview = () => {
             <Center>
               <div className="preview__content">
                 <img
-                  src={require("../../Assets/preview_2.png")}
+                  src={image}
                   alt="koonya pavillion"
                   className="preview__second__image"
                 />
                 <img
-                  src={require("../../Assets/preview_3.png")}
+                  src={image}
                   alt="koonya pavillion"
                   className="preview__third__image"
                 />
@@ -40,7 +43,7 @@ const Preview = () => {
             <Center>
               <div className="preview__content">
                 <img
-                  src={require("../../Assets/preview_4.png")}
+                  src={image}
                   alt="koonya pavillion"
                   className="preview__fourth__image"
                 />
@@ -51,12 +54,12 @@ const Preview = () => {
             <Center>
               <div className="preview__content">
                 <img
-                  src={require("../../Assets/preview_5.png")}
+                  src={image}
                   alt="koonya pavillion"
                   className="preview__fifth__image"
                 />
                 <img
-                  src={require("../../Assets/preview_6.png")}
+                  src={image}
                   alt="koonya pavillion"
                   className="preview__sixth__image"
                 />

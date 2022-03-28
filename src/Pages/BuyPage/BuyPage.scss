@@ -25,7 +25,6 @@ img {
 
   @media only screen and (max-width: 1494px) {
     width: 100%;
-    height: 100%;
   }
 }
 
@@ -47,8 +46,8 @@ img {
     font-weight: 300;
   }
   @media only screen and (max-width: 1494px) {
-    text-align: left;
     margin-left: 0;
+    text-align: left;
   }
 }
 
@@ -83,7 +82,7 @@ img {
   }
 
   @media only screen and (max-width: 1500px) {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -94,7 +93,7 @@ img {
 
 .buy__collapse__container {
   display: flex;
-
+  justify-content: space-between;
   height: 100%;
   border-radius: 10px;
   background-color: white;
@@ -106,11 +105,15 @@ img {
       width: 388px;
       height: 271px;
       border-radius: 8px;
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
   .buy__collapse__info {
-    margin-left: 60px;
+    margin-left: 20px;
   }
 
   .buy__collapse__price {

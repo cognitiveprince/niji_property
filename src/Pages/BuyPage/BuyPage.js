@@ -14,9 +14,7 @@ const BuyPage = () => {
 
   const fetchContent = async () => {
     const res = await axios
-      .get(
-        "https://my-json-server.typicode.com/realswikarrr/niji-json/buyContent"
-      )
+      .get("https://niji-json.herokuapp.com/buyContent")
       .catch((error) => {
         console.log(error);
       });
@@ -32,7 +30,7 @@ const BuyPage = () => {
     <Container>
       <div className="buy__list">
         <DragHandleIcon />{" "}
-        <Link to="/buycollapse">
+        <Link to="/buy/buycollapse">
           <p> List view </p>{" "}
         </Link>
       </div>

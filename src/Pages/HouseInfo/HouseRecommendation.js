@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 const HouseRecommendation = () => {
   const content = useSelector((state) => state.buyInfoReducer);
-  const { title, image, description } = content;
+  const { title, image, description, beds, showers, parking } = content;
   return (
     <div className="houseinfo__recommendation">
       <div style={{ fontSize: "25px", marginTop: "40px", textAlign: "left" }}>
@@ -28,15 +28,15 @@ const HouseRecommendation = () => {
               <p> {description}</p>
               <div className="rec__items">
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  3
+                  {beds}
                 </Badge>
                 <AirlineSeatIndividualSuiteIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  4
+                  {showers}
                 </Badge>
                 <ShowerIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  1,505
+                  {parking}
                 </Badge>
                 <LuggageIcon className="rec__icon" />
               </div>
@@ -52,15 +52,15 @@ const HouseRecommendation = () => {
               <p> {description}</p>
               <div className="rec__items">
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  3
+                  {beds}
                 </Badge>
                 <AirlineSeatIndividualSuiteIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  4
+                  {showers}
                 </Badge>
                 <ShowerIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  1,505
+                  {parking}
                 </Badge>
                 <LuggageIcon className="rec__icon" />
               </div>
@@ -76,15 +76,15 @@ const HouseRecommendation = () => {
               <p> {description}</p>
               <div className="rec__items">
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  3
+                  {beds}
                 </Badge>
                 <AirlineSeatIndividualSuiteIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  4
+                  {showers}
                 </Badge>
                 <ShowerIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  1,505
+                  {parking}
                 </Badge>
                 <LuggageIcon className="rec__icon" />
               </div>
@@ -100,15 +100,15 @@ const HouseRecommendation = () => {
               <p> {description}</p>
               <div className="rec__items">
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  3
+                  {beds}
                 </Badge>
                 <AirlineSeatIndividualSuiteIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  4
+                  {showers}
                 </Badge>
                 <ShowerIcon className="rec__icon" />
                 <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                  1,505
+                  {parking}
                 </Badge>
                 <LuggageIcon className="rec__icon" />
               </div>

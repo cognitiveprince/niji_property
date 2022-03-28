@@ -12,9 +12,7 @@ const RentPage = () => {
 
   const fetchContent = async () => {
     const res = await axios
-      .get(
-        "https://my-json-server.typicode.com/realswikarrr/niji-json/rentContent"
-      )
+      .get("https://niji-json.herokuapp.com/rentContent")
       .catch((error) => {
         console.log(error);
       });

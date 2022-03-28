@@ -28,7 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<BuyPage />} exact />
             <Route path="/buy" element={<BuyPage />} />
-            <Route path="buycollapse" element={<BuyCollapse />} />
+            <Route path="/buy/buycollapse" element={<BuyCollapse />} />
             <Route path="/buy/:buyID" element={<HouseInfo />} />
             <Route path="/rent" element={<RentPage />} />
             <Route path="/preview" element={<Preview />} />
