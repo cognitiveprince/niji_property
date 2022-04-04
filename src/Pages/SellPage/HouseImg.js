@@ -104,7 +104,7 @@ const HouseImg = () => {
               </Row>
             </div>
 
-            <Link to="/personalinfo">
+            <Link to="/sell/personalinfo">
               <Button variant="primary" size="lg" className="house__btn">
                 Next
               </Button>

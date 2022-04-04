@@ -46,7 +46,7 @@ const MapInfo = () => {
                 title="map"
               ></iframe>
             </div>
-            <Link to="/houseoffer">
+            <Link to="/sell/houseoffer">
               <Button variant="primary" size="lg" className="map__btn">
                 Next
               </Button>

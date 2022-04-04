@@ -88,7 +88,7 @@ const HouseOffer = () => {
                   </Row>
                 </div>
               </div>
-              <Link to="/houseimg">
+              <Link to="/sell/houseimg">
                 <Button variant="primary" size="lg" className="house__btn">
                   Next
                 </Button>

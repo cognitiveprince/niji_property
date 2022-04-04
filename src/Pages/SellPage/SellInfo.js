@@ -84,7 +84,7 @@ const SellInfo = () => {
                 </Center>
               </form>
             </div>
-            <Link to="/mapinfo">
+            <Link to="/sell/mapinfo">
               <Button variant="primary" size="lg" className="sell__btn">
                 Next
               </Button>

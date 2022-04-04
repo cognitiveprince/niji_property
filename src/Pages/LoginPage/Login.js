@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Center } from "@mantine/core";
 import { Switch, Badge } from "@mantine/core";
@@ -8,8 +8,30 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LockIcon from "@mui/icons-material/Lock";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./Login.scss";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase-config";
 
 const Login = () => {
+  let navigate = useNavigate();
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
+  const login = async () => {
+    const user = await signInWithEmailAndPassword(
+      auth,
+      loginEmail,
+      loginPassword
+    );
+    console.log(user);
+    navigate("/buy");
+  };
+
   return (
     <Container style={{ marginTop: "20px" }}>
       <Row md={2} sm={1} xs={1}>
@@ -26,24 +48,39 @@ const Login = () => {
                 <form style={{ marginTop: "10px" }}>
                   <Row>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Email</label>
                         <div className="login__input__container">
                           <span>
                             <MailOutlineIcon />
                           </span>
-                          <input type="text" className="login__input" />
+                          <input
+                            type="text"
+                            className="login__input"
+                            onChange={(e) => {
+                              setLoginEmail(e.target.value);
+                            }}
+                          />
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Password</label>
                         <div className="login__input__container">
                           <span>
                             <LockIcon />
                           </span>
-                          <input type="text" className="login__input" />
+                          <input
+                            type={passwordShown ? "text" : "password"}
+                            className="login__input"
+                            onChange={(e) => {
+                              setLoginPassword(e.target.value);
+                            }}
+                          />
                           <span>
-                            <VisibilityOffIcon />
+                            <VisibilityOffIcon
+                              onClick={togglePassword}
+                              style={{ cursor: "pointer" }}
+                            />
                           </span>
                         </div>
                       </div>
@@ -77,6 +114,7 @@ const Login = () => {
                                 variant="primary"
                                 size="lg"
                                 className="login__btn"
+                                onClick={login}
                               >
                                 Sign In
                               </Button>
@@ -89,7 +127,10 @@ const Login = () => {
                         <Col md={12}>
                           <h1 className="login__bottom__text">
                             New to the website ?{" "}
-                            <Link to="/register">
+                            <Link
+                              to="/register"
+                              style={{ textDecoration: "none" }}
+                            >
                               <Badge
                                 style={{
                                   backgroundColor: "purple",

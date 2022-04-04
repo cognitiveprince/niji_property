@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Center } from "@mantine/core";
 import { Checkbox } from "@mantine/core";
@@ -6,9 +6,49 @@ import image from "../../Assets/register.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import { db } from "../../firebase-config";
+import { collection } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { addDoc } from "firebase/firestore";
 import "./Register.scss";
 
 const Register = () => {
+  let navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerPasswordConfirm, setRegisterPasswordConfirm] = useState("");
+  const [registerCheckbox, setRegisterCheckbox] = useState(false);
+
+  const register = async () => {
+    if (registerPassword !== registerPasswordConfirm) {
+      alert("Passwords do not match");
+      return;
+    }
+    if (!registerCheckbox) {
+      alert("You must agree to the terms and conditions");
+      return;
+    } else {
+      try {
+        const user = await createUserWithEmailAndPassword(
+          auth,
+          registerEmail,
+          registerPassword
+        );
+        console.log("User Created Sucessfully");
+        navigate("/");
+        const userColRef = collection(db, "users");
+        return addDoc(userColRef, {
+          users: [{ id: user.user.uid, username: username }],
+        });
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   return (
     <Container style={{ marginTop: "20px" }}>
       <Row md={2} sm={1} xs={1}>
@@ -20,47 +60,76 @@ const Register = () => {
                 <form style={{ marginTop: "10px" }}>
                   <Row>
                     <Col md={8}>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Username</label>
                         <div className="register__input__container">
                           <span>
                             <PersonIcon />
                           </span>
-                          <input type="text" className="register__input" />
+                          <input
+                            type="text"
+                            className="register__input"
+                            onChange={(e) => {
+                              setUsername(e.target.value);
+                            }}
+                          />
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Email</label>
                         <div className="register__input__container">
                           <span>
                             <MailOutlineIcon />
                           </span>
-                          <input type="text" className="register__input" />
+                          <input
+                            type="text"
+                            className="register__input"
+                            onChange={(e) => {
+                              setRegisterEmail(e.target.value);
+                            }}
+                          />
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Password</label>
                         <div className="register__input__container">
                           <span>
                             <LockIcon />
                           </span>
-                          <input type="text" className="register__input" />
+                          <input
+                            type="password"
+                            className="register__input"
+                            onChange={(e) => {
+                              setRegisterPassword(e.target.value);
+                            }}
+                          />
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Confirm Password</label>
                         <div className="register__input__container">
                           <span>
                             <LockIcon />
                           </span>
-                          <input type="text" className="register__input" />
+                          <input
+                            type="password"
+                            className="register__input"
+                            onChange={(e) => {
+                              setRegisterPasswordConfirm(e.target.value);
+                            }}
+                          />
                         </div>
                       </div>
                       <Row md="auto">
                         <div className="register__remember__container">
                           <Col md={12}>
                             <span>
-                              <Checkbox label="I have read and agree to Terms and conditions" />
+                              <Checkbox
+                                label="I have read and agree to Terms and conditions"
+                                onChange={(e) => {
+                                  setRegisterCheckbox(e.target.checked);
+                                }}
+                              />
                             </span>
                           </Col>
                         </div>
@@ -70,7 +139,11 @@ const Register = () => {
                         <Col md={12}>
                           <div className="register__button__container">
                             <Center>
-                              <Button size="lg" className="register__btn">
+                              <Button
+                                size="lg"
+                                className="register__btn"
+                                onClick={register}
+                              >
                                 Sign Up
                               </Button>
                             </Center>

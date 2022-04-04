@@ -35,14 +35,14 @@ function App() {
             <Route path="/rent" element={<RentPage />} />
             <Route path="/preview" element={<Preview />} />
             <Route path="/sell" element={<SellPage />} />
-            <Route path="/selloption" element={<SellOption />} />
+            <Route path="/sell/selloption" element={<SellOption />} />
             <Route path="/rent/:rentID" element={<RoomRentInfo />} />
-            <Route path="/sellinfo" element={<SellInfo />} />
-            <Route path="/mapinfo" element={<MapInfo />} />
-            <Route path="/houseoffer" element={<HouseOffer />} />
-            <Route path="/houseimg" element={<HouseImg />} />
-            <Route path="/personalinfo" element={<PersonalInfo />} />
-            <Route path="/publish" element={<Publish />} />
+            <Route path="/sell/sellinfo" element={<SellInfo />} />
+            <Route path="/sell/mapinfo" element={<MapInfo />} />
+            <Route path="/sell/houseoffer" element={<HouseOffer />} />
+            <Route path="/sell/houseimg" element={<HouseImg />} />
+            <Route path="/sell/personalinfo" element={<PersonalInfo />} />
+            <Route path="/sell/publish" element={<Publish />} />
             <Route path="/development" element={<Development />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

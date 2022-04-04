@@ -21,7 +21,7 @@ const SellPage = () => {
               sell your house <br /> At the best price.
             </p>
             <div className="sell__line"></div>
-            <Link to="/selloption">
+            <Link to="/sell/selloption">
               <Button variant="outline-dark" size="lg" className="sell__btn">
                 Get Started
               </Button>

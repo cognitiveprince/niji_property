@@ -2,16 +2,38 @@ import React, { useState } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
 import { Burger } from "@mantine/core";
 import { Drawer } from "@mantine/core";
+import { auth } from "../../firebase-config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mantine/core";
 
 const NavBar = () => {
+  let navigate = useNavigate();
   const [opened, setOpened] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(true);
   const title = opened ? "Close navigation" : "Open navigation";
+  const [user, setUser] = useState({});
+  const [status, setStatus] = useState("Sign In");
+
+  onAuthStateChanged(auth, (currentUser) => {
+    if (currentUser) {
+      setUser(currentUser);
+      setStatus("Sign Out");
+    } else {
+      setUser("");
+    }
+  });
+
+  const logout = async () => {
+    await signOut(auth);
+    navigate("/login");
+  };
+
   return (
     <div className="nav__main">
       {/* Nav Bar Image Nad Heading */}
@@ -37,6 +59,7 @@ const NavBar = () => {
                 setOpened((o) => !o);
                 setDrawerOpened(true);
               }}
+              drawerOpened={drawerOpened}
               title={title}
               className="nav__burger"
             />
@@ -51,10 +74,14 @@ const NavBar = () => {
                 className="nav__links__mobile"
                 onClick={() => setOpened(false)}
               >
-                <Link to="/buy">Buy</Link>
-                <Link to="/sell">Sell</Link>
-                <Link to="/rent">Rent</Link>
-                <Link to="/development">Development</Link>
+                <NavLink to="/buy">Buy</NavLink>
+                <NavLink to="/sell">Sell</NavLink>
+                <NavLink to="/rent">Rent</NavLink>
+                <NavLink to="/development">Development</NavLink>
+                <Button style={{ marginBottom: "20px" }}>
+                  Email: {user.email}
+                </Button>
+                <Button onClick={logout}>{status}</Button>
               </div>
             </Drawer>
             <div className="nav__links">
@@ -64,6 +91,10 @@ const NavBar = () => {
               <NavLink to="/rent">Rent</NavLink>
 
               <NavLink to="/development">Development</NavLink>
+              <Button style={{ marginRight: "10px", marginLeft: "10px" }}>
+                Email: {user.email}
+              </Button>
+              <Button onClick={logout}>{status}</Button>
             </div>
           </div>
         </div>

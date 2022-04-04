@@ -50,7 +50,7 @@ const PersonalInfo = () => {
                 </Row>
               </form>
             </div>
-            <Link to="/publish">
+            <Link to="/sell/publish">
               <Button variant="primary" size="lg" className="personal__btn">
                 Next
               </Button>
