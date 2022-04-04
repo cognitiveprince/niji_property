@@ -59,7 +59,6 @@ const NavBar = () => {
                 setOpened((o) => !o);
                 setDrawerOpened(true);
               }}
-              drawerOpened={drawerOpened}
               title={title}
               className="nav__burger"
             />
