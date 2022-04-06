@@ -21,30 +21,40 @@ const RentContent = () => {
                 </Link>
               </div>
 
-              <div className="rent__info">
-                <h1>{title}</h1>
+              <Col md={8}>
+                <div className="rent__info">
+                  <h1>{title}</h1>
 
-                <p> {description}</p>
-                <div className="buy__items">
-                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    {beds}
-                  </Badge>
-                  <AirlineSeatIndividualSuiteIcon className="buy__icon" />
-                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    {showers}
-                  </Badge>
-                  <ShowerIcon className="buy__icon" />
-                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    {space}
-                  </Badge>
-                  <PeopleIcon className="buy__icon" />
+                  <p> {description}</p>
+                  <div className="buy__items">
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      {beds}
+                    </Badge>
+                    <AirlineSeatIndividualSuiteIcon className="buy__icon" />
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      {showers}
+                    </Badge>
+                    <ShowerIcon className="buy__icon" />
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      {space}
+                    </Badge>
+                    <PeopleIcon className="buy__icon" />
+                  </div>
                 </div>
-              </div>
+              </Col>
 
-              <div className="rent__price">
-                <h1>{price}</h1>
-                <p>/monthly</p>
-              </div>
+              <Col md={7}>
+                <div className="rent__price">
+                  <h1>{price}</h1>
+                  <p>/monthly</p>
+                </div>
+              </Col>
             </div>
           </Col>
         </Center>

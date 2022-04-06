@@ -22,29 +22,39 @@ const BuyCollapseContent = () => {
                 </Link>
               </div>
 
-              <div className="buy__collapse__info">
-                <h1>{title}</h1>
+              <Col md={8}>
+                <div className="buy__collapse__info">
+                  <h1>{title}</h1>
 
-                <p>{description}</p>
-                <div className="buy__items">
-                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    3
-                  </Badge>
-                  <AirlineSeatIndividualSuiteIcon className="buy__icon" />
-                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    4
-                  </Badge>
-                  <ShowerIcon className="buy__icon" />
-                  <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                    1,505
-                  </Badge>
-                  <LuggageIcon className="buy__icon" />
+                  <p>{description}</p>
+                  <div className="buy__items">
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      3
+                    </Badge>
+                    <AirlineSeatIndividualSuiteIcon className="buy__icon" />
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      4
+                    </Badge>
+                    <ShowerIcon className="buy__icon" />
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      1,505
+                    </Badge>
+                    <LuggageIcon className="buy__icon" />
+                  </div>
                 </div>
-              </div>
+              </Col>
 
-              <div className="buy__collapse__price">
-                <h1>{price}</h1>
-              </div>
+              <Col md={7}>
+                <div className="buy__collapse__price">
+                  <h1>{price}</h1>
+                </div>
+              </Col>
             </div>
           </Col>
         </Center>

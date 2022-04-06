@@ -61,7 +61,6 @@ const HouseInfo = () => {
                 size="100%"
                 transition="fade"
                 transitionDuration={600}
-                transitionTimingFunction="ease"
                 overlayOpacity={0.9}
                 overflow="inside"
               >
