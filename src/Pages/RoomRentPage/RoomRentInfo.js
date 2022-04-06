@@ -10,6 +10,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRentInfo } from "../../Redux/Actions/Actions";
+import Map from "../../Compnents/Map/Map";
 
 const RoomRentInfo = () => {
   const [opened, setOpened] = useState(false);
@@ -117,17 +118,7 @@ const RoomRentInfo = () => {
               House Location , Map View
             </Button>
             <div style={{ textAlign: "center" }}>
-              <iframe
-                src="https://maps.google.com/maps?q=Kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                width="1479"
-                height="888"
-                frameBorder="0"
-                style={{ border: 0, marginTop: "40px" }}
-                allowFullScreen=""
-                aria-hidden="false"
-                tabIndex="0"
-                title="map"
-              ></iframe>
+              <Map lat1="48.884" lng2="2.269" />
             </div>
           </div>
           {/* House Info Map Ends */}
