@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Center } from "@mantine/core";
 import { Switch, Badge } from "@mantine/core";
@@ -8,32 +8,55 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LockIcon from "@mui/icons-material/Lock";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./Login.scss";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase-config";
+import { useDispatch, useSelector } from "react-redux";
+import { loginInitiate } from "../../Redux/Actions/Actions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  /* Setting the state of the loginEmail, loginPassword, and passwordShown to an empty string, an empty
+  string, and false respectively. */
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
 
+  const { currentUser } = useSelector((state) => state.loginReducer);
+
+  /**
+   * If the password is shown, hide it. If the password is hidden, show it.
+   */
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
 
-  const login = async () => {
-    const user = await signInWithEmailAndPassword(
-      auth,
-      loginEmail,
-      loginPassword
-    );
-    console.log(user);
-    navigate("/buy");
+  useEffect(() => {
+    if (currentUser) {
+      toast("User Logged In Successfully");
+      navigate("/buy");
+    }
+  }, [currentUser, navigate]);
+
+  /**
+   * The login function is an async function that calls the signInWithEmailAndPassword function, which
+   * is a function that takes in three parameters: auth, loginEmail, and loginPassword. The
+   * signInWithEmailAndPassword function returns a user object, which is then assigned to the user
+   * variable.
+   */
+  const login = (e) => {
+    e.preventDefault();
+    if (loginEmail === "" || loginPassword === "") {
+      return alert("Please enter an email and password");
+    }
+    dispatch(loginInitiate(loginEmail, loginPassword));
   };
 
   return (
     <Container style={{ marginTop: "20px" }}>
+      <ToastContainer />
       <Row md={2} sm={1} xs={1}>
         <Col>
           <div className="login__left">

@@ -6,33 +6,16 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
 import { Burger } from "@mantine/core";
-import { Drawer } from "@mantine/core";
-import { auth } from "../../firebase-config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Drawer, Collapse } from "@mantine/core";
 import { Button } from "@mantine/core";
 
+import Profile from "./Profile";
+
 const NavBar = () => {
-  let navigate = useNavigate();
   const [opened, setOpened] = useState(false);
+  const [profileOpened, setProfileOpened] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(true);
   const title = opened ? "Close navigation" : "Open navigation";
-  const [user, setUser] = useState({});
-  const [status, setStatus] = useState("Sign In");
-
-  onAuthStateChanged(auth, (currentUser) => {
-    if (currentUser) {
-      setUser(currentUser);
-      setStatus("Sign Out");
-    } else {
-      setUser("");
-    }
-  });
-
-  const logout = async () => {
-    await signOut(auth);
-    navigate("/login");
-  };
 
   return (
     <div className="nav__main">
@@ -77,10 +60,13 @@ const NavBar = () => {
                 <NavLink to="/sell">Sell</NavLink>
                 <NavLink to="/rent">Rent</NavLink>
                 <NavLink to="/development">Development</NavLink>
-                <Button style={{ marginBottom: "20px" }}>
-                  Email: {user.email}
+                <Button onClick={() => setProfileOpened((o) => !o)}>
+                  Profile
                 </Button>
-                <Button onClick={logout}>{status}</Button>
+
+                <Collapse in={profileOpened}>
+                  <Profile />
+                </Collapse>
               </div>
             </Drawer>
             <div className="nav__links">
@@ -90,10 +76,17 @@ const NavBar = () => {
               <NavLink to="/rent">Rent</NavLink>
 
               <NavLink to="/development">Development</NavLink>
-              <Button style={{ marginRight: "10px", marginLeft: "10px" }}>
-                Email: {user.email}
+
+              <Button
+                onClick={() => setProfileOpened((o) => !o)}
+                style={{ background: "black" }}
+              >
+                Profile
               </Button>
-              <Button onClick={logout}>{status}</Button>
+
+              <Collapse in={profileOpened}>
+                <Profile />
+              </Collapse>
             </div>
           </div>
         </div>

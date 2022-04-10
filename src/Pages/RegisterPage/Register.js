@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Center } from "@mantine/core";
 import { Checkbox } from "@mantine/core";
@@ -6,23 +6,34 @@ import image from "../../Assets/register.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase-config";
-import { db } from "../../firebase-config";
-import { collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { addDoc } from "firebase/firestore";
+import { useDispatch, useSelector } from "react-redux";
 import "./Register.scss";
+import { registerInitiate } from "../../Redux/Actions/Actions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const dispatch = useDispatch();
   let navigate = useNavigate();
+
+  const { currentUser } = useSelector((state) => state.userReducer);
+
   const [username, setUsername] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerPasswordConfirm, setRegisterPasswordConfirm] = useState("");
   const [registerCheckbox, setRegisterCheckbox] = useState(false);
 
-  const register = async () => {
+  useEffect(() => {
+    if (currentUser) {
+      toast("User Registered Successfully");
+      navigate("/buy");
+    }
+  }, [currentUser, navigate]);
+
+  const register = (e) => {
+    e.preventDefault();
     if (registerPassword !== registerPasswordConfirm) {
       alert("Passwords do not match");
       return;
@@ -31,26 +42,18 @@ const Register = () => {
       alert("You must agree to the terms and conditions");
       return;
     } else {
-      try {
-        const user = await createUserWithEmailAndPassword(
-          auth,
-          registerEmail,
-          registerPassword
-        );
-        console.log("User Created Sucessfully");
-        navigate("/");
-        const userColRef = collection(db, "users");
-        return addDoc(userColRef, {
-          users: [{ id: user.user.uid, username: username }],
-        });
-      } catch (error) {
-        console.log(error.message);
-      }
+      dispatch(registerInitiate(registerEmail, registerPassword, username));
+      setUsername("");
+      setRegisterEmail("");
+      setRegisterPassword("");
+      setRegisterPasswordConfirm("");
+      setRegisterCheckbox(false);
     }
   };
 
   return (
     <Container style={{ marginTop: "20px" }}>
+      <ToastContainer />
       <Row md={2} sm={1} xs={1}>
         <Center>
           <Col md={10}>

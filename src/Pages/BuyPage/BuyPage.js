@@ -8,10 +8,14 @@ import BuyContent from "./BuyContent";
 import { useDispatch } from "react-redux";
 import { getBuyContents } from "../../Redux/Actions/Actions";
 import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
 
 const BuyPage = () => {
   const dispatch = useDispatch();
 
+  /**
+   * The function fetches data from the server and then dispatches the data to the reducer.
+   */
   const fetchContent = async () => {
     const res = await axios
       .get("https://niji-json.herokuapp.com/buyContent")

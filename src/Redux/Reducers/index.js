@@ -4,6 +4,10 @@ import {
   rentInfoReducer,
   buyContentReducer,
   buyInfoReducer,
+  userReducer,
+  loginReducer,
+  logoutReducer,
+  setUserReducer,
 } from "./Reducer";
 
 const reducers = combineReducers({
@@ -11,6 +15,10 @@ const reducers = combineReducers({
   rentInfoReducer: rentInfoReducer,
   buyContentReducer: buyContentReducer,
   buyInfoReducer: buyInfoReducer,
+  userReducer: userReducer,
+  loginReducer: loginReducer,
+  logoutReducer: logoutReducer,
+  setUser: setUserReducer,
 });
 
 export default reducers;

@@ -82,3 +82,82 @@
     }
   }
 }
+
+.nav__user {
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  background-color: #f6f6f6;
+  border-radius: 10px !important;
+  box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+  -webkit-box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+  -moz-box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+  color: #3d3d3d;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  position: absolute;
+  right: 20px;
+  visibility: visible !important;
+  width: 300px;
+
+  .nav__user__pic {
+    align-items: center;
+    background-color: unset !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border: 0.5px solid #fff;
+      border-radius: 50px !important;
+      box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+      -webkit-box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+      -moz-box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+      height: 80px;
+      width: 80px;
+    }
+
+    p {
+      background: unset !important;
+      margin-top: 5px;
+    }
+  }
+
+  .nav__user__links {
+    background-color: unset !important;
+    display: flex;
+    justify-content: space-around;
+
+    .nav__user__items {
+      align-items: center;
+      background-color: unset !important;
+      border-radius: 5px !important;
+      box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+      -webkit-box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+      -moz-box-shadow: 1px 0 5px 2px hsla(0, 0%, 71%, 0.47) !important;
+      color: #000;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+      justify-content: center;
+      padding-top: 10px;
+      transition: 0.3s ease-in-out;
+      width: 100px;
+
+      img {
+        background: unset !important;
+        height: 30px;
+        width: 30px;
+      }
+      p {
+        background-color: unset !important;
+      }
+    }
+  }
+}

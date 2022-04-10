@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -20,8 +21,24 @@ import Preview from "./Pages/HouseInfo/Preview";
 import Development from "./Pages/Development/Development";
 import Login from "./Pages/LoginPage/Login";
 import Register from "./Pages/RegisterPage/Register";
+import { useDispatch } from "react-redux";
+import { auth } from "./firebase-config";
+import { onAuthStateChanged } from "firebase/auth";
+import { setUser } from "./Redux/Actions/Actions";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(setUser(user));
+      } else {
+        dispatch(setUser(null));
+      }
+    });
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Router>
