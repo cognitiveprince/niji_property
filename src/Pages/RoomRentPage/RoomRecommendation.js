@@ -17,7 +17,7 @@ const RoomRecommendation = () => {
       </div>
       <div className="recommendation__content">
         <Row>
-          <Col>
+          <Col md={3}>
             <div className="rec__image">
               <img src={image} alt="koonya pavillion" />
             </div>
@@ -41,7 +41,7 @@ const RoomRecommendation = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col md={3}>
             <div className="rec__image">
               <img src={image} alt="koonya pavillion" />
             </div>
@@ -65,7 +65,7 @@ const RoomRecommendation = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col md={3}>
             <div className="rec__image">
               <img src={image} alt="koonya pavillion" />
             </div>
@@ -89,7 +89,7 @@ const RoomRecommendation = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col md={3}>
             <div className="rec__image">
               <img src={image} alt="koonya pavillion" />
             </div>

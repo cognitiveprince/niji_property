@@ -102,3 +102,12 @@ export const setUserReducer = (state = loginInitialState, action) => {
       return state;
   }
 };
+
+export const userDataReducer = (state = loginInitialState, action) => {
+  switch (action.type) {
+    case ActionTypes.USER__DATA:
+      return { ...state, ...action.payload };
+    default:
+      return state;
+  }
+};

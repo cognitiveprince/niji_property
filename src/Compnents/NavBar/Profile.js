@@ -5,6 +5,9 @@ import { loginReset, logoutInitiate } from "../../Redux/Actions/Actions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase-config";
+import { useState, useEffect } from "react";
 
 const Profile = () => {
   const dispatch = useDispatch();

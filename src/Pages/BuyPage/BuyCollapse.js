@@ -31,10 +31,10 @@ const BuyCollapse = () => {
   return (
     <Container style={{ textAlign: "left" }}>
       <div className="buy__grid">
-        <AllInclusiveIcon />{" "}
         <Link to="/buy">
-          <p> Grid view </p>{" "}
+          <AllInclusiveIcon />{" "}
         </Link>
+        <p> Grid view </p>
       </div>
       <BuyCollapseContent />
       <div className="rent__pagination">

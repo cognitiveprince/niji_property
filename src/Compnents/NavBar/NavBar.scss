@@ -25,6 +25,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 96rem;
+  margin: auto;
 
   .nav__left {
     display: flex;
@@ -97,7 +99,7 @@
   height: fit-content;
   padding: 20px;
   position: absolute;
-  right: 20px;
+  right: 80px;
   visibility: visible !important;
   width: 300px;
 

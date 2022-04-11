@@ -1,7 +1,7 @@
 import { ActionTypes } from "../Constants/action-types";
 import { auth } from "../../firebase-config";
 import { db } from "../../firebase-config";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, getDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 

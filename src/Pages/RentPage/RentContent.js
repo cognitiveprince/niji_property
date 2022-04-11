@@ -21,7 +21,7 @@ const RentContent = () => {
                 </Link>
               </div>
 
-              <Col md={8}>
+              <Col md={7}>
                 <div className="rent__info">
                   <h1>{title}</h1>
 
@@ -49,7 +49,7 @@ const RentContent = () => {
                 </div>
               </Col>
 
-              <Col md={7}>
+              <Col md={2}>
                 <div className="rent__price">
                   <h1>{price}</h1>
                   <p>/monthly</p>

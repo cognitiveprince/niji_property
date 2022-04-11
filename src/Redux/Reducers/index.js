@@ -8,6 +8,7 @@ import {
   loginReducer,
   logoutReducer,
   setUserReducer,
+  userDataReducer,
 } from "./Reducer";
 
 const reducers = combineReducers({
@@ -19,6 +20,7 @@ const reducers = combineReducers({
   loginReducer: loginReducer,
   logoutReducer: logoutReducer,
   setUser: setUserReducer,
+  userDataReducer: userDataReducer,
 });
 
 export default reducers;

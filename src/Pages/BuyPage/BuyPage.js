@@ -33,10 +33,10 @@ const BuyPage = () => {
   return (
     <Container>
       <div className="buy__list">
-        <DragHandleIcon />{" "}
         <Link to="/buy/buycollapse">
-          <p> List view </p>{" "}
+          <DragHandleIcon />{" "}
         </Link>
+        <p> List view </p>
       </div>
 
       <Row>

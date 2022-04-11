@@ -14,4 +14,5 @@ export const ActionTypes = {
   LOGOUT__SUCCESS: "LOGOUT__SUCCESS",
   LOGOUT__FAILURE: "LOGOUT__FAILURE",
   SET__USER: "SET__USER",
+  USER__DATA: "USER__DATA",
 };
