@@ -12,35 +12,33 @@ const BuyContent = () => {
   const renderList = content.map((item) => {
     const { id, title, image, description, beds, showers, parking } = item;
     return (
-      <>
-        <Col key={id} md={4}>
-          <Center>
-            <div className="buy__image">
-              <Link to={`/buy/${id}`}>
-                <img src={image} alt={title} />
-              </Link>
-            </div>
-          </Center>
-          <div className="buy__content">
-            <h1>{title}</h1>
-            <p> {description}</p>
-            <div className="buy__items">
-              <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                {beds}
-              </Badge>
-              <AirlineSeatIndividualSuiteIcon className="buy__icon" />
-              <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                {showers}
-              </Badge>
-              <ShowerIcon className="buy__icon" />
-              <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                {parking}
-              </Badge>
-              <LuggageIcon className="buy__icon" />
-            </div>
+      <Col key={id} md={4}>
+        <Center>
+          <div className="buy__image">
+            <Link to={`/buy/${id}`}>
+              <img src={image} alt={title} />
+            </Link>
           </div>
-        </Col>
-      </>
+        </Center>
+        <div className="buy__content">
+          <h1>{title}</h1>
+          <p> {description}</p>
+          <div className="buy__items">
+            <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+              {beds}
+            </Badge>
+            <AirlineSeatIndividualSuiteIcon className="buy__icon" />
+            <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+              {showers}
+            </Badge>
+            <ShowerIcon className="buy__icon" />
+            <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
+              {parking}
+            </Badge>
+            <LuggageIcon className="buy__icon" />
+          </div>
+        </div>
+      </Col>
     );
   });
 

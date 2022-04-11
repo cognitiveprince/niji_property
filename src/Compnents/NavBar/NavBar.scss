@@ -103,6 +103,13 @@
   visibility: visible !important;
   width: 300px;
 
+  @media only screen and (max-width: 800px) {
+    right: 34px;
+    a {
+      padding: 0px;
+    }
+  }
+
   .nav__user__pic {
     align-items: center;
     background-color: unset !important;
