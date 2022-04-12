@@ -45,37 +45,37 @@ const SellInfo = () => {
                 <form style={{ marginTop: "40px" }}>
                   <Row>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>House name</label>
                         <input type="text" />
                       </div>
                     </Col>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Area size</label>
                         <input type="text" />
                       </div>
                     </Col>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Address</label>
                         <input type="text" />
                       </div>
                     </Col>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Built year</label>
                         <input type="text" />
                       </div>
                     </Col>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>Price</label>
                         <input type="text" />
                       </div>
                     </Col>
                     <Col>
-                      <div class="form-group">
+                      <div className="form-group">
                         <label>House type</label>
                         <input type="text" />
                       </div>
@@ -83,7 +83,7 @@ const SellInfo = () => {
                   </Row>
                   <Center>
                     <div
-                      class="form-group"
+                      className="form-group"
                       style={{ width: "807px", height: "184px" }}
                     >
                       <label>Description</label>
