@@ -27,6 +27,14 @@
     border: none;
     outline: none;
 
+    @media screen and (max-width: 1480px) {
+      width: 75%;
+    }
+
+    @media screen and (max-width: 1034px) {
+      width: 60%;
+    }
+
     @media screen and (max-width: 800px) {
       width: 80%;
     }
@@ -40,6 +48,14 @@
       color: #48a3ff;
       font-size: 15px;
       margin-left: 5px;
+
+      @media screen and (max-width: 1480px) {
+        margin-left: -70px;
+      }
+
+      @media screen and (max-width: 1034px) {
+        margin-left: -70px;
+      }
 
       @media screen and (max-width: 800px) {
         margin-left: 10px;
