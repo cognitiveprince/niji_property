@@ -35,7 +35,6 @@ const Login = () => {
 
   useEffect(() => {
     if (currentUser) {
-      toast("User Logged In Successfully");
       navigate("/buy");
     }
   }, [currentUser, navigate]);
@@ -52,6 +51,7 @@ const Login = () => {
       return alert("Please enter an email and password");
     }
     dispatch(loginInitiate(loginEmail, loginPassword));
+    toast("User Logged In Successfully");
   };
 
   return (

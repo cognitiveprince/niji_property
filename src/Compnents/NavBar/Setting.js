@@ -7,7 +7,7 @@ import Profile from "./Profile";
 import ProfileEdit from "./ProfileEdit";
 import PasswordEdit from "./PasswordEdit";
 
-const Setting = () => {
+const Setting = ({ username, picture }) => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.setUser);
 
@@ -43,19 +43,16 @@ const Setting = () => {
       ) : (
         <>
           {editActive ? (
-            <ProfileEdit />
+            <ProfileEdit username={username} picture={picture} />
           ) : (
             <>
               {editPasswordActive ? (
-                <PasswordEdit />
+                <PasswordEdit username={username} picture={picture} />
               ) : (
                 <div className="nav__user" style={{ marginTop: "30px" }}>
                   <div className="nav__user__pic">
-                    <img
-                      src="https://firebasestorage.googleapis.com/v0/b/paradoxauth-56b93.appspot.com/o/uploads%2Findex.jpg?alt=media&token=c17e308e-cf88-404f-a105-659f2a90656a"
-                      alt="user"
-                    />
-                    <p>{currentUser ? currentUser.email : "email"}</p>
+                    <img src={picture} alt="user" />
+                    <p>{currentUser ? username : "email"}</p>
                   </div>
                   <div className="nav__user__button">
                     <button className="edit__btn" onClick={handleEditClick}>
