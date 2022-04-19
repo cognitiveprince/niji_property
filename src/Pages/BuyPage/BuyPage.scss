@@ -170,3 +170,24 @@ img {
     color: black;
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .buy__content__container {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius: 6px;
+  }
+
+  .buy__content {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  .buy__items {
+    margin-bottom: 10px;
+  }
+}
