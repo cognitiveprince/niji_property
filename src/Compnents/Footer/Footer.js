@@ -7,6 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import "./Footer.scss";
+import FooterMobile from "./FooterMobile";
 
 const Footer = () => {
   return (
@@ -23,21 +24,25 @@ const Footer = () => {
         <Col>
           <div className="footer__border"></div>
         </Col>
+
         <Col md={3} xs={12}>
-          <div className="footer__map">
-            <iframe
-              src="https://maps.google.com/maps?q=Nayabazar%20marg&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              width="349"
-              height="251"
-              frameBorder="0"
-              style={{ border: 0, marginTop: "40px" }}
-              allowFullScreen=""
-              aria-hidden="false"
-              tabIndex="0"
-              title="map"
-            ></iframe>
+          <div className="footer__map__container">
+            <div className="footer__map">
+              <iframe
+                src="https://maps.google.com/maps?q=Nayabazar%20marg&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="349"
+                height="251"
+                frameBorder="0"
+                style={{ border: 0, marginTop: "40px" }}
+                allowFullScreen=""
+                aria-hidden="false"
+                tabIndex="0"
+                title="map"
+              ></iframe>
+            </div>
           </div>
         </Col>
+
         <Col md={3} style={{ marginTop: "10px" }} xs={12} sm={12}>
           <div className="footer__contact__container">
             <div className="footer__contact">
@@ -83,6 +88,7 @@ const Footer = () => {
           </div>
         </Col>
       </Row>
+      <FooterMobile />
     </Container>
   );
 };

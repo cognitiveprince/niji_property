@@ -33,6 +33,7 @@ const NavBar = () => {
             <SearchIcon />
             <input type="text" placeholder="Search location here"></input>
             <KeyboardArrowDownIcon
+              className="nav__arrow"
               style={{ background: "#E5E5E5", color: "#222222" }}
             />
           </div>

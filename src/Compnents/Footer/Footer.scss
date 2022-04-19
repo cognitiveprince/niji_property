@@ -1,3 +1,7 @@
+.footer__mobile__container {
+  display: none;
+}
+
 .footer__content {
   margin-top: 100px;
   border-top: solid 1px #707070;
@@ -83,19 +87,8 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .footer__border {
-    display: none;
-  }
   iframe {
     width: 100%;
-  }
-  .footer__links {
-    border-bottom: 1px solid black;
-  }
-
-  .footer__contact__container {
-    padding-bottom: 20px;
-    border-bottom: 1px solid black;
   }
 
   .footer__email {
@@ -103,5 +96,87 @@
       margin-left: 0px;
       margin-top: 20px;
     }
+  }
+}
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .footer__mobile__container {
+    display: block;
+  }
+  .footer__content {
+    display: none;
+  }
+  .footer__mobile {
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+  }
+
+  .footer__links {
+    font-size: 14px;
+  }
+
+  .footer__contact p {
+    font-size: 11px;
+  }
+
+  .footer__contact {
+    margin-left: 12px;
+  }
+
+  .footer__border {
+    border-left: 1px solid #bababa;
+    height: 171px;
+    margin-left: 8px;
+  }
+
+  .footer__links {
+    border-top: 1px solid #bababa;
+    width: 323%;
+  }
+
+  .footer__links a {
+    padding-bottom: 0px;
+  }
+
+  .footer__social__container {
+    text-align: center;
+    margin-top: 10px;
+
+    h1 {
+      font-size: 20px;
+      border-top: 1px solid #bababa;
+      padding-top: 20px;
+    }
+
+    .footer__social {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .footer__email {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+
+    input {
+      border-bottom: none;
+      background-color: #f2f2f2;
+      width: 100%;
+      border-radius: 6px;
+      padding-left: 6px;
+    }
+    button {
+      width: 100%;
+      border: 1px solid gray;
+    }
+  }
+
+  .footer__deals {
+    margin-bottom: 20px;
   }
 }

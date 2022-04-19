@@ -20,6 +20,11 @@ const ProfileEdit = ({ username, picture }) => {
     setActive(!active);
   };
 
+  /**
+   * It takes the new username, email, and picture, and uploads the picture to the storage, and updates
+   * the user's username and email.
+   * </code>
+   */
   const handleSubmit = () => {
     if (newUsername !== "" && newEmail !== "" && newPicture !== "") {
       setActive(!active);
@@ -27,7 +32,7 @@ const ProfileEdit = ({ username, picture }) => {
       setNewEmail("");
       setNewPicture("");
 
-      // Upload The Profile Picture And Username To The Storage
+      /* Creating a reference to the storage. */
       const imageRef = ref(storage, "profile-pictures", currentUser.uid);
       uploadBytes(imageRef, newPicture).then(() => {
         getDownloadURL(imageRef)

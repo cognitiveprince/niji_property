@@ -228,3 +228,26 @@
     }
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .nav__brand {
+    h1 {
+      display: none;
+    }
+  }
+
+  .nav__left {
+    input {
+      display: none;
+    }
+    .nav__arrow {
+      display: none;
+    }
+  }
+
+  .nav__container {
+    margin-top: -64px;
+    flex-direction: row-reverse;
+  }
+}

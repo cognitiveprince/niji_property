@@ -15,6 +15,10 @@ const Setting = ({ username, picture }) => {
   const [editActive, setEditActive] = useState(false);
   const [editPasswordActive, setEditPasswordActive] = useState(false);
 
+  /**
+   * If the user is logged in, logoutInitiate() is called, loginReset() is called, active is set to the
+   * opposite of what it was, and a toast is displayed.
+   */
   const logout = () => {
     if (currentUser) {
       dispatch(logoutInitiate());

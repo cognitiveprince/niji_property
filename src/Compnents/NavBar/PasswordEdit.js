@@ -15,6 +15,11 @@ const PasswordEdit = ({ username, picture }) => {
     setActive(!active);
   };
 
+  /**
+   * If the new password and the new password confirmation match, then set the active state to false,
+   * set the new password and new password confirmation to an empty string, update the password, and
+   * display a success message. Otherwise, display an error message.
+   */
   const submitHandler = () => {
     if (newPassword === newPasswordConfirm) {
       setActive(!active);
