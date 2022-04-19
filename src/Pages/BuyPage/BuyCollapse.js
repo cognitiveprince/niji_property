@@ -8,6 +8,7 @@ import "./BuyPage.scss";
 import { useDispatch } from "react-redux";
 import { getBuyContents } from "../../Redux/Actions/Actions";
 import axios from "axios";
+import BuyIcon from "./BuyIcon";
 
 const BuyCollapse = () => {
   const dispatch = useDispatch();
@@ -30,13 +31,18 @@ const BuyCollapse = () => {
 
   return (
     <Container style={{ textAlign: "left" }}>
-      <div className="buy__grid">
-        <Link to="/buy">
-          <AllInclusiveIcon />{" "}
-        </Link>
-        <p> Grid view </p>
+      <div className="buy__list">
+        <div className="buy__desktop">
+          <Link to="/buy">
+            <AllInclusiveIcon />{" "}
+          </Link>
+          <p> Grid view </p>
+        </div>
+        <BuyIcon />
       </div>
+
       <BuyCollapseContent />
+
       <div className="rent__pagination">
         <Pagination total={4} color="gray" />
       </div>

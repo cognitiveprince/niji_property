@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { getBuyContents } from "../../Redux/Actions/Actions";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import BuyIcon from "./BuyIcon";
 
 const BuyPage = () => {
   const dispatch = useDispatch();
@@ -33,10 +34,13 @@ const BuyPage = () => {
   return (
     <Container>
       <div className="buy__list">
-        <Link to="/buy/buycollapse">
-          <DragHandleIcon />{" "}
-        </Link>
-        <p> List view </p>
+        <div className="buy__desktop">
+          <Link to="/buycollapse">
+            <DragHandleIcon />{" "}
+          </Link>
+          <p> List view </p>
+        </div>
+        <BuyIcon />
       </div>
 
       <Row>

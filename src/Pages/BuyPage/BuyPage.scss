@@ -2,9 +2,18 @@
   max-width: 1755px;
 }
 
+.buy__icon__container {
+  display: none;
+}
+
+.buy__desktop {
+  display: flex;
+}
+
 .buy__list {
   display: flex;
   margin-left: 15px;
+
   p {
     padding-left: 5px;
     font-size: 15px;
@@ -156,21 +165,6 @@ img {
   margin-top: 20px;
 }
 
-.buy__grid {
-  display: flex;
-  margin-left: 8px;
-
-  p {
-    padding-left: 5px;
-    font-size: 15px;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-}
-
 // Mobile Responsiveness
 @media only screen and (max-width: 768px) {
   .buy__content__container {
@@ -189,5 +183,58 @@ img {
   }
   .buy__items {
     margin-bottom: 10px;
+  }
+
+  .buy__list {
+    flex-direction: row-reverse;
+  }
+
+  .buy__desktop {
+    display: none;
+  }
+
+  .buy__icon__container {
+    display: flex;
+    width: 109px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    float: right;
+    background-color: #f7f7f7;
+
+    .buy__icon__first {
+      width: 53px;
+      height: 32px;
+      text-align: center;
+
+      img {
+        width: 15px;
+        height: 15px;
+        border-radius: 0;
+        margin: auto;
+        padding: auto;
+      }
+    }
+
+    .buy__icon__second {
+      width: 53px;
+      height: 32px;
+      text-align: center;
+
+      img {
+        width: 26px;
+        height: 10px;
+        border-radius: 0;
+        margin: auto;
+        padding: auto;
+      }
+    }
+
+    .active {
+      background-color: #505050;
+      color: white;
+      border-radius: 5px;
+    }
   }
 }
