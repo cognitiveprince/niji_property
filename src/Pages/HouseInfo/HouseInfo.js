@@ -5,6 +5,7 @@ import "./HouseInfo.scss";
 import HouseCard from "./HouseCard";
 import HouseComments from "./HouseComments";
 import HouseRecommendation from "./HouseRecommendation";
+import HouseRecommendationSwipe from "./HouseRecommendationSwipe";
 import Preview from "./Preview";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -80,7 +81,7 @@ const HouseInfo = () => {
           {/* Image Section Of The Page Ends */}
 
           {/* Card Section */}
-          <Col>
+          <Col className="desktop__house">
             <HouseCard />
           </Col>
           {/* Card Section Ends */}
@@ -111,6 +112,12 @@ const HouseInfo = () => {
           </div>
           {/* House info text ends */}
 
+          {/* Card Section */}
+          <Col className="mobile__house">
+            <HouseCard />
+          </Col>
+          {/* Card Section Ends */}
+
           {/* House Info Map */}
           <div className="houseinfo__map">
             <Button variant="primary" size="lg">
@@ -127,7 +134,16 @@ const HouseInfo = () => {
           {/* House Info Comments Ends Here */}
 
           {/* House Info Recommendation Starts */}
-          <HouseRecommendation />
+          <div className="desktop__recommend">
+            <HouseRecommendation />
+          </div>
+          {/* House Recommendation Ends Here */}
+
+          {/* House Info Recommendation Starts */}
+          <div className="mobile__recommend">
+            <HouseRecommendationSwipe />
+          </div>
+
           {/* House Recommendation Ends Here */}
         </Row>
       </Container>

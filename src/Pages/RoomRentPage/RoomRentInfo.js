@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRentInfo } from "../../Redux/Actions/Actions";
 import Map from "../../Compnents/Map/Map";
+import RoomRecommendationSwipe from "./RoomRecommendationSwipe";
 
 const RoomRentInfo = () => {
   const [opened, setOpened] = useState(false);
@@ -80,7 +81,7 @@ const RoomRentInfo = () => {
           {/* Image Section Of The Page Ends */}
 
           {/* Card Section */}
-          <Col>
+          <Col className="desktop__rent">
             <RoomCard />
           </Col>
           {/* Card Section Ends */}
@@ -111,6 +112,12 @@ const RoomRentInfo = () => {
           </div>
           {/* House info text ends */}
 
+          {/* Card Section */}
+          <Col className="mobile__rent">
+            <RoomCard />
+          </Col>
+          {/* Card Section Ends */}
+
           {/* House Info Map */}
           <div className="houseinfo__map">
             <Button variant="primary" size="lg">
@@ -127,7 +134,15 @@ const RoomRentInfo = () => {
           {/* House Info Comments Ends Here */}
 
           {/* House Info Recommendation Starts */}
-          <RoomRecommendation />
+          <div className="desktop__recommend">
+            <RoomRecommendation />
+          </div>
+          {/* House Recommendation Ends Here */}
+
+          {/* House Info Recommendation Starts */}
+          <div className="mobile__recommend">
+            <RoomRecommendationSwipe />
+          </div>
           {/* House Recommendation Ends Here */}
         </Row>
       </Container>

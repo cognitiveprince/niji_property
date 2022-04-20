@@ -6,7 +6,7 @@ import Comment from "./Comment";
 const RoomComment = () => {
   return (
     <div className="houseinfo__comments" style={{ width: "96%" }}>
-      <div style={{ fontSize: "30px", textAlign: "left" }}>Comments</div>
+      <div style={{ fontSize: "24px", textAlign: "left" }}>Comments</div>
 
       <div className="houseinfo__comments__container">
         <ScrollArea style={{ height: "250px" }}>

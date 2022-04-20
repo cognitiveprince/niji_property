@@ -232,3 +232,33 @@
     }
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .development__footer {
+    width: 382px;
+  }
+
+  .development__footer .development__footer__container h1 {
+    width: 330px;
+  }
+
+  .development__footer
+    .development__footer__container
+    .development__footer__container__social
+    Button {
+    width: 91px;
+  }
+
+  .develop__skills .skills__buttons .skills__content {
+    margin-bottom: 80px;
+  }
+
+  .develop__skills p {
+    font-size: 13px;
+  }
+
+  .develop__project__container .develop__project__text p {
+    font-size: 13px;
+  }
+}

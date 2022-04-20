@@ -1,3 +1,11 @@
+.mobile__house {
+  display: none;
+}
+
+.mobile__recommend {
+  display: none;
+}
+
 .houseinfo__main__image {
   img {
     width: 100%;
@@ -228,7 +236,7 @@
   }
 
   @media only screen and (max-width: 1064px) {
-    margin-top: 80px;
+    margin-top: 20px;
     width: 100%;
   }
 }
@@ -421,6 +429,52 @@
     .preview__images {
       display: flex;
       flex-direction: column;
+    }
+  }
+}
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .houseinfo__main__image {
+    img {
+      width: 100%;
+      height: 290px;
+      border-radius: 10px 0 0 10px;
+    }
+  }
+
+  .desktop__house {
+    display: none;
+  }
+
+  .mobile__house {
+    display: block;
+  }
+
+  .houseinfo__card {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .houseinfo__comments__container {
+    font-size: 13px;
+  }
+
+  .house__comment {
+    width: 24%;
+  }
+
+  .mobile__recommend {
+    display: block;
+  }
+
+  .desktop__recommend {
+    display: none;
+  }
+
+  .recommendation__content .rec__image {
+    img {
+      padding: 8px;
     }
   }
 }

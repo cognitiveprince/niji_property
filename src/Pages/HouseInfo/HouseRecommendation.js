@@ -13,7 +13,7 @@ const HouseRecommendation = () => {
   const { title, image, description, beds, showers, parking } = content;
   return (
     <div className="houseinfo__recommendation">
-      <div style={{ fontSize: "25px", marginTop: "40px", textAlign: "left" }}>
+      <div style={{ fontSize: "24px", marginTop: "40px", textAlign: "left" }}>
         Recommended houses based on your preferences
       </div>
       <div className="recommendation__content">

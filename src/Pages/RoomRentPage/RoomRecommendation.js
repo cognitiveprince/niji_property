@@ -12,7 +12,7 @@ const RoomRecommendation = () => {
   const { title, image, description } = content;
   return (
     <div className="houseinfo__recommendation">
-      <div style={{ fontSize: "25px", marginTop: "40px", textAlign: "left" }}>
+      <div style={{ fontSize: "24px", marginTop: "40px", textAlign: "left" }}>
         Recommended room you may like
       </div>
       <div className="recommendation__content">

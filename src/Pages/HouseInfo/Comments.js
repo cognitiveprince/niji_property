@@ -19,7 +19,10 @@ const Comments = () => {
           />
         </div>
         <div className="comments__user__text">{comments}</div>
-        <Badge style={{ backgroundColor: "#217FC4", color: "white" }}>
+        <Badge
+          style={{ backgroundColor: "#217FC4", color: "white" }}
+          className="house__comment"
+        >
           {user}
         </Badge>
       </div>
