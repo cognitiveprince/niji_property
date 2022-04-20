@@ -50,3 +50,14 @@
     }
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .publish__main p {
+    font-size: 15px;
+  }
+
+  .publish__main h1 {
+    font-size: 70px;
+  }
+}

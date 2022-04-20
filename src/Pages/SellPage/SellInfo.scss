@@ -70,3 +70,23 @@
     margin-top: 50px;
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .sell__info__left {
+    display: none;
+  }
+
+  .sell__info__right {
+    margin-top: 0px;
+  }
+
+  .sell__info__right .sell__btn {
+    width: 95%;
+    float: none;
+  }
+
+  .sell__info__right .form-group {
+    margin-left: 0px;
+  }
+}

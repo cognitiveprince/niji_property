@@ -1,3 +1,7 @@
+.sell__mobile {
+  display: none;
+}
+
 .sell__main {
   text-align: center;
 
@@ -48,5 +52,19 @@
     .sell__btn {
       width: 100%;
     }
+  }
+}
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .sell__mobile {
+    display: block;
+  }
+  .sell__desktop {
+    display: none;
+  }
+
+  .sell__main h1 {
+    font-size: 40px;
   }
 }

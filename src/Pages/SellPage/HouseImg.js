@@ -44,18 +44,18 @@ const HouseImg = () => {
                 <Row md={2}>
                   <Col>
                     <Image
-                      width={200}
-                      height={280}
+                      width={298}
+                      height={261}
                       src={null}
                       alt="With default placeholder"
                       withPlaceholder
-                      style={{ border: "solid 2px" }}
+                      style={{ border: "solid 2px", width: "330px" }}
                     />
                   </Col>
                   <Row md={2}>
                     <Col className="second__col">
                       <Image
-                        width={200}
+                        width={140}
                         height={120}
                         src={null}
                         alt="With default placeholder"
@@ -65,7 +65,7 @@ const HouseImg = () => {
                     </Col>
                     <Col className="second__col">
                       <Image
-                        width={200}
+                        width={140}
                         height={120}
                         src={null}
                         alt="With default placeholder"
@@ -75,7 +75,7 @@ const HouseImg = () => {
                     </Col>
                     <Col className="second__col">
                       <Image
-                        width={200}
+                        width={140}
                         height={120}
                         src={null}
                         alt="With default placeholder"
@@ -85,7 +85,7 @@ const HouseImg = () => {
                     </Col>
                     <Col className="second__col">
                       <Image
-                        width={200}
+                        width={140}
                         height={120}
                         src={null}
                         alt="With default placeholder"
@@ -96,7 +96,7 @@ const HouseImg = () => {
 
                     <Col className="second__col">
                       <Image
-                        width={200}
+                        width={140}
                         height={120}
                         src={null}
                         alt="With default placeholder"
@@ -106,7 +106,7 @@ const HouseImg = () => {
                     </Col>
                     <Col className="second__col">
                       <Image
-                        width={200}
+                        width={140}
                         height={120}
                         src={null}
                         alt="With default placeholder"

@@ -70,3 +70,23 @@
     margin-top: 50px;
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .personal__info__left {
+    display: none;
+  }
+
+  .personal__info__right {
+    margin-top: 0px;
+  }
+
+  .personal__info__right .personal__btn {
+    width: 95%;
+    float: none;
+  }
+
+  .personal__info__right .form-group {
+    margin-left: 0px;
+  }
+}

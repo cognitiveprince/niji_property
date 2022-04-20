@@ -57,3 +57,19 @@
     margin-top: 50px;
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .house__offer__left {
+    display: none;
+  }
+
+  .house__offer__right {
+    margin-top: 0px;
+  }
+
+  .house__offer__right .house__btn {
+    width: 95%;
+    float: none;
+  }
+}

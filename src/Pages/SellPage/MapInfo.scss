@@ -48,3 +48,19 @@
     margin-top: 50px;
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .map__info__left {
+    display: none;
+  }
+
+  .map__info__right {
+    margin-top: 0px;
+  }
+
+  .map__info__right .map__btn {
+    width: 95%;
+    float: none;
+  }
+}

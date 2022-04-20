@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
+.sell__main__mobile {
+  display: none;
+}
+
 .sell__option__btn {
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -10,4 +14,24 @@
   border: none;
   text-align: center;
   width: 300px;
+}
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .sell__main__mobile {
+    display: block;
+  }
+
+  .sell__main__desktop {
+    display: none;
+  }
+
+  .sell__option__btn {
+    margin: 20px;
+    border-radius: 54px;
+  }
+
+  .sell__option__btn__sell {
+    margin-top: 170px;
+  }
 }

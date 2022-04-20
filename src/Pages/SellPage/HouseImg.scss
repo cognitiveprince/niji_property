@@ -53,3 +53,24 @@
     margin-top: 50px;
   }
 }
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .house__img__left {
+    display: none;
+  }
+
+  .house__img__right {
+    margin-top: 0px;
+  }
+
+  .house__img__right .house__btn {
+    width: 94%;
+    float: none;
+  }
+
+  .second__col {
+    padding-bottom: 0px;
+    margin-top: 20px;
+  }
+}

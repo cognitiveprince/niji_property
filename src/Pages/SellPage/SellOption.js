@@ -24,8 +24,12 @@ const SellOption = () => {
           <Col>
             <div className="sell__main">
               <h1>Choose one of the category</h1>
-              <p>
+              <p className="sell__main__desktop">
                 Niji property provides you a platform to sell & buy your house.
+                Our team will verify your published <br /> post in order to
+                maintain trust among the buyers
+              </p>
+              <p className="sell__main__mobile">
                 Our team will verify your published <br /> post in order to
                 maintain trust among the buyers
               </p>
@@ -34,7 +38,7 @@ const SellOption = () => {
                 <Button
                   variant="primary"
                   size="lg"
-                  className="sell__option__btn"
+                  className="sell__option__btn sell__option__btn__sell"
                 >
                   Sell
                 </Button>
