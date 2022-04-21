@@ -9,7 +9,7 @@ import { storage } from "../../firebase-config";
 import { updateEmail } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const ProfileEdit = ({ username, picture }) => {
+const ProfileEdit = ({ username, picture, toggle }) => {
   const [active, setActive] = useState(false);
   const { currentUser } = useSelector((state) => state.setUser);
   const [newUsername, setNewUsername] = useState("");
@@ -33,7 +33,7 @@ const ProfileEdit = ({ username, picture }) => {
       setNewPicture("");
 
       /* Creating a reference to the storage. */
-      const imageRef = ref(storage, "profile-pictures", currentUser.uid);
+      const imageRef = ref(storage, `${currentUser.uid}.jpg`);
       uploadBytes(imageRef, newPicture).then(() => {
         getDownloadURL(imageRef)
           .then((url) => {
@@ -61,7 +61,7 @@ const ProfileEdit = ({ username, picture }) => {
   return (
     <>
       {active ? (
-        <Setting username={username} picture={picture} />
+        <Setting username={username} picture={picture} toggle={toggle} />
       ) : (
         <div className="nav__user" style={{ marginTop: "30px" }}>
           <div className="nav__user__pic">

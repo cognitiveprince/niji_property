@@ -7,7 +7,7 @@ import Profile from "./Profile";
 import ProfileEdit from "./ProfileEdit";
 import PasswordEdit from "./PasswordEdit";
 
-const Setting = ({ username, picture }) => {
+const Setting = ({ username, picture, toggle }) => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.setUser);
 
@@ -25,6 +25,7 @@ const Setting = ({ username, picture }) => {
       dispatch(loginReset());
       setActive(!active);
       toast("Logged Out Of The Account");
+      toggle();
     }
   };
 
@@ -43,11 +44,15 @@ const Setting = ({ username, picture }) => {
   return (
     <>
       {active ? (
-        <Profile />
+        <Profile toggle={toggle} />
       ) : (
         <>
           {editActive ? (
-            <ProfileEdit username={username} picture={picture} />
+            <ProfileEdit
+              username={username}
+              picture={picture}
+              toggle={toggle}
+            />
           ) : (
             <>
               {editPasswordActive ? (

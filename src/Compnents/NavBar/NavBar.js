@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -7,15 +7,35 @@ import "./NavBar.scss";
 import { Container } from "react-bootstrap";
 import { Burger } from "@mantine/core";
 import { Drawer, Collapse } from "@mantine/core";
-import { Button } from "@mantine/core";
 import { ToastContainer } from "react-toastify";
 import Profile from "./Profile";
+import { db } from "../../firebase-config";
+import { doc, getDoc } from "firebase/firestore";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const [opened, setOpened] = useState(false);
   const [profileOpened, setProfileOpened] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(true);
   const title = opened ? "Close navigation" : "Open navigation";
+  const { currentUser } = useSelector((state) => state.setUser);
+  const [picture, setPicture] = useState(
+    "https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650535325/ss_kvxzft.png"
+  );
+
+  const toggle = useCallback(() => setProfileOpened((o) => !o));
+
+  if (currentUser) {
+    getDoc(doc(db, "users", currentUser.uid)).then((docSnap) => {
+      if (docSnap.exists()) {
+        if (docSnap.data().photo) {
+          setPicture(docSnap.data().photo);
+        }
+      } else {
+        console.log("No such document!");
+      }
+    });
+  }
 
   return (
     <div className="nav__main">
@@ -69,9 +89,12 @@ const NavBar = () => {
                 <NavLink to="/development" onClick={() => setOpened(false)}>
                   Development
                 </NavLink>
-                <Button onClick={() => setProfileOpened((o) => !o)}>
-                  Profile
-                </Button>
+                <img
+                  src={picture}
+                  alt="user"
+                  className="navbar__profile"
+                  onClick={() => setProfileOpened((o) => !o)}
+                />
 
                 <Collapse in={profileOpened}>
                   <Profile />
@@ -89,15 +112,15 @@ const NavBar = () => {
 
               <NavLink to="/development">Development</NavLink>
 
-              <Button
+              <img
+                src={picture}
+                alt="user"
+                className="navbar__profile"
                 onClick={() => setProfileOpened((o) => !o)}
-                style={{ background: "black" }}
-              >
-                Profile
-              </Button>
+              />
 
               <Collapse in={profileOpened}>
-                <Profile />
+                <Profile toggle={toggle} />
               </Collapse>
             </div>
           </div>

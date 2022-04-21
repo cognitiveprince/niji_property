@@ -7,12 +7,13 @@ import Setting from "./Setting";
 import { db } from "../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 
-const Profile = () => {
+const Profile = ({ toggle }) => {
+  /* Getting the current user from the redux store. */
   const { currentUser } = useSelector((state) => state.setUser);
   const [active, setActive] = useState(false);
   const [username, setUsername] = useState("");
   const [picture, setPicture] = useState(
-    "https://firebasestorage.googleapis.com/v0/b/paradoxauth-56b93.appspot.com/o/uploads%2Findex.jpg?alt=media&token=c17e308e-cf88-404f-a105-659f2a90656a"
+    "https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650535325/ss_kvxzft.png"
   );
 
   const handleClick = () => {
@@ -23,7 +24,9 @@ const Profile = () => {
     getDoc(doc(db, "users", currentUser.uid)).then((docSnap) => {
       if (docSnap.exists()) {
         setUsername(docSnap.data().username);
-        setPicture(docSnap.data().photo);
+        if (docSnap.data().photo) {
+          setPicture(docSnap.data().photo);
+        }
       } else {
         console.log("No such document!");
       }
@@ -33,7 +36,7 @@ const Profile = () => {
   return (
     <>
       {active ? (
-        <Setting username={username} picture={picture} />
+        <Setting username={username} picture={picture} toggle={toggle} />
       ) : (
         <div className="nav__user" style={{ marginTop: "30px" }}>
           <div className="nav__user__pic">
@@ -44,7 +47,7 @@ const Profile = () => {
           <div className="nav__user__links">
             <div className="nav__user__items">
               <img src="https://princelab.org/assets/theme.png" alt="user" />
-              <Link to="/buy">
+              <Link to="/buy" onClick={toggle}>
                 <p>Home</p>
               </Link>
             </div>
@@ -53,7 +56,7 @@ const Profile = () => {
               {currentUser ? (
                 <p onClick={handleClick}>Settings</p>
               ) : (
-                <Link to="/login">
+                <Link to="/login" onClick={toggle}>
                   <p> Login</p>
                 </Link>
               )}
