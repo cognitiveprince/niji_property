@@ -36,6 +36,7 @@ const Login = () => {
   useEffect(() => {
     if (currentUser) {
       navigate("/buy");
+      toast.success("Login Successful!");
     }
   }, [currentUser, navigate]);
 
@@ -50,8 +51,11 @@ const Login = () => {
     if (loginEmail === "" || loginPassword === "") {
       return alert("Please enter an email and password");
     }
-    dispatch(loginInitiate(loginEmail, loginPassword));
-    toast("User Logged In Successfully");
+    try {
+      dispatch(loginInitiate(loginEmail, loginPassword));
+    } catch (error) {
+      toast("User Name or Password Is Incorrect");
+    }
   };
 
   return (

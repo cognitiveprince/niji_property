@@ -1,9 +1,10 @@
 import { ActionTypes } from "../Constants/action-types";
 import { auth } from "../../firebase-config";
 import { db } from "../../firebase-config";
-import { setDoc, doc, getDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 
 export const getRentContents = (rentContent) => {
   return {
@@ -57,15 +58,19 @@ export const registerInitiate = (email, password, username) => {
   return function (dispatch) {
     dispatch(registerStart());
     try {
-      const user = createUserWithEmailAndPassword(auth, email, password).then(
-        (cred) => {
+      const user = createUserWithEmailAndPassword(auth, email, password)
+        .then((cred) => {
+          dispatch(registerSuccess(user));
           return setDoc(doc(db, "users", cred.user.uid), {
             username: username,
           });
-        }
-      );
-      console.log("User Created Sucessfully");
-      dispatch(registerSuccess(user));
+        })
+        .catch((error) => {
+          dispatch(registerFailure(error));
+          toast("Please Check The Info Again", {
+            type: "error",
+          });
+        });
     } catch (error) {
       dispatch(registerFailure(error.message));
     }
@@ -92,13 +97,26 @@ export const loginFailure = (error) => {
   };
 };
 
+export const loginReset = () => {
+  return {
+    type: ActionTypes.LOGIN__RESET,
+  };
+};
+
 export const loginInitiate = (email, password) => {
   return function (dispatch) {
     dispatch(loginStart());
     try {
-      const user = signInWithEmailAndPassword(auth, email, password);
-      console.log("User Logged In Sucessfully");
-      dispatch(loginSuccess(user));
+      signInWithEmailAndPassword(auth, email, password)
+        .then((user) => {
+          dispatch(loginSuccess(user));
+        })
+        .catch((error) => {
+          dispatch(loginFailure(error.message));
+          toast("Invalid Credentials", {
+            type: "error",
+          });
+        });
     } catch (error) {
       dispatch(loginFailure(error.message));
     }
@@ -121,12 +139,6 @@ export const logoutFailure = (error) => {
   return {
     type: ActionTypes.LOGOUT__FAILURE,
     payload: error,
-  };
-};
-
-export const loginReset = () => {
-  return {
-    type: ActionTypes.LOGIN__RESET,
   };
 };
 
