@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginInitiate } from "../../Redux/Actions/Actions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -53,6 +55,25 @@ const Login = () => {
     }
     try {
       dispatch(loginInitiate(loginEmail, loginPassword));
+    } catch (error) {
+      toast("User Name or Password Is Incorrect");
+    }
+  };
+
+  const forgotPasswordHandler = () => {
+    if (loginEmail === "") {
+      return alert("Please enter an email");
+    }
+    try {
+      sendPasswordResetEmail(auth, loginEmail, {
+        url: "http://localhost:3000/login",
+      })
+        .then(() => {
+          toast.success("Password Reset Email Sent");
+        })
+        .catch((error) => {
+          toast.error("Invalid Email");
+        });
     } catch (error) {
       toast("User Name or Password Is Incorrect");
     }
@@ -126,7 +147,10 @@ const Login = () => {
                           </Col>
 
                           <Col md={12} style={{ textAlign: "center" }}>
-                            <span className="login__forgot">
+                            <span
+                              className="login__forgot"
+                              onClick={forgotPasswordHandler}
+                            >
                               Forgot password ?
                             </span>
                           </Col>
