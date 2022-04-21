@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -19,23 +19,29 @@ const NavBar = () => {
   const [drawerOpened, setDrawerOpened] = useState(true);
   const title = opened ? "Close navigation" : "Open navigation";
   const { currentUser } = useSelector((state) => state.setUser);
-  const [picture, setPicture] = useState(
-    "https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650535325/ss_kvxzft.png"
-  );
+  const [picture, setPicture] = useState("");
 
   const toggle = useCallback(() => setProfileOpened((o) => !o));
 
-  if (currentUser) {
-    getDoc(doc(db, "users", currentUser.uid)).then((docSnap) => {
-      if (docSnap.exists()) {
-        if (docSnap.data().photo) {
-          setPicture(docSnap.data().photo);
+  useEffect(() => {
+    if (!currentUser) {
+      setPicture(
+        "https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650535325/ss_kvxzft.png"
+      );
+    }
+
+    if (currentUser) {
+      getDoc(doc(db, "users", currentUser.uid)).then((docSnap) => {
+        if (docSnap.exists()) {
+          if (docSnap.data().photo) {
+            setPicture(docSnap.data().photo);
+          }
+        } else {
+          console.log("No such document!");
         }
-      } else {
-        console.log("No such document!");
-      }
-    });
-  }
+      });
+    }
+  }, [currentUser]);
 
   return (
     <div className="nav__main">
@@ -97,7 +103,7 @@ const NavBar = () => {
                 />
 
                 <Collapse in={profileOpened}>
-                  <Profile />
+                  <Profile toggle={toggle} />
                 </Collapse>
               </div>
             </Drawer>
