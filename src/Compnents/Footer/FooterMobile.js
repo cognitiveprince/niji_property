@@ -9,9 +9,6 @@ const FooterMobile = () => {
     <>
       <div className="footer__mobile__container">
         <div className="footer__mobile">
-          <Col>
-            <div className="footer__top__border"></div>
-          </Col>
           <Col md={2}>
             <div className="footer__links">
               <a href="#information">Information</a>
@@ -25,7 +22,7 @@ const FooterMobile = () => {
             <div className="footer__border"></div>
           </Col>
 
-          <Col md={3} xs={12} sm={12}>
+          <Col md={3}>
             <div className="footer__contact__container">
               <div className="footer__contact">
                 <FlightTakeoffIcon style={{ color: "#0542EB" }} />

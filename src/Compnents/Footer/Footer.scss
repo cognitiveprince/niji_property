@@ -121,8 +121,8 @@
     font-size: 11px;
   }
 
-  .footer__contact {
-    margin-left: 12px;
+  .footer__mobile {
+    border-top: 1px solid #bababa;
   }
 
   .footer__border {
@@ -131,18 +131,18 @@
     margin-left: 8px;
   }
 
-  .footer__links {
-    border-top: 1px solid #bababa;
-    width: 323%;
+  .footer__contact {
+    margin-left: 10px;
   }
 
   .footer__links a {
     padding-bottom: 0px;
+    margin-left: -10px;
   }
 
   .footer__social__container {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
 
     h1 {
       font-size: 20px;
