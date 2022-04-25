@@ -26,36 +26,32 @@ const ProfileEdit = ({ username, picture, toggle }) => {
    * </code>
    */
   const handleSubmit = () => {
-    if (newUsername !== "" && newEmail !== "" && newPicture !== "") {
-      setActive(!active);
-      setNewUsername("");
-      setNewEmail("");
-      setNewPicture("");
+    setActive(!active);
+    setNewUsername("");
+    setNewEmail("");
+    setNewPicture("");
 
-      /* Creating a reference to the storage. */
-      const imageRef = ref(storage, `${currentUser.uid}.jpg`);
-      uploadBytes(imageRef, newPicture).then(() => {
-        getDownloadURL(imageRef)
-          .then((url) => {
-            // Update User
-            updateDoc(doc(db, "users", currentUser.uid), {
-              username: newUsername,
-              photo: url,
-            });
-          })
-          .catch((error) => {
-            console.log(error.message);
+    /* Creating a reference to the storage. */
+    const imageRef = ref(storage, `${currentUser.uid}.jpg`);
+    uploadBytes(imageRef, newPicture).then(() => {
+      getDownloadURL(imageRef)
+        .then((url) => {
+          // Update User
+          updateDoc(doc(db, "users", currentUser.uid), {
+            username: newUsername,
+            photo: url,
           });
-      });
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    });
 
-      // Update Email
-      updateEmail(currentUser, newEmail);
+    // Update Email
+    updateEmail(currentUser, newEmail);
 
-      console.log(newUsername, newEmail, newPicture);
-      toast("Profile Updated");
-    } else {
-      toast.error("Please Fill All The Fields");
-    }
+    console.log(newUsername, newEmail, newPicture);
+    toast("Profile Updated");
   };
 
   return (
@@ -72,13 +68,15 @@ const ProfileEdit = ({ username, picture, toggle }) => {
             <span>Username</span>
             <input
               type="text"
-              placeholder="Username"
+              placeholder={username}
+              value={username}
               onChange={(e) => setNewUsername(e.target.value)}
             />
             <span>Email</span>
             <input
               type="text"
               placeholder={currentUser.email}
+              value={currentUser.email}
               onChange={(e) => setNewEmail(e.target.value)}
             />
             <span>Choose Profile Picture</span>

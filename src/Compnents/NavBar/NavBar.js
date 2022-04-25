@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
 import { Burger } from "@mantine/core";
@@ -47,8 +47,12 @@ const NavBar = () => {
     <div className="nav__main">
       {/* Nav Bar Image Nad Heading */}
       <div className="nav__brand">
-        <img src={Logo} alt="logo" />
-        <h1>Niji property</h1>
+        <Link to="/buy">
+          <img src={Logo} alt="logo" />
+        </Link>
+        <Link to="/buy">
+          <h1>Niji property</h1>
+        </Link>
       </div>
 
       {/* Nav Bar Links */}
