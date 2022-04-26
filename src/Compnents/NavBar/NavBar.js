@@ -51,7 +51,7 @@ const NavBar = () => {
           <img src={Logo} alt="logo" />
         </Link>
         <Link to="/buy">
-          <h1>Niji property</h1>
+          <h1>Niji Property</h1>
         </Link>
       </div>
 
