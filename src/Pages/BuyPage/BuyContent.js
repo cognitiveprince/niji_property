@@ -12,7 +12,7 @@ const BuyContent = () => {
   const renderList = content.map((item) => {
     const { id, title, image, description, beds, showers, parking } = item;
     return (
-      <Col key={id} md={4}>
+      <Col key={id} md={3}>
         <div className="buy__content__container">
           <Center>
             <div className="buy__image">
