@@ -25,6 +25,7 @@ import { useDispatch } from "react-redux";
 import { auth } from "./firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { setUser } from "./Redux/Actions/Actions";
+import BuyPageFilter from "./Pages/BuyPage/BuyPageFilter";
 
 function App() {
   const dispatch = useDispatch();
@@ -63,6 +64,7 @@ function App() {
             <Route path="/development" element={<Development />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/buypagefilter" element={<BuyPageFilter />} />
           </Routes>
         </div>
         <Footer />

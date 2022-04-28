@@ -165,6 +165,75 @@ img {
   margin-top: 20px;
 }
 
+.buy__filter__container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  border-radius: 10px;
+
+  .buy__filter__title {
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    margin-bottom: 20px;
+  }
+
+  .buy__filter__content {
+    margin-bottom: 20px;
+    h1 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  .buy__filter__date {
+    h2 {
+      font-size: 1rem;
+      margin: auto;
+      padding: auto;
+    }
+
+    .react-datepicker__input-container {
+      input {
+        background-color: #f4f2f2;
+        width: 20rem;
+        padding: 7px;
+        border-radius: 9px;
+        border: none;
+      }
+    }
+  }
+
+  .buy__filter__input {
+    input {
+      background-color: #f4f2f2;
+      width: 20rem;
+      padding: 7px;
+      border-radius: 9px;
+      border: none;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin: auto;
+      padding: auto;
+    }
+  }
+
+  .buy__filter__button {
+    margin-top: 40px;
+    margin-left: -10px;
+    Button {
+      width: 100%;
+      border-radius: 9px;
+    }
+  }
+}
+
 // Mobile Responsiveness
 @media only screen and (max-width: 768px) {
   .buy__content__container {
@@ -235,6 +304,23 @@ img {
       background-color: #505050;
       color: white;
       border-radius: 5px;
+    }
+  }
+
+  .buy__filter__container {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    .buy__filter__button {
+      margin-top: 40px;
+      margin-left: -10px;
+      Button {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 9px;
+      }
     }
   }
 }
