@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { NavLink, Link } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
@@ -12,16 +13,21 @@ import Profile from "./Profile";
 import { db } from "../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 import { useSelector } from "react-redux";
+import BuyFilter from "../../Pages/BuyPage/BuyFilter";
 
 const NavBar = () => {
   const [opened, setOpened] = useState(false);
   const [profileOpened, setProfileOpened] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(true);
+  const [filterOpened, setFilterOpened] = useState(false);
   const title = opened ? "Close navigation" : "Open navigation";
   const { currentUser } = useSelector((state) => state.setUser);
   const [picture, setPicture] = useState("");
+  const [arrowClick, setArrowClick] = useState(false);
 
   const toggle = useCallback(() => setProfileOpened((o) => !o));
+  const filterToggle = useCallback(() => setFilterOpened((o) => !o));
+  const arrowToggle = useCallback(() => setArrowClick((o) => !o));
 
   useEffect(() => {
     if (!currentUser) {
@@ -43,6 +49,11 @@ const NavBar = () => {
     }
   }, [currentUser]);
 
+  const arrowClickHandler = () => {
+    setFilterOpened((o) => !o);
+    setArrowClick((o) => !o);
+  };
+
   return (
     <div className="nav__main">
       {/* Nav Bar Image Nad Heading */}
@@ -62,10 +73,27 @@ const NavBar = () => {
           <div className="nav__left">
             <SearchIcon />
             <input type="text" placeholder="Search location here"></input>
-            <KeyboardArrowDownIcon
-              className="nav__arrow"
-              style={{ background: "#E5E5E5", color: "#222222" }}
-            />
+
+            {arrowClick ? (
+              <KeyboardArrowUpIcon
+                className="nav__arrow"
+                style={{ background: "#E5E5E5", color: "#222222" }}
+                onClick={arrowClickHandler}
+              />
+            ) : (
+              <KeyboardArrowDownIcon
+                className="nav__arrow"
+                style={{ background: "#E5E5E5", color: "#222222" }}
+                onClick={arrowClickHandler}
+              />
+            )}
+
+            <Collapse in={filterOpened}>
+              <BuyFilter
+                filterToggle={filterToggle}
+                arrowToggle={arrowToggle}
+              />
+            </Collapse>
           </div>
           <div className="nav__right">
             {/* Mobile Nav Bar */}

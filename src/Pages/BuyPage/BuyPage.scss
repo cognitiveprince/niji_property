@@ -173,7 +173,11 @@ img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 20px;
   border-radius: 10px;
-  width: 22rem;
+  width: 21rem;
+  position: absolute;
+  background: white;
+  left: 9%;
+  margin-top: 60px;
 
   .buy__filter__title {
     h1 {
@@ -201,10 +205,11 @@ img {
     .react-datepicker__input-container {
       input {
         background-color: #f4f2f2;
-        width: 20rem;
+        width: 19rem;
         padding: 7px;
         border-radius: 9px;
         border: none;
+        margin: 0;
       }
     }
   }
@@ -212,10 +217,11 @@ img {
   .buy__filter__input {
     input {
       background-color: #f4f2f2;
-      width: 20rem;
+      width: 19rem;
       padding: 7px;
       border-radius: 9px;
       border: none;
+      margin: 0;
     }
 
     h2 {

@@ -4,8 +4,13 @@ import { Row, Col } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const BuyFilter = () => {
+const BuyFilter = ({ filterToggle, arrowToggle }) => {
   const [startDate, setStartDate] = useState(new Date());
+
+  const handleClick = () => {
+    filterToggle();
+    arrowToggle();
+  };
 
   return (
     <div className="buy__filter__container">
@@ -49,7 +54,7 @@ const BuyFilter = () => {
             </Button>
           </Col>
           <Col md={6}>
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" onClick={handleClick}>
               Search
             </Button>
           </Col>
