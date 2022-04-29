@@ -67,7 +67,7 @@ export const registerInitiate = (email, password, username) => {
         })
         .catch((error) => {
           dispatch(registerFailure(error));
-          toast("Please Check The Info Again", {
+          toast(error.message + " Please Refresh And Fill The Form Again", {
             type: "error",
           });
         });
