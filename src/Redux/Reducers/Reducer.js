@@ -6,6 +6,7 @@ const initialState = {
 
 const buyInitialState = {
   buyContent: [],
+  loading: true,
 };
 
 const loginInitialState = {
@@ -38,7 +39,7 @@ export const buyContentReducer = (
 ) => {
   switch (type) {
     case ActionTypes.GET__BUY__CONTENT:
-      return { ...state, buyContent: payload };
+      return { ...state, buyContent: payload, loading: false };
     default:
       return state;
   }

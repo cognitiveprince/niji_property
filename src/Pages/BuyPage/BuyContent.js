@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const BuyContent = () => {
   const content = useSelector((state) => state.buyContentReducer.buyContent);
+  const { loading } = useSelector((state) => state.buyContentReducer);
   const renderList = content.map((item) => {
     const { id, title, image, description, beds, showers, parking } = item;
     return (
@@ -44,7 +45,7 @@ const BuyContent = () => {
     );
   });
 
-  return <>{renderList}</>;
+  return <>{loading ? <div className="loader"></div> : renderList}</>;
 };
 
 export default BuyContent;
