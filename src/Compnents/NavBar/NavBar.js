@@ -32,7 +32,7 @@ const NavBar = () => {
   useEffect(() => {
     if (!currentUser) {
       setPicture(
-        "https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650535325/ss_kvxzft.png"
+        "https://res.cloudinary.com/dnfr5p8jc/image/upload/v1651814770/profile_c6bbm5.png"
       );
     }
 
