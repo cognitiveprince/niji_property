@@ -7,7 +7,7 @@ import Setting from "./Setting";
 import { db } from "../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 
-const Profile = ({ toggle }) => {
+const Profile = ({ toggle, toggleProfile }) => {
   /* Getting the current user from the redux store. */
   const { currentUser } = useSelector((state) => state.setUser);
   const [active, setActive] = useState(false);
@@ -36,9 +36,17 @@ const Profile = ({ toggle }) => {
   return (
     <>
       {active ? (
-        <Setting username={username} picture={picture} toggle={toggle} />
+        <Setting
+          username={username}
+          picture={picture}
+          toggle={toggle}
+          toggleProfile={toggleProfile}
+        />
       ) : (
         <div className="nav__user" style={{ marginTop: "30px" }}>
+          <div className="nav__close">
+            <div class="close" onClick={toggleProfile}></div>
+          </div>
           <div className="nav__user__pic">
             <img src={picture} alt="user" />
             <p>{currentUser ? username : "user"}</p>

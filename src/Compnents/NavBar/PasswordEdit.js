@@ -5,7 +5,7 @@ import Setting from "./Setting";
 import { toast } from "react-toastify";
 import { updatePassword } from "firebase/auth";
 
-const PasswordEdit = ({ username, picture }) => {
+const PasswordEdit = ({ username, picture, toggleProfile, toggle }) => {
   const [active, setActive] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [newPasswordConfirm, setNewPasswordConfirm] = useState("");
@@ -35,9 +35,17 @@ const PasswordEdit = ({ username, picture }) => {
   return (
     <>
       {active ? (
-        <Setting username={username} picture={picture} />
+        <Setting
+          username={username}
+          picture={picture}
+          toggleProfile={toggleProfile}
+          toggle={toggle}
+        />
       ) : (
         <div className="nav__user" style={{ marginTop: "30px" }}>
+          <div className="nav__close">
+            <div class="close" onClick={toggleProfile}></div>
+          </div>
           <div className="nav__user__pic">
             <img src={picture} alt="user" />
             <p>{currentUser ? username : "email"}</p>

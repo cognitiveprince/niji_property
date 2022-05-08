@@ -9,7 +9,7 @@ import { storage } from "../../firebase-config";
 import { updateEmail } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const ProfileEdit = ({ username, picture, toggle }) => {
+const ProfileEdit = ({ username, picture, toggle, toggleProfile }) => {
   const [active, setActive] = useState(false);
   const { currentUser } = useSelector((state) => state.setUser);
   const [newUsername, setNewUsername] = useState("");
@@ -57,9 +57,17 @@ const ProfileEdit = ({ username, picture, toggle }) => {
   return (
     <>
       {active ? (
-        <Setting username={username} picture={picture} toggle={toggle} />
+        <Setting
+          username={username}
+          picture={picture}
+          toggle={toggle}
+          toggleProfile={toggleProfile}
+        />
       ) : (
         <div className="nav__user" style={{ marginTop: "30px" }}>
+          <div className="nav__close">
+            <div class="close" onClick={toggleProfile}></div>
+          </div>
           <div className="nav__user__pic">
             <img src={picture} alt="user" />
             <p>{currentUser ? username : "email"}</p>

@@ -26,6 +26,7 @@ const NavBar = () => {
   const [arrowClick, setArrowClick] = useState(false);
 
   const toggle = useCallback(() => setProfileOpened((o) => !o));
+  const toggleProfile = useCallback(() => setProfileOpened(false));
   const filterToggle = useCallback(() => setFilterOpened((o) => !o));
   const arrowToggle = useCallback(() => setArrowClick((o) => !o));
 
@@ -135,7 +136,7 @@ const NavBar = () => {
                 />
 
                 <Collapse in={profileOpened}>
-                  <Profile toggle={toggle} />
+                  <Profile toggle={toggle} toggleProfile={toggleProfile} />
                 </Collapse>
               </div>
             </Drawer>
@@ -158,7 +159,7 @@ const NavBar = () => {
               />
 
               <Collapse in={profileOpened}>
-                <Profile toggle={toggle} />
+                <Profile toggle={toggle} toggleProfile={toggleProfile} />
               </Collapse>
             </div>
           </div>

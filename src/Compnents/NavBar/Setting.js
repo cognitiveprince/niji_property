@@ -7,7 +7,7 @@ import Profile from "./Profile";
 import ProfileEdit from "./ProfileEdit";
 import PasswordEdit from "./PasswordEdit";
 
-const Setting = ({ username, picture, toggle }) => {
+const Setting = ({ username, picture, toggle, toggleProfile }) => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.setUser);
 
@@ -44,7 +44,7 @@ const Setting = ({ username, picture, toggle }) => {
   return (
     <>
       {active ? (
-        <Profile toggle={toggle} />
+        <Profile toggle={toggle} toggleProfile={toggleProfile} />
       ) : (
         <>
           {editActive ? (
@@ -52,13 +52,22 @@ const Setting = ({ username, picture, toggle }) => {
               username={username}
               picture={picture}
               toggle={toggle}
+              toggleProfile={toggleProfile}
             />
           ) : (
             <>
               {editPasswordActive ? (
-                <PasswordEdit username={username} picture={picture} />
+                <PasswordEdit
+                  username={username}
+                  picture={picture}
+                  toggleProfile={toggleProfile}
+                  toggle={toggle}
+                />
               ) : (
                 <div className="nav__user" style={{ marginTop: "30px" }}>
+                  <div className="nav__close">
+                    <div class="close" onClick={toggleProfile}></div>
+                  </div>
                   <div className="nav__user__pic">
                     <img src={picture} alt="user" />
                     <p>{currentUser ? username : "email"}</p>
