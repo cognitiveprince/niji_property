@@ -59,7 +59,7 @@ const HouseInfo = () => {
                 opened={opened}
                 onClose={() => setOpened(false)}
                 centered
-                size="100%"
+                size="80%"
                 transition="fade"
                 transitionDuration={600}
                 overlayOpacity={0.9}

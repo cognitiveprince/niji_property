@@ -7,7 +7,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./NavBar.scss";
 import { Container } from "react-bootstrap";
 import { Burger } from "@mantine/core";
-import { Drawer, Collapse } from "@mantine/core";
+import { Drawer, Collapse, Modal } from "@mantine/core";
 import { ToastContainer } from "react-toastify";
 import Profile from "./Profile";
 import { db } from "../../firebase-config";
@@ -51,8 +51,13 @@ const NavBar = () => {
   }, [currentUser]);
 
   const arrowClickHandler = () => {
-    setFilterOpened((o) => !o);
+    setFilterOpened(true);
     setArrowClick((o) => !o);
+  };
+
+  const closeFilter = () => {
+    setFilterOpened(false);
+    setArrowClick(false);
   };
 
   return (
@@ -89,12 +94,24 @@ const NavBar = () => {
               />
             )}
 
-            <Collapse in={filterOpened}>
+            <Modal
+              opened={filterOpened}
+              onClose={closeFilter}
+              centered
+              size="80%"
+              transition="fade"
+              transitionDuration={600}
+              overlayOpacity={0.9}
+              overflow="inside"
+            >
               <BuyFilter
                 filterToggle={filterToggle}
                 arrowToggle={arrowToggle}
               />
-            </Collapse>
+            </Modal>
+            {/* <Collapse in={filterOpened}>
+              
+            </Collapse> */}
           </div>
           <div className="nav__right">
             {/* Mobile Nav Bar */}
