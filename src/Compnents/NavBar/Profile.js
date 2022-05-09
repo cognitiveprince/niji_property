@@ -45,7 +45,7 @@ const Profile = ({ toggle, toggleProfile }) => {
       ) : (
         <div className="nav__user" style={{ marginTop: "30px" }}>
           <div className="nav__close">
-            <div class="close" onClick={toggleProfile}></div>
+            <div className="close" onClick={toggleProfile}></div>
           </div>
           <div className="nav__user__pic">
             <img src={picture} alt="user" />
