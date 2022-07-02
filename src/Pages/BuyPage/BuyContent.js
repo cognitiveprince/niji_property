@@ -20,6 +20,7 @@ const BuyContent = () => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
   });
   
+  // render filterout data
   const renderList = filteredData.map((item) => {
     const { id, title, image, description, bedroom, bathroom, parking_sapce,location } = item;
     return (
