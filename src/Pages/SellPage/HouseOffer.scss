@@ -1,0 +1,75 @@
+.house__offer__left {
+  background: linear-gradient(
+    164deg,
+    rgba(249, 92, 187, 1) 0%,
+    rgba(66, 113, 221, 1) 100%
+  );
+  height: 992px;
+  text-align: center;
+  position: relative;
+
+  h1 {
+    top: 50%;
+    position: absolute;
+    color: white;
+    font-weight: 600;
+  }
+
+  p {
+    top: 95%;
+    color: white;
+    font-weight: 300;
+    position: absolute;
+  }
+}
+
+.house__offer__content {
+  margin-top: 40px;
+  font-size: 20px;
+
+  span {
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.house__offer__right {
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 20px;
+
+  .house__offer__title {
+    border-left: 6px solid #2c4dff;
+    border-radius: 2px;
+    padding-left: 6px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .house__btn {
+    width: 158px;
+    height: 57px;
+    border-radius: 15px;
+    float: right;
+    margin-top: 50px;
+  }
+}
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .house__offer__left {
+    display: none;
+  }
+
+  .house__offer__right {
+    margin-top: 0px;
+  }
+
+  .house__offer__right .house__btn {
+    width: 95%;
+    float: none;
+  }
+}

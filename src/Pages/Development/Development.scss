@@ -1,0 +1,264 @@
+.develop__header__container {
+  margin-top: 20px;
+  position: relative;
+
+  .develop__header {
+    .develop__filler__first {
+      position: absolute;
+      width: 156px;
+      height: 131px;
+      right: 121%;
+      top: -39px;
+    }
+  }
+
+  .develop__btn {
+    background-color: #8f56fc;
+    border: none;
+    margin-top: 25px;
+  }
+
+  .develop__image {
+    margin-top: 25px;
+    img {
+      width: 1129px;
+      height: 571px;
+    }
+    .develop__filler__second {
+      position: absolute;
+      width: 156px;
+      height: 131px;
+      top: 87%;
+      left: 120%;
+    }
+  }
+
+  @media only screen and (max-width: 1494px) {
+    .develop__header {
+      text-align: center;
+    }
+    .develop__image {
+      img {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.develop__project__container {
+  margin-top: 100px;
+
+  .develop__project__img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+      width: 256px;
+      height: 538px;
+      margin-left: 30px;
+    }
+  }
+
+  .develop__project__text {
+    text-align: left;
+    margin-left: 40px;
+
+    h1 {
+      line-height: 75px;
+    }
+
+    p {
+      font-size: 30px;
+      line-height: 45px;
+    }
+
+    .develop__btn {
+      border-radius: 38px;
+      margin-top: 360px;
+    }
+  }
+
+  @media only screen and (max-width: 1494px) {
+    .develop__project__text {
+      .develop__btn {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .develop__project__text {
+      margin: 0px;
+      h1 {
+        line-height: 40px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    .develop__project__img {
+      flex-direction: column;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .develop__project__text {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .develop__project__img {
+      img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.develop__skills {
+  margin-top: 100px;
+  text-align: center;
+  p {
+    font-size: 25px;
+  }
+
+  .skills__buttons {
+    margin-top: 60px;
+    text-align: center;
+
+    .skills__content {
+      display: flex;
+      flex-direction: column;
+      margin-left: 100px;
+      margin-right: 100px;
+
+      img {
+        width: 229px;
+        height: 120px;
+      }
+
+      Button {
+        width: 229px;
+        margin-top: 20px;
+        border: none;
+        color: white;
+        font-weight: 500;
+      }
+
+      @media only screen and (max-width: 1494px) {
+        img {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        Button {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
+.development__footer {
+  text-align: center;
+  width: 1480px;
+  height: 480px;
+  border-radius: 30px;
+  margin-top: 100px;
+  background: rgb(132, 192, 255);
+  background: linear-gradient(
+    154deg,
+    rgba(132, 192, 255, 1) 0%,
+    rgba(196, 150, 255, 1) 100%
+  );
+
+  .development__footer__container {
+    margin-top: 40px;
+
+    h1 {
+      background-color: white;
+      width: 722px;
+      height: 121px;
+      padding-top: 35px;
+      border-radius: 20px;
+      font-weight: 800;
+    }
+
+    p {
+      color: white;
+      font-size: 25px;
+      margin-top: 20px;
+    }
+
+    .development__footer__container__social {
+      margin-top: 50px;
+
+      Button {
+        width: 150px;
+        height: 50px;
+        border-radius: 57px;
+        margin-right: 10px;
+        border: none;
+        font-weight: 800;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      @media only screen and (max-width: 800px) {
+        Button {
+          width: 100px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+// Mobile Responsiveness
+@media only screen and (max-width: 768px) {
+  .development__footer {
+    width: 382px;
+  }
+
+  .development__footer .development__footer__container h1 {
+    width: 330px;
+  }
+
+  .development__footer
+    .development__footer__container
+    .development__footer__container__social
+    Button {
+    width: 91px;
+  }
+
+  .develop__skills .skills__buttons .skills__content {
+    margin-bottom: 80px;
+  }
+
+  .develop__skills p {
+    font-size: 13px;
+  }
+
+  .develop__project__container .develop__project__text p {
+    font-size: 13px;
+  }
+}
