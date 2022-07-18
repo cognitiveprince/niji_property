@@ -19,7 +19,7 @@ const BuyPage = () => {
    */
   const fetchContent = async () => {
     const res = await axios
-      .get("http://5.189.134.55:9000/api/sellhouse/")
+      .get("https://nijiproperty-server.herokuapp.com/sellproperty/house/")
       .catch((error) => {
         console.log(error);
       });
