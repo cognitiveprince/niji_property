@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 const BuyCollapseContent = () => {
   const content = useSelector((state) => state.buyContentReducer.buyContent);
 
-  const renderList = content.results && content.results.map((item) => {
+  const renderList = content.results > 0 && content.results.map((item) => {
     
     const { id, title, images, description, bedroom, bathroom, parking_sapce, location } = item;
     return (

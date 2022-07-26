@@ -21,7 +21,7 @@ const BuyContent = () => {
   }) 
   
   // render filterout data
-  const renderList = content.results && filteredData.map((item) => {
+  const renderList = content.resultes && filteredData.length > 0 && filteredData.map((item) => {
     const { id, title, images, description, bedroom, bathroom, parking_sapce,location } = item;
     return (
       <Col key={id} md={3}>

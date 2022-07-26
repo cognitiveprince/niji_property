@@ -42,11 +42,11 @@ const HouseInfo = () => {
           {/* Image Section Of The Page */}
 
           <Col md={6} className="houseinfo__main__image">
-            <img src={images && images[0].image} alt="koonya pavillion" />
+            <img src={images[0].image && images[0].image} alt="koonya pavillion" />
           </Col>
           <Col md={2} className="houseinfo__second__image">
             {
-              images && images.map((src, index) => {
+              images.map((src, index) => {
                 return index !== 0 && (
                   <img className={"my-2"} src={src.image} alt="koonya pavillion" key={index} />
                 )

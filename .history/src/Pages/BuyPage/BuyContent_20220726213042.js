@@ -16,12 +16,12 @@ const BuyContent = () => {
   const { loading } = useSelector((state) => state.buyContentReducer);
   
   // filter out the data based on search keyword on each key press
-  const filteredData = content.results && content.results.filter(data => {
+  const filteredData = content.length > 0 ? content.results.filter(data => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
-  }) 
+  }) : null
   
   // render filterout data
-  const renderList = content.results && filteredData.map((item) => {
+  const renderList = filteredData.length > 0 && filteredData.map((item) => {
     const { id, title, images, description, bedroom, bathroom, parking_sapce,location } = item;
     return (
       <Col key={id} md={3}>
