@@ -16,7 +16,8 @@ const BuyContent = () => {
   const { loading } = useSelector((state) => state.buyContentReducer);
   
   // filter out the data based on search keyword on each key press
-  const filteredData = content.length > 0 && content.results.filter(data => {
+  content.length && console.log("hacker")
+  const filteredData = content && content.results.filter(data => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
   });
   
