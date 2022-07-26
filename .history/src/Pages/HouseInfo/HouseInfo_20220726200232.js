@@ -17,7 +17,7 @@ const HouseInfo = () => {
   const [opened, setOpened] = useState(false);
 
   const content = useSelector((state) => state.buyInfoReducer);
-  const { id, title, images, description, bedroom, bathroom, parking_sapce, location } = content;
+  const { image, price, title, description } = content;
   const { buyID } = useParams();
   const dispatch = useDispatch();
 
@@ -27,6 +27,7 @@ const HouseInfo = () => {
       .catch((error) => {
         console.log(error);
       });
+    console.log(res)
     dispatch(getBuyInfo(res.data));
   };
 
@@ -43,16 +44,15 @@ const HouseInfo = () => {
           {/* Image Section Of The Page */}
 
           <Col md={6} className="houseinfo__main__image">
-            <img src={images[0].image} alt="koonya pavillion" />
+            <img src={image} alt="koonya pavillion" />
           </Col>
           <Col md={2} className="houseinfo__second__image">
-            {
-              images.map((src, index) => {
-                return index !== 0 && (
-                  <img className={"my-2"} src={src.image} alt="koonya pavillion" key={index} />
-                )
-              })
-            }
+            <img src={image} alt="koonya pavillion" />
+            <img
+              src={image}
+              alt="koonya pavillion"
+              style={{ marginTop: "10px", borderRadius: "0 0 10px 0" }}
+            />
             <div className="d-grid gap-2">
               <Modal
                 opened={opened}
@@ -89,7 +89,7 @@ const HouseInfo = () => {
           <div className="houseinfo__main__title">
             <Col md={8}>
               <div className="houseinfo__text">
-                <h1>5454</h1>
+                <h1>{price}</h1>
                 <h2>An Inimitable Experience of Place - {title}</h2>
                 <p>{description}</p>
               </div>

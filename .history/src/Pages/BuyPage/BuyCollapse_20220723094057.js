@@ -12,6 +12,7 @@ import BuyIcon from "./BuyIcon";
 
 const BuyCollapse = () => {
   const dispatch = useDispatch();
+
   const fetchContent = async () => {
     const res = await axios
       .get(
@@ -20,12 +21,12 @@ const BuyCollapse = () => {
       .catch((error) => {
         console.log(error);
       });
-
     dispatch(getBuyContents(res.data));
   };
 
   useEffect(() => {
     fetchContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

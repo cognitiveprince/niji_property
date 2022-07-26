@@ -12,20 +12,21 @@ import BuyIcon from "./BuyIcon";
 
 const BuyCollapse = () => {
   const dispatch = useDispatch();
+
   const fetchContent = async () => {
     const res = await axios
       .get(
-        "https://nijiproperty-server.herokuapp.com/sellproperty/house/"
+        "https://my-json-server.typicode.com/realswikarrr/json-server-niji/buyContent"
       )
       .catch((error) => {
         console.log(error);
       });
-
     dispatch(getBuyContents(res.data));
   };
 
   useEffect(() => {
     fetchContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

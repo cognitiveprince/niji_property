@@ -22,14 +22,14 @@ const BuyContent = () => {
   
   // render filterout data
   const renderList = filteredData.map((item) => {
-    const { id, title, images, description, bedroom, bathroom, parking_sapce,location } = item;
+    const { id, title, image, description, bedroom, bathroom, parking_sapce,location } = item;
     return (
       <Col key={id} md={3}>
         <div className="buy__content__container">
           <Center>
             <div className="buy__image">
               <Link to={`/buy/${id}`}>
-                <img src={images.length < 0 ? "https://nepalhomesearch.com/wp-content/uploads/2020/07/budhanilkantha-71.jpg":images[0].image} alt={title} />
+                <img src={image === undefined || null || image.length < 0 ? "https://nepalhomesearch.com/wp-content/uploads/2020/07/budhanilkantha-71.jpg":image} alt={title} />
               </Link>
             </div>
           </Center>

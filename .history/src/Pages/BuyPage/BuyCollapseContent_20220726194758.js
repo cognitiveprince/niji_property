@@ -20,7 +20,7 @@ const BuyCollapseContent = () => {
             <div className="buy__collapse__container">
               <div className="buy__collapse__image">
                 <Link to={`/buy/${id}`}>
-                  <img src={images[0].image} alt="koonya pavillion" />
+                  <img src={images[0]} alt="koonya pavillion" />
                 </Link>
               </div>
 

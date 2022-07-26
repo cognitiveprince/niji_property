@@ -11,8 +11,7 @@ const BuyCollapseContent = () => {
   const content = useSelector((state) => state.buyContentReducer.buyContent);
   console.log(content)
   const renderList = content.results.map((item) => {
-    
-    const { id, title, images, description, bedroom, bathroom, parking_sapce, location } = item;
+    const { id, title, image, description, bedroom, bathroom, parking_sapce, location } = item;
     return (
       <Row key={id}>
         <Center>
@@ -20,7 +19,7 @@ const BuyCollapseContent = () => {
             <div className="buy__collapse__container">
               <div className="buy__collapse__image">
                 <Link to={`/buy/${id}`}>
-                  <img src={images[0].image} alt="koonya pavillion" />
+                  <img src={image[0]} alt="koonya pavillion" />
                 </Link>
               </div>
 

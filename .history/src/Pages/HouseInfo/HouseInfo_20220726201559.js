@@ -48,7 +48,7 @@ const HouseInfo = () => {
           <Col md={2} className="houseinfo__second__image">
             {
               images.map((src, index) => {
-                return index !== 0 && (
+                return (
                   <img className={"my-2"} src={src.image} alt="koonya pavillion" key={index} />
                 )
               })

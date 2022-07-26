@@ -29,7 +29,7 @@ const BuyContent = () => {
           <Center>
             <div className="buy__image">
               <Link to={`/buy/${id}`}>
-                <img src={images.length < 0 ? "https://nepalhomesearch.com/wp-content/uploads/2020/07/budhanilkantha-71.jpg":images[0].image} alt={title} />
+                <img src={images === undefined || null || images.length < 0 ? "https://nepalhomesearch.com/wp-content/uploads/2020/07/budhanilkantha-71.jpg":images[0]} alt={title} />
               </Link>
             </div>
           </Center>

@@ -12,6 +12,7 @@ import BuyIcon from "./BuyIcon";
 
 const BuyCollapse = () => {
   const dispatch = useDispatch();
+  console.log("hacker")
   const fetchContent = async () => {
     const res = await axios
       .get(
@@ -21,7 +22,7 @@ const BuyCollapse = () => {
         console.log(error);
       });
 
-    dispatch(getBuyContents(res.data));
+    dispatch(getBuyContents(res.data.results));
   };
 
   useEffect(() => {

@@ -18,7 +18,9 @@ const BuyPage = () => {
    * The function fetches data from the server and then dispatches the data to the reducer.
    */
   const fetchContent = async () => {
-    const res = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
+    console.log("sjfv")
+    const res = await axios
+      .get("https://nijiproperty-server.herokuapp.com/sellproperty/house/")
 
     console.log(res.data)
     dispatch(getBuyContents(res.data));

@@ -44,15 +44,15 @@ const HouseInfo = () => {
 
           <Col md={6} className="houseinfo__main__image">
             <img src={images[0].image} alt="koonya pavillion" />
-          </Col>
-          <Col md={2} className="houseinfo__second__image">
             {
               images.map((src, index) => {
-                return index !== 0 && (
-                  <img className={"my-2"} src={src.image} alt="koonya pavillion" key={index} />
-                )
+                return (
+                  <img className={"my-2"} src={src} alt={src} key={index} />
+)
               })
-            }
+}
+          </Col>
+          <Col md={2} className="houseinfo__second__image">
             <div className="d-grid gap-2">
               <Modal
                 opened={opened}

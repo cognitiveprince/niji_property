@@ -11,8 +11,7 @@ const BuyCollapseContent = () => {
   const content = useSelector((state) => state.buyContentReducer.buyContent);
   console.log(content)
   const renderList = content.results.map((item) => {
-    
-    const { id, title, images, description, bedroom, bathroom, parking_sapce, location } = item;
+    const { id, title, image, description, bedroom, bathroom, parking_sapce, location } = item;
     return (
       <Row key={id}>
         <Center>
@@ -20,7 +19,7 @@ const BuyCollapseContent = () => {
             <div className="buy__collapse__container">
               <div className="buy__collapse__image">
                 <Link to={`/buy/${id}`}>
-                  <img src={images[0].image} alt="koonya pavillion" />
+                  <img src={image} alt="koonya pavillion" />
                 </Link>
               </div>
 
@@ -30,16 +29,22 @@ const BuyCollapseContent = () => {
 
                   <p>{description}</p>
                   <div className="buy__items">
-                    <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                      {bedroom}
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      3
                     </Badge>
                     <AirlineSeatIndividualSuiteIcon className="buy__icon" />
-                    <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                      {bathroom}
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      4
                     </Badge>
                     <ShowerIcon className="buy__icon" />
-                    <Badge style={{ backgroundColor: "#EBEBEB", color: "black" }}>
-                      {parking_sapce}
+                    <Badge
+                      style={{ backgroundColor: "#EBEBEB", color: "black" }}
+                    >
+                      1,505
                     </Badge>
                     <LuggageIcon className="buy__icon" />
                   </div>
@@ -48,7 +53,7 @@ const BuyCollapseContent = () => {
 
               <Col md={2}>
                 <div className="buy__collapse__price">
-                  <h1>{1343443}</h1>
+                  <h1>{price}</h1>
                 </div>
               </Col>
             </div>

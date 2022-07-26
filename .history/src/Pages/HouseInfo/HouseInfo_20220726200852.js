@@ -48,9 +48,7 @@ const HouseInfo = () => {
           <Col md={2} className="houseinfo__second__image">
             {
               images.map((src, index) => {
-                return index !== 0 && (
-                  <img className={"my-2"} src={src.image} alt="koonya pavillion" key={index} />
-                )
+                index != 0 && <img src={src} alt="koonya pavillion" key={index} />
               })
             }
             <div className="d-grid gap-2">
@@ -89,7 +87,7 @@ const HouseInfo = () => {
           <div className="houseinfo__main__title">
             <Col md={8}>
               <div className="houseinfo__text">
-                <h1>5454</h1>
+                <h1>{price}</h1>
                 <h2>An Inimitable Experience of Place - {title}</h2>
                 <p>{description}</p>
               </div>
