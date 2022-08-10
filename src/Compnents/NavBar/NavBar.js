@@ -13,7 +13,7 @@ import Profile from "./Profile";
 import { db } from "../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 import { useSelector, useDispatch } from "react-redux";
-import { updateKeyword } from '../../Redux/Actions/Actions';
+import { updateKeyword } from "../../Redux/Actions/Actions";
 import BuyFilter from "../../Pages/BuyPage/BuyFilter";
 
 const NavBar = () => {
@@ -30,7 +30,7 @@ const NavBar = () => {
   const toggleProfile = useCallback(() => setProfileOpened(false));
   const filterToggle = useCallback(() => setFilterOpened((o) => !o));
   const arrowToggle = useCallback(() => setArrowClick((o) => !o));
-  
+
   // create dispatcher instance
   const dispatch = useDispatch();
 
@@ -63,12 +63,12 @@ const NavBar = () => {
     setFilterOpened(false);
     setArrowClick(false);
   };
-  
+
   //live search
   const searchFetch = (keyword) => {
     // save to redux store
     dispatch(updateKeyword(keyword));
-  }
+  };
 
   return (
     <div className="nav__main">
@@ -88,7 +88,11 @@ const NavBar = () => {
         <div className="nav__container">
           <div className="nav__left">
             <SearchIcon />
-            <input type="text" onChange={(e) => searchFetch(e.target.value)} placeholder="Search location here"></input>
+            <input
+              type="text"
+              onChange={(e) => searchFetch(e.target.value)}
+              placeholder="Search location here"
+            ></input>
 
             {arrowClick ? (
               <KeyboardArrowUpIcon

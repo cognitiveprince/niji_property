@@ -243,18 +243,33 @@ img {
 // Mobile Responsiveness
 @media only screen and (max-width: 768px) {
   .buy__content__container {
+    display: flex;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 0;
+    padding-left: 0;
     padding-top: 10px;
     border-radius: 6px;
   }
+  img{
+    width: 32vw !important;
+    height: 14vh !important;
+  }
 
   .buy__content {
-    margin-left: 0px;
+    margin-left: 10px;
     margin-right: 0px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .buy__items .buy__icon{
+    width: 25px;
+    height: 18px;
+  }
+  .buy__content h1{
+    font-size: 20px;
+  }
+  .buy__content p{
+    font-size: 15px;
   }
   .buy__items {
     margin-bottom: 10px;

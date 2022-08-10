@@ -256,11 +256,14 @@
   }
 
   .nav__left {
+    justify-content: center;
+    align-items: center;
+    margin:40px auto;
     input {
-      display: none;
+      display:block;
     }
     .nav__arrow {
-      display: none;
+      display: block;
     }
   }
 
