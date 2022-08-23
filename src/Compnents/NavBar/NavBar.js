@@ -1,11 +1,11 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import Logo from "../../Assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { NavLink, Link } from "react-router-dom";
 import "./NavBar.scss";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Burger } from "@mantine/core";
 import { Drawer, Collapse, Modal } from "@mantine/core";
 import { ToastContainer } from "react-toastify";
@@ -15,6 +15,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { useSelector, useDispatch } from "react-redux";
 import { updateKeyword, searchLocation } from "../../Redux/Actions/Actions";
 import BuyFilter from "../../Pages/BuyPage/BuyFilter";
+import data from "../../location.json";
+import Tag from "./Tag";
 
 const NavBar = () => {
   const [opened, setOpened] = useState(false);
@@ -30,12 +32,13 @@ const NavBar = () => {
   const toggleProfile = useCallback(() => setProfileOpened(false));
   const filterToggle = useCallback(() => setFilterOpened((o) => !o));
   const arrowToggle = useCallback(() => setArrowClick((o) => !o));
-  const [isCrossed1, setIsCrossed1] = useState(false);
-  const [isCrossed2, setIsCrossed2] = useState(false);
-  const [isCrossed3, setIsCrossed3] = useState(false);
 
   // create dispatcher instance
   const dispatch = useDispatch();
+
+  let scrl = useRef(null);
+  const [scrollX, setscrollX] = useState(0);
+  const [scrolEnd, setscrolEnd] = useState(false);
 
   useEffect(() => {
     if (!currentUser) {
@@ -76,6 +79,46 @@ const NavBar = () => {
   const labelFetch = (location) => {
     dispatch(searchLocation(location));
   };
+
+  //Slide click
+  const slide = (shift) => {
+    scrl.current.scrollLeft += shift;
+    setscrollX(scrollX + shift);
+
+    if (
+      Math.floor(scrl.current.scrollWidth - scrl.current.scrollLeft) <=
+      scrl.current.offsetWidth
+    ) {
+      setscrolEnd(true);
+    } else {
+      setscrolEnd(false);
+    }
+  };
+
+  const scrollCheck = () => {
+    setscrollX(scrl.current.scrollLeft);
+    if (
+      Math.floor(scrl.current.scrollWidth - scrl.current.scrollLeft) <=
+      scrl.current.offsetWidth
+    ) {
+      setscrolEnd(true);
+    } else {
+      setscrolEnd(false);
+    }
+  };
+
+  useEffect(() => {
+    //Check width of the scollings
+    if (
+      scrl.current &&
+      scrl?.current?.scrollWidth === scrl?.current?.offsetWidth
+    ) {
+      setscrolEnd(true);
+    } else {
+      setscrolEnd(false);
+    }
+    return () => {};
+  }, [scrl?.current?.scrollWidth, scrl?.current?.offsetWidth]);
 
   return (
     <div className="nav__main">
@@ -206,10 +249,28 @@ const NavBar = () => {
       </Container>
 
       <div className="tags_bar">
-        <div
-          className="label-search"
-          style={{ display: isCrossed1 ? "none" : "" }}
+        {scrollX !== 0 && (
+          <button className="prev" onClick={() => slide(-50)}>
+            <i className="fa fa-angle-left"></i>
+          </button>
+        )}
+        <ul
+          ref={scrl}
+          onScroll={scrollCheck}
+          onClick={(e) => {
+            labelFetch(e.target.innerText);
+          }}
         >
+          {data.fruits.map((d, i) => (
+            <Tag data={d} />
+          ))}
+        </ul>
+        {!scrolEnd && (
+          <button className="next" onClick={() => slide(+50)}>
+            <i className="fa fa-angle-right"></i>
+          </button>
+        )}
+        {/* <div className="label-search">
           <label
             onClick={(e) => {
               labelFetch(e.target.innerText);
@@ -217,12 +278,8 @@ const NavBar = () => {
           >
             Kathmandu
           </label>
-          <button onClick={() => setIsCrossed1(!isCrossed1)}>x</button>
         </div>
-        <div
-          className="label-search"
-          style={{ display: isCrossed2 ? "none" : "" }}
-        >
+        <div className="label-search">
           {}
           <label
             onClick={(e) => {
@@ -231,12 +288,8 @@ const NavBar = () => {
           >
             Lalitpur
           </label>
-          <button onClick={() => setIsCrossed2(!isCrossed2)}>x</button>
         </div>
-        <div
-          className="label-search"
-          style={{ display: isCrossed3 ? "none" : "" }}
-        >
+        <div className="label-search">
           <label
             onClick={(e) => {
               labelFetch(e.target.innerText);
@@ -244,8 +297,7 @@ const NavBar = () => {
           >
             Budhanilkanth
           </label>
-          <button onClick={() => setIsCrossed3(!isCrossed3)}>x</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

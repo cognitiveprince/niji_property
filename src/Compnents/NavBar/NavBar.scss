@@ -269,27 +269,50 @@
 
   .tags_bar {
     display: flex !important;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    .label-search {
+    justify-content: space-between;
+    // .label-search {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   margin: 0 10px;
+    //   cursor: pointer;
+    //   background-color: #cfcaca;
+    //   color: #000;
+    ul {
       display: flex;
       align-items: center;
-      justify-content: center;
+      list-style: none;
+      max-width: 100%;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      cursor: pointer;
+      &::-webkit-scrollbar {
+        background: transparent; /* make scrollbar transparent */
+        -webkit-appearance: none;
+        width: 0;
+        height: 0;
+      }
+      li {
+        background: #919091;
+        color: #fff;
+        padding: 8px;
+        border-radius: 4px;
+        margin: 0 4px;
+        white-space: nowrap;
+      }
+    }
+
+    button {
+      border: 0;
+      color: #777;
+      font-size: 24px;
       margin: 0 10px;
       cursor: pointer;
-      background-color: #cfcaca;
-      color: #000;
-
-      button {
-        display: block;
-        justify-content: end;
-        align-items: flex-start;
-        background-color: #cfcaca;
-        margin: 0 0px 12px 10px;
-        border: none;
-        text-align: end;
-        cursor: pointer;
-      }
     }
   }
 
