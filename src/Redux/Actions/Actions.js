@@ -162,12 +162,17 @@ export const setUser = (user) => {
   };
 };
 
-
-
 // update search keyword on each keypress
 export const updateKeyword = (keyword) => {
   return {
     type: "search",
-    payload:keyword
-  }
-}
+    payload: keyword,
+  };
+};
+
+export const searchLocation = (location) => {
+  return {
+    type: "search",
+    payload: location,
+  };
+};

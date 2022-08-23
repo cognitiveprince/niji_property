@@ -13,7 +13,7 @@ import Profile from "./Profile";
 import { db } from "../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 import { useSelector, useDispatch } from "react-redux";
-import { updateKeyword } from '../../Redux/Actions/Actions';
+import { updateKeyword, searchLocation } from "../../Redux/Actions/Actions";
 import BuyFilter from "../../Pages/BuyPage/BuyFilter";
 
 const NavBar = () => {
@@ -30,7 +30,10 @@ const NavBar = () => {
   const toggleProfile = useCallback(() => setProfileOpened(false));
   const filterToggle = useCallback(() => setFilterOpened((o) => !o));
   const arrowToggle = useCallback(() => setArrowClick((o) => !o));
-  
+  const [isCrossed1, setIsCrossed1] = useState(false);
+  const [isCrossed2, setIsCrossed2] = useState(false);
+  const [isCrossed3, setIsCrossed3] = useState(false);
+
   // create dispatcher instance
   const dispatch = useDispatch();
 
@@ -63,12 +66,16 @@ const NavBar = () => {
     setFilterOpened(false);
     setArrowClick(false);
   };
-  
+
   //live search
   const searchFetch = (keyword) => {
     // save to redux store
     dispatch(updateKeyword(keyword));
-  }
+  };
+
+  const labelFetch = (location) => {
+    dispatch(searchLocation(location));
+  };
 
   return (
     <div className="nav__main">
@@ -88,7 +95,11 @@ const NavBar = () => {
         <div className="nav__container">
           <div className="nav__left">
             <SearchIcon />
-            <input type="text" onChange={(e) => searchFetch(e.target.value)} placeholder="Search location here"></input>
+            <input
+              type="text"
+              onChange={(e) => searchFetch(e.target.value)}
+              placeholder="Search location here"
+            ></input>
 
             {arrowClick ? (
               <KeyboardArrowUpIcon
@@ -120,9 +131,10 @@ const NavBar = () => {
               />
             </Modal>
             {/* <Collapse in={filterOpened}>
-              
+
             </Collapse> */}
           </div>
+
           <div className="nav__right">
             {/* Mobile Nav Bar */}
 
@@ -155,12 +167,12 @@ const NavBar = () => {
                 <NavLink to="/development" onClick={() => setOpened(false)}>
                   Development
                 </NavLink>
-                <img
-                  src={picture}
-                  alt="user"
+                <button
                   className="navbar__profile"
                   onClick={() => setProfileOpened((o) => !o)}
-                />
+                >
+                  Login
+                </button>
 
                 <Collapse in={profileOpened}>
                   <Profile toggle={toggle} toggleProfile={toggleProfile} />
@@ -178,12 +190,12 @@ const NavBar = () => {
 
               <NavLink to="/development">Development</NavLink>
 
-              <img
-                src={picture}
-                alt="user"
+              <button
                 className="navbar__profile"
                 onClick={() => setProfileOpened((o) => !o)}
-              />
+              >
+                Login
+              </button>
 
               <Collapse in={profileOpened}>
                 <Profile toggle={toggle} toggleProfile={toggleProfile} />
@@ -192,6 +204,49 @@ const NavBar = () => {
           </div>
         </div>
       </Container>
+
+      <div className="tags_bar">
+        <div
+          className="label-search"
+          style={{ display: isCrossed1 ? "none" : "" }}
+        >
+          <label
+            onClick={(e) => {
+              labelFetch(e.target.innerText);
+            }}
+          >
+            Kathmandu
+          </label>
+          <button onClick={() => setIsCrossed1(!isCrossed1)}>x</button>
+        </div>
+        <div
+          className="label-search"
+          style={{ display: isCrossed2 ? "none" : "" }}
+        >
+          {}
+          <label
+            onClick={(e) => {
+              labelFetch(e.target.innerText);
+            }}
+          >
+            Lalitpur
+          </label>
+          <button onClick={() => setIsCrossed2(!isCrossed2)}>x</button>
+        </div>
+        <div
+          className="label-search"
+          style={{ display: isCrossed3 ? "none" : "" }}
+        >
+          <label
+            onClick={(e) => {
+              labelFetch(e.target.innerText);
+            }}
+          >
+            Budhanilkanth
+          </label>
+          <button onClick={() => setIsCrossed3(!isCrossed3)}>x</button>
+        </div>
+      </div>
     </div>
   );
 };

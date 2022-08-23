@@ -48,18 +48,21 @@ const FooterMobile = () => {
             <div className="footer__social">
               <div>
                 <img
+                  className="footer__social__img"
                   src="https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650353688/footer_fb_altftq.png"
                   alt="fb"
                 />
               </div>
               <div>
                 <img
+                  className="footer__social__img"
                   src="https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650353918/footer_insta_bkcxxm.png"
                   alt="insta"
                 />
               </div>
               <div>
                 <img
+                  className="footer__social__img"
                   src="https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650353938/footer_twitter_nasw2u.png"
                   alt="twiiter"
                 />

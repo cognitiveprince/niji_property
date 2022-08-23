@@ -9,7 +9,8 @@ import {
   logoutReducer,
   setUserReducer,
   userDataReducer,
-  keywordChange
+  keywordChange,
+  searchTag,
 } from "./Reducer";
 
 const reducers = combineReducers({
@@ -22,7 +23,8 @@ const reducers = combineReducers({
   logoutReducer: logoutReducer,
   setUser: setUserReducer,
   userDataReducer: userDataReducer,
-  keywordChange:keywordChange
+  keywordChange: keywordChange,
+  searchTag: searchTag,
 });
 
 export default reducers;

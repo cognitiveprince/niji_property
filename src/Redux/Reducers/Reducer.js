@@ -113,15 +113,23 @@ export const userDataReducer = (state = loginInitialState, action) => {
   }
 };
 
-
-
 // keyword reducers
 export const keywordChange = (state = "", action) => {
   switch (action.type) {
     case "search":
       return action.payload;
-    
+
     default:
       return state;
   }
-}
+};
+
+export const searchTag = (state = "", action) => {
+  switch (action.type) {
+    case "location":
+      return action.payload;
+
+    default:
+      return state;
+  }
+};

@@ -151,9 +151,9 @@
     }
 
     .footer__social {
-      img {
-        width: 30px;
-        height: 30px;
+      .footer__social__img {
+        width: 60px !important;
+        height: 60px !important;
       }
     }
   }
