@@ -63,7 +63,6 @@ const Footer = () => {
               </div>
               <div>
               <a> <InstagramIcon /></a>
-                <InstagramIcon />
               </div>
               <div>
               <a> <TwitterIcon /> </a>
