@@ -3,6 +3,9 @@ import { Col } from "react-bootstrap";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 const FooterMobile = () => {
   return (
@@ -30,7 +33,7 @@ const FooterMobile = () => {
               </div>
               <div className="footer__contact">
                 <LocalPhoneIcon style={{ color: "#0542EB" }} />
-                <p>984187394, 977-1-4118745, 4110987</p>
+                <p>+977-1-5913449 , 9840384286, 986-8203428, +977-980-6564588</p>
               </div>
               <div className="footer__contact">
                 <EmailIcon style={{ color: "#0542EB" }} />
@@ -46,26 +49,14 @@ const FooterMobile = () => {
               <h1>Our Social Medias</h1>
             </div>
             <div className="footer__social">
-              <div>
-                <img
-                  className="footer__social__img"
-                  src="https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650353688/footer_fb_altftq.png"
-                  alt="fb"
-                />
+            <div>
+                <a href="https://www.facebook.com/nijiproperty/"> <FacebookIcon /></a>
               </div>
               <div>
-                <img
-                  className="footer__social__img"
-                  src="https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650353918/footer_insta_bkcxxm.png"
-                  alt="insta"
-                />
+              <a> <InstagramIcon /></a>
               </div>
               <div>
-                <img
-                  className="footer__social__img"
-                  src="https://res.cloudinary.com/dnfr5p8jc/image/upload/v1650353938/footer_twitter_nasw2u.png"
-                  alt="twiiter"
-                />
+              <a> <TwitterIcon /> </a>
               </div>
             </div>
           </Col>

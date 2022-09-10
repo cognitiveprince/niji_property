@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
             <div className="footer__contact">
               <LocalPhoneIcon style={{ color: "#0542EB" }} />
-              <p>984187394, 977-1-4118745, 4110987</p>
+              <p>+977-1-5913449 , 9840384286, 986-8203428, +977-980-6564588</p>
             </div>
             <div className="footer__contact">
               <EmailIcon style={{ color: "#0542EB" }} />
@@ -59,13 +59,14 @@ const Footer = () => {
             </div>
             <div className="footer__social">
               <div>
-                <FacebookIcon />
+                <a href="https://www.facebook.com/nijiproperty/"> <FacebookIcon /></a>
               </div>
               <div>
+              <a> <InstagramIcon /></a>
                 <InstagramIcon />
               </div>
               <div>
-                <TwitterIcon />
+              <a> <TwitterIcon /> </a>
               </div>
             </div>
           </div>
