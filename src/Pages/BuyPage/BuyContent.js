@@ -51,6 +51,7 @@ const BuyContent = () => {
   
 
     return (
+      <div>
       
       <Col key={id} md={3}>
         <div className="buy__content__container">
@@ -83,15 +84,15 @@ const BuyContent = () => {
         </div>
         
       </Col>
-      
-    //  {totalPosts > postPerPage && (
-		// 				<Paginate
-		// 					currentPage={currentPage}
-		// 					setCurrentPage={setCurrentPage}
-		// 					totalPosts={totalPosts}
-		// 					postPerPage={postPerPage}
-		// 				/>
-		// 			)} 
+     {totalPosts > postPerPage && (
+						<Paginate
+							currentPage={currentPage}
+							setCurrentPage={setCurrentPage}
+							totalPosts={totalPosts}
+							postPerPage={postPerPage}
+						/>
+					)} 
+          </div>
   
           
             

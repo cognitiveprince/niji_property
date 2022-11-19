@@ -46,7 +46,7 @@ const BuyPage = () => {
 
       <Row>
         <BuyContent />
-        <Paginate/>
+        {/* <Paginate/> */}
          
       </Row>
 
