@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const BuyCollapseContent = () => {
   const content = useSelector((state) => state.buyContentReducer.buyContent);
+  
 
   const renderList = content.results && content.results.map((item) => {
     

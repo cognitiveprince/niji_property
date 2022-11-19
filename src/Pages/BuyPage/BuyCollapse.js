@@ -42,9 +42,9 @@ const BuyCollapse = () => {
 
       <BuyCollapseContent />
 
-      <div className="rent__pagination">
+      {/* <div className="rent__pagination">
         <Pagination total={4} color="gray" />
-      </div>
+      </div> */}
     </Container>
   );
 };
