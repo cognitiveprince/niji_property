@@ -1,0 +1,215 @@
+.develop__header__container {
+  margin-top: 20px;
+  position: relative;
+}
+.develop__header__container .develop__header .develop__filler__first {
+  position: absolute;
+  width: 156px;
+  height: 131px;
+  right: 121%;
+  top: -39px;
+}
+.develop__header__container .develop__btn {
+  background-color: #8f56fc;
+  border: none;
+  margin-top: 25px;
+}
+.develop__header__container .develop__image {
+  margin-top: 25px;
+}
+.develop__header__container .develop__image img {
+  width: 1129px;
+  height: 571px;
+}
+.develop__header__container .develop__image .develop__filler__second {
+  position: absolute;
+  width: 156px;
+  height: 131px;
+  top: 87%;
+  left: 120%;
+}
+@media only screen and (max-width: 1494px) {
+  .develop__header__container .develop__header {
+    text-align: center;
+  }
+  .develop__header__container .develop__image img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+.develop__project__container {
+  margin-top: 100px;
+}
+.develop__project__container .develop__project__img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.develop__project__container .develop__project__img img {
+  width: 256px;
+  height: 538px;
+  margin-left: 30px;
+}
+.develop__project__container .develop__project__text {
+  text-align: left;
+  margin-left: 40px;
+}
+.develop__project__container .develop__project__text h1 {
+  line-height: 75px;
+}
+.develop__project__container .develop__project__text p {
+  font-size: 30px;
+  line-height: 45px;
+}
+.develop__project__container .develop__project__text .develop__btn {
+  border-radius: 38px;
+  margin-top: 360px;
+}
+@media only screen and (max-width: 1494px) {
+  .develop__project__container .develop__project__text .develop__btn {
+    margin-top: 0px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .develop__project__container .develop__project__text {
+    margin: 0px;
+  }
+  .develop__project__container .develop__project__text h1 {
+    line-height: 40px;
+  }
+  .develop__project__container .develop__project__text p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .develop__project__container .develop__project__img {
+    flex-direction: column;
+  }
+  .develop__project__container .develop__project__img img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .develop__project__container .develop__project__text {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .develop__project__container .develop__project__img img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.develop__skills {
+  margin-top: 100px;
+  text-align: center;
+}
+.develop__skills p {
+  font-size: 25px;
+}
+.develop__skills .skills__buttons {
+  margin-top: 60px;
+  text-align: center;
+}
+.develop__skills .skills__buttons .skills__content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.develop__skills .skills__buttons .skills__content img {
+  width: 229px;
+  height: 120px;
+}
+.develop__skills .skills__buttons .skills__content Button {
+  width: 229px;
+  margin-top: 20px;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+@media only screen and (max-width: 1494px) {
+  .develop__skills .skills__buttons .skills__content img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .develop__skills .skills__buttons .skills__content Button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.development__footer {
+  text-align: center;
+  width: 1480px;
+  height: 480px;
+  border-radius: 30px;
+  margin-top: 100px;
+  background: rgb(132, 192, 255);
+  background: linear-gradient(154deg, rgb(132, 192, 255) 0%, rgb(196, 150, 255) 100%);
+}
+.development__footer .development__footer__container {
+  margin-top: 40px;
+}
+.development__footer .development__footer__container h1 {
+  background-color: white;
+  width: 722px;
+  height: 121px;
+  padding-top: 35px;
+  border-radius: 20px;
+  font-weight: 800;
+}
+.development__footer .development__footer__container p {
+  color: white;
+  font-size: 25px;
+  margin-top: 20px;
+}
+.development__footer .development__footer__container .development__footer__container__social {
+  margin-top: 50px;
+}
+.development__footer .development__footer__container .development__footer__container__social Button {
+  width: 150px;
+  height: 50px;
+  border-radius: 57px;
+  margin-right: 10px;
+  border: none;
+  font-weight: 800;
+}
+.development__footer .development__footer__container .development__footer__container__social img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 800px) {
+  .development__footer .development__footer__container .development__footer__container__social Button {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .development__footer .development__footer__container p {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .development__footer {
+    width: 382px;
+  }
+  .development__footer .development__footer__container h1 {
+    width: 330px;
+  }
+  .development__footer .development__footer__container .development__footer__container__social Button {
+    width: 91px;
+  }
+  .develop__skills .skills__buttons .skills__content {
+    margin-bottom: 80px;
+  }
+  .develop__skills p {
+    font-size: 13px;
+  }
+  .develop__project__container .develop__project__text p {
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=Development.css.map */

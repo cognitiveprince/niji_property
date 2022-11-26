@@ -25,6 +25,8 @@ import { useDispatch } from "react-redux";
 import { auth } from "./firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { setUser } from "./Redux/Actions/Actions";
+import { getBuyContents } from "./Redux/Actions/Actions";
+import axios from "axios";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +40,19 @@ function App() {
       }
     });
   }, [dispatch]);
+
+
+  const fetchContent = async () => {
+    const res = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
+
+    dispatch(getBuyContents(res.data));
+     
+  };
+
+  useEffect(() => {
+    fetchContent();
+  },[]);
+
 
   return (
     <div className="App">

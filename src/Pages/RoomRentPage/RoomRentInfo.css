@@ -1,0 +1,430 @@
+.mobile__rent {
+  display: none;
+}
+
+.houseinfo__main__image img {
+  width: 100%;
+  height: 577px;
+  border-radius: 10px 0 0 10px;
+}
+@media only screen and (max-width: 1064px) {
+  .houseinfo__main__image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.houseinfo__second__image img {
+  width: 100%;
+  height: 284px;
+  border-radius: 0 10px 0 0;
+}
+.houseinfo__second__image Button {
+  width: 100%;
+  height: 30px;
+  font-weight: 500;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 4px;
+}
+@media only screen and (max-width: 1064px) {
+  .houseinfo__second__image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.houseinfo__card {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__title {
+  display: flex;
+  justify-content: flex-start;
+}
+.card__title .card__title__left {
+  background-color: black;
+  width: 104px;
+  height: 20px;
+  color: white;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.card__title .card__title__right {
+  display: flex;
+}
+.card__title .card__title__right div {
+  padding-left: 15px;
+}
+@media only screen and (max-width: 1700px) {
+  .card__title .card__title__right {
+    margin-left: 120px;
+  }
+}
+@media only screen and (max-width: 1650px) {
+  .card__title .card__title__right {
+    margin-left: 100px;
+  }
+}
+@media only screen and (max-width: 1530px) {
+  .card__title .card__title__right {
+    margin-left: 80px;
+  }
+}
+@media only screen and (max-width: 1430px) {
+  .card__title .card__title__right {
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 1350px) {
+  .card__title .card__title__right {
+    margin-left: 30px;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .card__title .card__title__right {
+    margin-left: 5px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .card__title .card__title__right {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+  .card__title .card__title__right div {
+    padding-left: 5px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .card__title {
+    flex-direction: column;
+  }
+}
+
+.card__profile {
+  margin-top: 15px;
+  display: flex;
+  border-bottom: solid 1px #dddddd;
+  width: 100%;
+}
+.card__profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.card__profile .card__profile__info {
+  margin-left: 10px;
+}
+.card__profile .card__profile__info p {
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+.card__profile .card__profile__info h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card__contact {
+  margin-top: 40px;
+  margin-left: 17px;
+}
+.card__contact .card__contact__title {
+  border-left: 6px solid #2c4dff;
+  border-radius: 2px;
+  padding-left: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.card__contact .card__contact__info {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  color: #2c4dff;
+  border-bottom: solid 1px #dddddd;
+}
+.card__contact .card__contact__info h6 {
+  padding-left: 30px;
+  color: black;
+}
+
+.card__offer {
+  margin-top: 40px;
+  margin-left: 17px;
+}
+.card__offer .card__offer__title {
+  border-left: 6px solid #2c4dff;
+  border-radius: 2px;
+  padding-left: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.card__offer .card__offer__info {
+  margin-top: 15px;
+}
+.card__offer .card__offer__info .col {
+  padding: 10px;
+}
+.card__offer .card__offer__button {
+  margin-top: 40px;
+  margin-left: -10px;
+}
+.card__offer .card__offer__button Button {
+  width: 200px;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 1494px) {
+  .card__offer .card__offer__button Button {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .card__offer .card__offer__button Button {
+    margin-top: 20px;
+  }
+}
+
+.houseinfo__main__title {
+  margin-top: -120px;
+}
+.houseinfo__main__title .houseinfo__text {
+  border-left: 14px solid #ff8226;
+  padding-left: 10px;
+  border-radius: 4px;
+  text-align: left;
+}
+.houseinfo__main__title .houseinfo__text h1 {
+  font-size: 25px;
+  color: #2e5491;
+  line-height: 1;
+}
+.houseinfo__main__title .houseinfo__text p {
+  color: #262626;
+  padding: 0;
+  line-height: 1.5;
+}
+.houseinfo__main__title p {
+  text-align: justify;
+  padding-left: 25px;
+  line-height: 45px;
+}
+@media only screen and (max-width: 1064px) {
+  .houseinfo__main__title {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.houseinfo__map {
+  margin-top: 90px;
+  text-align: left;
+}
+
+.houseinfo__comments__container {
+  background-color: #f4f4f4;
+  padding: 37px 37px 0 37px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+.houseinfo__comments__content {
+  border-bottom: 1px solid #cbcbcb;
+  margin-bottom: 30px;
+}
+
+.houseinfo__comments {
+  font-family: "Inter", sans-serif;
+  margin-top: 90px;
+}
+.houseinfo__comments .comments__user {
+  display: flex;
+}
+.houseinfo__comments .comments__user .comments__user__text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.houseinfo__comments .comments__user .comments__author {
+  background-color: #2127c4;
+  border-radius: 16px;
+  color: white;
+  width: 110px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  padding-top: 2px;
+}
+.houseinfo__comments .comments__admin {
+  display: flex;
+  margin-top: 10px;
+}
+.houseinfo__comments .comments__admin .comments__admin__text {
+  margin-bottom: 10px;
+}
+
+.houseinfo__recommendation {
+  width: 98%;
+}
+
+.recommendation__content {
+  margin-top: 40px;
+}
+.recommendation__content .rec__image img {
+  width: 379px;
+  height: 404px;
+}
+@media only screen and (max-width: 1700px) {
+  .recommendation__content .rec__image img {
+    width: 100%;
+  }
+}
+.recommendation__content .rec__content {
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 13px;
+}
+.recommendation__content .rec__content h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.recommendation__content .rec__content p {
+  font-size: 15px;
+  font-weight: 300;
+}
+@media only screen and (max-width: 1500px) {
+  .recommendation__content .rec__content {
+    margin-bottom: 20px;
+  }
+}
+.recommendation__content .rec__items {
+  display: flex;
+}
+.recommendation__content .rec__items .rec__count {
+  margin-left: 10px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.recommendation__content .rec__items .rec__count__lug {
+  margin-left: 10px;
+  background-color: #ebebeb;
+  border-radius: 40%;
+  width: 56px;
+  height: 21px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+.recommendation__content .rec__items .rec__icon {
+  width: 40px;
+  height: 21px;
+}
+
+.preview__content {
+  margin-top: 40px;
+}
+.preview__content img {
+  border-radius: 0;
+}
+.preview__content .preview__main__image {
+  width: 1374px;
+  height: 861px;
+}
+.preview__content .preview__second__image {
+  width: 780px;
+  height: 651px;
+  margin-right: 50px;
+}
+.preview__content .preview__third__image {
+  width: 532px;
+  height: 651px;
+}
+.preview__content .preview__fourth__image {
+  width: 1372px;
+  height: 861px;
+}
+.preview__content .preview__fifth__image {
+  width: 780px;
+  height: 651px;
+  margin-right: 50px;
+}
+.preview__content .preview__sixth__image {
+  width: 532px;
+  height: 651px;
+}
+@media only screen and (max-width: 1500px) {
+  .preview__content .preview__main__image {
+    width: 100%;
+  }
+  .preview__content .preview__second__image {
+    width: 100%;
+  }
+  .preview__content .preview__third__image {
+    width: 100%;
+  }
+  .preview__content .preview__fourth__image {
+    width: 100%;
+  }
+  .preview__content .preview__fifth__image {
+    width: 100%;
+  }
+  .preview__content .preview__sixth__image {
+    width: 100%;
+  }
+  .preview__content .preview__images {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .houseinfo__main__image img {
+    width: 100%;
+    height: 290px;
+    border-radius: 10px 0 0 10px;
+  }
+  .desktop__rent {
+    display: none;
+  }
+  .mobile__rent {
+    display: block;
+  }
+  .houseinfo__card {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .houseinfo__comments__container {
+    font-size: 13px;
+  }
+  .rent__comment {
+    width: 24%;
+  }
+  .mobile__recommend {
+    display: block;
+  }
+  .desktop__recommend {
+    display: none;
+  }
+  .recommendation__content .rec__image img {
+    padding: 8px;
+  }
+}/*# sourceMappingURL=RoomRentInfo.css.map */

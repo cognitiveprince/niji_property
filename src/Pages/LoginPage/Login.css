@@ -1,0 +1,100 @@
+.login__left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+}
+
+.login__right {
+  text-align: left;
+}
+.login__right .login__right__title {
+  color: #0058ff;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+}
+.login__right .login__input__container {
+  margin-top: -15px;
+}
+.login__right .login__input {
+  margin-left: 5px;
+  width: 85%;
+  margin-right: 5px;
+  border: none;
+  outline: none;
+}
+@media screen and (max-width: 1480px) {
+  .login__right .login__input {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 1034px) {
+  .login__right .login__input {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .login__right .login__input {
+    width: 80%;
+  }
+}
+.login__right .login__remember__container {
+  display: flex;
+  align-content: center;
+}
+.login__right .login__remember__container .login__forgot {
+  color: #48a3ff;
+  font-size: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1480px) {
+  .login__right .login__remember__container .login__forgot {
+    margin-left: -70px;
+  }
+}
+@media screen and (max-width: 1034px) {
+  .login__right .login__remember__container .login__forgot {
+    margin-left: -70px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .login__right .login__remember__container .login__forgot {
+    margin-left: 10px;
+  }
+}
+.login__right .login__button__container {
+  align-content: center;
+  margin-top: 20px;
+}
+.login__right .login__button__container .login__btn {
+  width: 100%;
+  border-radius: 34px;
+}
+.login__right .login__bottom__text {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+.login__right .form-group {
+  padding: 10px;
+  width: 100%;
+  height: 64px;
+  border: 2px solid;
+  outline: none;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+.login__right .form-group > label {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  top: -24px;
+  left: 20px;
+  background-color: white;
+}
+.login__right .form-group > input {
+  border: none;
+  width: 100%;
+  outline: none;
+}/*# sourceMappingURL=Login.css.map */
