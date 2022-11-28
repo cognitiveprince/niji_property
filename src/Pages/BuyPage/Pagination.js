@@ -17,7 +17,7 @@ const Paginate = ({ currentPage, setCurrentPage, totalPosts, postPerPage }) => {
 					&laquo;
 				</button>
 			</li>
-			{pages.map((page) => (
+			{pages && pages.map((page) => (
 				<li
 					key={page}
 					className={`page-item ${page === currentPage && `active`}`}

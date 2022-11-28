@@ -7,11 +7,11 @@ import { Badge, Center } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const BuyCollapseContent = () => {
-  const content = useSelector((state) => state.buyContentReducer.buyContent);
+const BuyCollapseContent = ({filteredData}) => {
+  // const content = useSelector((state) => state.buyContentReducer.buyContent);
   
 
-  const renderList = content.results && content.results.map((item) => {
+  const renderList = <>{filteredData.map((item) => {
     
     const { id, title, images, description, bedroom, bathroom, parking_sapce, location } = item;
     return (
@@ -57,7 +57,8 @@ const BuyCollapseContent = () => {
         </Center>
       </Row>
     );
-  });
+  })}
+  </>
 
   return <>{renderList}</>;
 };

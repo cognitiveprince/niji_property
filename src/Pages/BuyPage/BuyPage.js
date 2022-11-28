@@ -2,7 +2,6 @@ import React, { useEffect,useState } from "react";
 import "./BuyPage.scss";
 import { Container, Row } from "react-bootstrap";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
-import { Pagination } from "@mantine/core";
 import { Link } from "react-router-dom";
 import BuyContent from "./BuyContent";
 import { useDispatch } from "react-redux";
@@ -16,31 +15,43 @@ import "./Pagination.css";
 
 const BuyPage = () => {
   const dispatch = useDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
+  const content = useSelector((state) => state.buyContentReducer.buyContent);
+  console.log(content.results)
+  const search_keyword = useSelector((state) => state.keywordChange);
 
   const fetchContent = async () => {
     const res = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
-
+    console.log(res,"***")
     dispatch(getBuyContents(res.data));
   };
 
   useEffect(() => {
+    console.log("***")
     fetchContent();
+    
   }, []);
+
+
+
+   
+
+   
   
-//   const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
-  const content = useSelector((state) => state.buyContentReducer.buyContent);
-  const search_keyword = useSelector((state) => state.keywordChange);
+
+  
+  
+ 
   
   const filteredData = content.results && content.results.filter(data => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
   }) 
   const postPerPage = 8;
-  const totalPosts = filteredData.length;
+  const totalPosts = filteredData?.length;
   console.log(totalPosts)
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const filterPosts = filteredData.slice(indexOfFirstPost, indexOfLastPost);
+  const filterPosts = filteredData?.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <Container>

@@ -5,7 +5,29 @@ import { setDoc, doc } from "firebase/firestore";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
+// import { async } from "@firebase/util";
+// import { Action } from "history";
+import axios from 'axios';
 
+// export const getBuyContents=()=> async(dispatch)=>{
+//   dispatch({type:Action.FETCH_POST_REQUEST});
+//   try{
+//     const buyContent = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
+//     dispatch({ type: ActionTypes.GET__BUY__CONTENT,
+//       payload: buyContent,});
+
+//   }
+
+//     catch (error) {
+//       dispatch({ type: ActionTypes.GET__BUY__FAILED, payload: error.message });
+//       console.log(error.message);
+//     }
+  
+// }
+
+ 
+		
+ 
 export const getRentContents = (rentContent) => {
   return {
     type: ActionTypes.GET__RENT__CONTENT,

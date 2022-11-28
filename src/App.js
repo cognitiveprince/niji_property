@@ -25,9 +25,21 @@ import { useDispatch } from "react-redux";
 import { auth } from "./firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { setUser } from "./Redux/Actions/Actions";
+import { getBuyContents } from "./Redux/Actions/Actions";
+import axios from "axios";
 
 function App() {
   const dispatch = useDispatch();
+
+  const fetchContent = async () => {
+    const res = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
+
+    dispatch(getBuyContents(res.data));
+  };
+
+  useEffect(() => {
+    fetchContent();
+  }, [dispatch]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -39,6 +51,8 @@ function App() {
     });
   }, [dispatch]);
 
+  
+
   return (
     <div className="App">
       <Router>
@@ -46,7 +60,7 @@ function App() {
         <div className="app__container">
           <Routes>
             <Route path="/" element={<BuyPage />} exact />
-            <Route path="/buy" element={<BuyPage />} />
+            {/* <Route path="/buy" element={<BuyPage />} /> */}
             <Route path="/buycollapse" element={<BuyCollapse />} />
             <Route path="/buy/:buyID" element={<HouseInfo />} />
             <Route path="/rent" element={<RentPage />} />

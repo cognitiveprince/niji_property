@@ -21,7 +21,7 @@ const BuyContent = ({filteredData}) => {
   // }) 
   
   // render filterout data
-  const renderList =<> {filteredData.map((item) => {
+  const renderList =<> {filteredData && filteredData.map((item) => {
     const { id, title, images, description, bedroom, bathroom, parking_sapce,location } = item;
     return (
       <Col key={id} md={3}>
@@ -57,6 +57,7 @@ const BuyContent = ({filteredData}) => {
     );
   })}
   </>
+  // return <>{renderList}</>;
 
   return <>{loading ? <div className="loader"></div> : renderList}</>;
 };
