@@ -32,7 +32,7 @@ function App() {
   const dispatch = useDispatch();
 
   const fetchContent = async () => {
-    const res = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
+    const res = await axios.get("https://nijiproperty.herokuapp.com/sellproperty/house/");
 
     dispatch(getBuyContents(res.data));
   };
@@ -60,7 +60,7 @@ function App() {
         <div className="app__container">
           <Routes>
             <Route path="/" element={<BuyPage />} exact />
-            {/* <Route path="/buy" element={<BuyPage />} /> */}
+            <Route path="/buy" element={<BuyPage />} />
             <Route path="/buycollapse" element={<BuyCollapse />} />
             <Route path="/buy/:buyID" element={<HouseInfo />} />
             <Route path="/rent" element={<RentPage />} />

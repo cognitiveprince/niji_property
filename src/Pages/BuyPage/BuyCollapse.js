@@ -36,11 +36,11 @@ const BuyCollapse = () => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
   }) 
   const postPerPage = 8;
-  const totalPosts = filteredData.length;
+  const totalPosts = filteredData?.length;
   console.log(totalPosts)
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const filterPosts = filteredData.slice(indexOfFirstPost, indexOfLastPost);
+  const filterPosts = filteredData?.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <Container style={{ textAlign: "left" }}>

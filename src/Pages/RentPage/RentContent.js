@@ -7,9 +7,11 @@ import { Badge, Center } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 const RentContent = () => {
+
   const content = useSelector((state) => state.rentContentReducer.rentContent);
-  const renderList = content.map((item) => {
-    const { id, title, image, description, beds, showers, space, price } = item;
+  const renderList = content.results && content.results.map((item) => {
+    const { id, title, images, description, bedroom, bathroom, parking_sapce,location,price } = item;
+    // const { id, title, images, description, bedroom, bathroom, space, price } = item;
     return (
       <Row key={id}>
         <Center>
@@ -17,7 +19,7 @@ const RentContent = () => {
             <div className="rent__container">
               <div className="rent__image">
                 <Link to={`/rent/${id}`}>
-                  <img src={image} alt="koonya pavillion" />
+                  <img src={images.length < 0 ? "https://nepalhomesearch.com/wp-content/uploads/2020/07/budhanilkantha-71.jpg":images[0].image} alt={title}/>
                 </Link>
               </div>
 
@@ -30,19 +32,19 @@ const RentContent = () => {
                     <Badge
                       style={{ backgroundColor: "#EBEBEB", color: "black" }}
                     >
-                      {beds}
+                      {bedroom}
                     </Badge>
                     <AirlineSeatIndividualSuiteIcon className="buy__icon" />
                     <Badge
                       style={{ backgroundColor: "#EBEBEB", color: "black" }}
                     >
-                      {showers}
+                      {bathroom}
                     </Badge>
                     <ShowerIcon className="buy__icon" />
                     <Badge
                       style={{ backgroundColor: "#EBEBEB", color: "black" }}
                     >
-                      {space}
+                      {parking_sapce}
                     </Badge>
                     <PeopleIcon className="buy__icon" />
                   </div>

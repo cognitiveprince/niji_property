@@ -11,7 +11,7 @@ const BuyCollapseContent = ({filteredData}) => {
   // const content = useSelector((state) => state.buyContentReducer.buyContent);
   
 
-  const renderList = <>{filteredData.map((item) => {
+  const renderList = <>{filteredData && filteredData.map((item) => {
     
     const { id, title, images, description, bedroom, bathroom, parking_sapce, location } = item;
     return (

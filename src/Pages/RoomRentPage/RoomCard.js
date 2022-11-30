@@ -53,7 +53,8 @@ const RoomCard = () => {
 
           <div className="card__profile__info">
             <p>Seller</p>
-            <h3>Yuna Evergarden</h3>
+            {/* hard coded seller name */}
+            <h3>Yuna Evergarden</h3>    
           </div>
         </div>
         {/* Profile Section Ends */}
