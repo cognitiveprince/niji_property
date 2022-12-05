@@ -9,7 +9,11 @@ import { useSelector } from "react-redux";
 const RentContent = () => {
 
   const content = useSelector((state) => state.rentContentReducer.rentContent);
-  const renderList = content.results && content.results.map((item) => {
+
+  console.log(content)
+  // const content = useSelector((state) => state.buyContentReducer.buyContent);
+
+  const renderList = content && content.map((item) => {
     const { id, title, images, description, bedroom, bathroom, parking_sapce,location,price } = item;
     // const { id, title, images, description, bedroom, bathroom, space, price } = item;
     return (

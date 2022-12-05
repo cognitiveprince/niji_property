@@ -12,7 +12,7 @@ const RentPage = () => {
 
   const fetchContent = async () => {
     const res = await axios
-      .get("https://nijiproperty-server.herokuapp.com/sellproperty/house/")
+      .get("https://nijiproperty.herokuapp.com/sellproperty/house/")
       .catch((error) => {
         console.log(error);
       });
@@ -26,7 +26,7 @@ const RentPage = () => {
 
   return (
     <Container style={{ textAlign: "left" }}>
-      <RentContent />
+      <RentContent  />
       {/* <div className="rent__pagination">
         <Pagination total={4} color="gray" />
       </div> */}

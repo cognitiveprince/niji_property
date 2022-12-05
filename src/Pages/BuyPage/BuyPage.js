@@ -12,6 +12,7 @@ import BuyIcon from "./BuyIcon";
 import Paginate from "./Pagination";
 import { useSelector } from "react-redux";
 import "./Pagination.css";
+import { ContactlessOutlined } from "@material-ui/icons";
 
 const BuyPage = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const BuyPage = () => {
    
   
 
-  
+console.log(content.data)
   
  
   
@@ -65,6 +66,7 @@ const BuyPage = () => {
 
       <Row>
         <BuyContent filteredData={filterPosts} />
+         
         <Paginate  currentPage={currentPage}
 							setCurrentPage={setCurrentPage}
 							totalPosts={totalPosts}

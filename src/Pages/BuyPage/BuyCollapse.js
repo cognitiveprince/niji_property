@@ -32,7 +32,7 @@ const BuyCollapse = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const search_keyword = useSelector((state) => state.keywordChange);
   
-  const filteredData = content.results && content.results.filter(data => {
+  const filteredData = content.data && content.data.filter(data => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
   }) 
   const postPerPage = 8;
