@@ -17,17 +17,15 @@ const BuyPage = () => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const content = useSelector((state) => state.buyContentReducer.buyContent);
-  console.log(content.results)
+  console.log(content.data)
   const search_keyword = useSelector((state) => state.keywordChange);
 
   const fetchContent = async () => {
-    const res = await axios.get("https://nijiproperty-server.herokuapp.com/sellproperty/house/");
-    console.log(res,"***")
+    const res = await axios.get("https://nijiproperty.herokuapp.com/sellproperty/house/");
     dispatch(getBuyContents(res.data));
   };
 
   useEffect(() => {
-    console.log("***")
     fetchContent();
     
   }, []);
@@ -43,7 +41,7 @@ const BuyPage = () => {
   
  
   
-  const filteredData = content.results && content.results.filter(data => {
+  const filteredData = content.data && content.data.filter(data => {
     return data.location.toUpperCase().includes(search_keyword.toUpperCase());
   }) 
   const postPerPage = 8;

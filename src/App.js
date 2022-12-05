@@ -34,7 +34,7 @@ function App() {
   const fetchContent = async () => {
     const res = await axios.get("https://nijiproperty.herokuapp.com/sellproperty/house/");
 
-    dispatch(getBuyContents(res.data));
+    dispatch(getBuyContents(res));
   };
 
   useEffect(() => {
